@@ -62,11 +62,6 @@ public class BForm extends JFrame implements WindowListener, KeyListener,
         addComponentListener(this);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
-        try {
-            UIManager.getInstalledLookAndFeels();
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-        }
     }
 
     public void keyPressed(KeyEvent e) {

@@ -67,12 +67,6 @@ public class BDialog extends JDialog implements WindowListener, KeyListener,
         addComponentListener(this);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
-        try {
-            UIManager.getInstalledLookAndFeels();
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception ex) {
-            System.err.println("BDialog#.ctor; ex=" + ex);
-        }
     }
 
     public void setCancelButton(JButton button) {
