@@ -13,7 +13,6 @@
  */
 package org.kbinani.cadencii;
 
-    public interface ICommandRunnable {
-        ICommand executeCommand( ICommand command );
-    }
-
+public interface ICommandRunnable {
+    ICommand executeCommand(ICommand command);
+}

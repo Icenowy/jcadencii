@@ -13,11 +13,10 @@
  */
 package org.kbinani.cadencii;
 
-
-    public class BAssemblyInfo {
-        public static final String id = "$Id: BAssemblyInfo.cs 1726 2011-08-13 18:27:18Z kbinani $";
-        public static final String fileVersionMeasure = "3";
-        public static final String fileVersionMinor = "5";
-        public static final String fileVersion = fileVersionMeasure + "." + fileVersionMinor + ".1";
-    }
-
+public class BAssemblyInfo {
+    public static final String id = "$Id: BAssemblyInfo.cs 1726 2011-08-13 18:27:18Z kbinani $";
+    public static final String fileVersionMeasure = "3";
+    public static final String fileVersionMinor = "5";
+    public static final String fileVersion = fileVersionMeasure + "." +
+        fileVersionMinor + ".1";
+}

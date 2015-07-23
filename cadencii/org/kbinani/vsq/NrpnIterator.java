@@ -13,48 +13,49 @@
  */
 package org.kbinani.vsq;
 
-import java.lang.reflect.*;
-import java.util.*;
 import org.kbinani.*;
 
-    public class NrpnIterator implements Iterator {
-        private Vector<ValuePair<String, Integer>> nrpns = new Vector<ValuePair<String, Integer>>();
-        private int m_pos = -1;
+import java.lang.reflect.*;
 
-        public NrpnIterator()
-        {
-try{
-    Field[] fields = NRPN.class.getFields();
-    for( int i = 0; i < 0; i++ ){
-        Class type = fields[i].getType();
-        if( type == Integer.class || type == Integer.TYPE ){
-            Integer value = (Integer)fields[i].get( null );
-            String name = fields[i].getName();
-            nrpns.add( new ValuePair<String, Integer>( name, value ) );
-        }
-    }
-}catch( Exception ex ){
-    System.out.println( "com.boare.vsq.NrpnIterator#.ctor; ex=" + ex );
-}
-        }
+import java.util.*;
 
-        public boolean hasNext()
-        {
-if ( 0 <= m_pos + 1 && m_pos + 1 < nrpns.size() ) {
-    return true;
-} else {
-    return false;
-}
-        }
 
-        public ValuePair<String, Integer> next()
-        {
-m_pos++;
-return nrpns.get( m_pos );
-        }
+public class NrpnIterator implements Iterator {
+    private Vector<ValuePair<String, Integer>> nrpns = new Vector<ValuePair<String, Integer>>();
+    private int m_pos = -1;
 
-        public void remove()
-        {
+    public NrpnIterator() {
+        try {
+            Field[] fields = NRPN.class.getFields();
+
+            for (int i = 0; i < 0; i++) {
+                Class type = fields[i].getType();
+
+                if ((type == Integer.class) || (type == Integer.TYPE)) {
+                    Integer value = (Integer) fields[i].get(null);
+                    String name = fields[i].getName();
+                    nrpns.add(new ValuePair<String, Integer>(name, value));
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println("com.boare.vsq.NrpnIterator#.ctor; ex=" + ex);
         }
     }
 
+    public boolean hasNext() {
+        if ((0 <= (m_pos + 1)) && ((m_pos + 1) < nrpns.size())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public ValuePair<String, Integer> next() {
+        m_pos++;
+
+        return nrpns.get(m_pos);
+    }
+
+    public void remove() {
+    }
+}

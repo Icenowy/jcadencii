@@ -13,23 +13,21 @@
  */
 package org.kbinani.vsq;
 
-    public enum UstPortamentoType
-    {
-        /// <summary>
-        /// S型．表記は''(空文字)
-        /// </summary>
-        S,
-        /// <summary>
-        /// 直線型．表記は's'
-        /// </summary>
-        Linear,
-        /// <summary>
-        /// R型．表記は'r'
-        /// </summary>
-        R,
-        /// <summary>
-        /// J型．表記は'j'
-        /// </summary>
-        J,
-    }
+public enum UstPortamentoType { /// <summary>
+                                /// S型．表記は''(空文字)
+                                /// </summary>
+    S,
 
+    /// <summary>
+    /// 直線型．表記は's'
+    /// </summary>
+    Linear,
+    /// <summary>
+    /// R型．表記は'r'
+    /// </summary>
+    R,
+    /// <summary>
+    /// J型．表記は'j'
+    /// </summary>
+    J;
+}

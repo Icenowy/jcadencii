@@ -13,45 +13,45 @@
  */
 package org.kbinani.media;
 
-import java.util.*;
 import org.kbinani.*;
 
+import java.util.*;
+
+
+/// <summary>
+/// 接頭辞b: 単位が変換前のサンプル数になっている変数
+/// 接頭辞a: 単位が変換後のサンプル数になっている変数
+/// </summary>
+public class WaveRateConvertAdapter {
+    private IWaveReceiver mReceiver;
+    private RateConvertContext mContext = null;
+
     /// <summary>
-    /// 接頭辞b: 単位が変換前のサンプル数になっている変数
-    /// 接頭辞a: 単位が変換後のサンプル数になっている変数
+    /// コンストラクタ．変換後のサンプリング周波数は，receiverのgetSampleRate()で自動的に取得される
     /// </summary>
-    public class WaveRateConvertAdapter
-    {
-        private IWaveReceiver mReceiver;
-        private RateConvertContext mContext = null;
+    /// <param name="receiver">変換した波形を送る相手先</param>
+    /// <param name="sample_rate">変換前のサンプリング周波数</param>
+    public WaveRateConvertAdapter(IWaveReceiver receiver, int sample_rate) {
+        mReceiver = receiver;
 
-        /// <summary>
-        /// コンストラクタ．変換後のサンプリング周波数は，receiverのgetSampleRate()で自動的に取得される
-        /// </summary>
-        /// <param name="receiver">変換した波形を送る相手先</param>
-        /// <param name="sample_rate">変換前のサンプリング周波数</param>
-        public WaveRateConvertAdapter( IWaveReceiver receiver, int sample_rate )
-        {
-mReceiver = receiver;
-int rate_from = sample_rate;
-int rate_to = receiver.getSampleRate();
-try {
-    mContext = new RateConvertContext( rate_from, rate_to );
-} catch ( Exception ex ) {
-    mContext = null; // m9(＠ｑ＠)
-}
-        }
+        int rate_from = sample_rate;
+        int rate_to = receiver.getSampleRate();
 
-        public void close()
-        {
-mReceiver.close();
-        }
-
-        public void append( double[] left, double[] right, int length )
-        {
-while ( RateConvertContext.convert( mContext, left, right, length ) ) {
-    mReceiver.append( mContext.bufferLeft, mContext.bufferRight, mContext.length );
-}
+        try {
+            mContext = new RateConvertContext(rate_from, rate_to);
+        } catch (Exception ex) {
+            mContext = null; // m9(＠ｑ＠)
         }
     }
 
+    public void close() {
+        mReceiver.close();
+    }
+
+    public void append(double[] left, double[] right, int length) {
+        while (RateConvertContext.convert(mContext, left, right, length)) {
+            mReceiver.append(mContext.bufferLeft, mContext.bufferRight,
+                mContext.length);
+        }
+    }
+}

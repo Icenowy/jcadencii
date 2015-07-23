@@ -15,17 +15,13 @@ package org.kbinani.windows.forms;
 
 import org.kbinani.BEventHandler;
 
-    public class BKeyEventHandler extends BEventHandler{
-        public BKeyEventHandler( Object sender, String method_name )
-        {
- super( sender, method_name, Void.TYPE, Object.class, BKeyEventArgs.class )
-;
-        }
 
-        public BKeyEventHandler( Class sender, String method_name )
-        {
- super( sender, method_name, Void.TYPE, Object.class, BKeyEventArgs.class )
-;
-        }
+public class BKeyEventHandler extends BEventHandler {
+    public BKeyEventHandler(Object sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Object.class, BKeyEventArgs.class);
     }
 
+    public BKeyEventHandler(Class sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Object.class, BKeyEventArgs.class);
+    }
+}

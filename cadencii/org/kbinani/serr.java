@@ -13,15 +13,12 @@
  */
 package org.kbinani;
 
-        public class serr
-        {
-private serr()
-{
-}
+public class serr {
+    private serr() {
+    }
 
-public static void println( String s )
-{
-    System.err.println( s );
+    public static void println(String s) {
+        System.err.println(s);
+    }
 }
-        };
-
+;

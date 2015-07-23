@@ -11,23 +11,20 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
-
-import java.awt.*;
 
 import org.kbinani.windows.forms.*;
 
+import java.awt.*;
 
-interface WaveformZoomUi
-{
+
+interface WaveformZoomUi {
     int getWidth();
 
     int getHeight();
 
-    void setListener( WaveformZoomUiListener listener );
+    void setListener(WaveformZoomUiListener listener);
 
     void repaint();
-};
-
-
+}
+;

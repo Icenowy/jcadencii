@@ -11,7 +11,6 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.apputil.*;
@@ -20,9 +19,7 @@ import org.kbinani.apputil.*;
 /// <summary>
 /// コントローラーの基底となる抽象クラス．
 /// </summary>
-public abstract class ControllerBase
-{
-
+public abstract class ControllerBase {
     /// <summary>
     /// 現在の言語設定に基づき，文字列messageに対応するメッセージを取得します．
     /// </summary>
@@ -32,6 +29,5 @@ public abstract class ControllerBase
     {
         return Messaging.getMessage( message );
     }*/
-
-};
-
+}
+;

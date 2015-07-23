@@ -11,45 +11,33 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.componentmodel.*;
 
 
-    @TypeConverterAnnotation( VibratoVariationConverter.class )
-    public class VibratoVariation
-    {
-        public static final VibratoVariation empty = new VibratoVariation();
+@TypeConverterAnnotation(VibratoVariationConverter.class)
+public class VibratoVariation {
+    public static final VibratoVariation empty = new VibratoVariation();
+    public String description = "";
 
-        public String description = "";
-
-        private VibratoVariation()
-        {
-description = "-";
-        }
-
-        public VibratoVariation( String description )
-        {
-this.description = description;
-        }
-
-        public boolean equals( Object obj )
-        {
-if ( obj != null && obj instanceof VibratoVariation ) {
-    return ((VibratoVariation)obj).description.equals( description );
-} else {
-    return super.equals( obj );
-}
-        }
-
-
-
-        public Object clone()
-        {
-return new VibratoVariation( this.description );
-        }
-
-
+    private VibratoVariation() {
+        description = "-";
     }
 
+    public VibratoVariation(String description) {
+        this.description = description;
+    }
+
+    public boolean equals(Object obj) {
+        if ((obj != null) && obj instanceof VibratoVariation) {
+            return ((VibratoVariation) obj).description.equals(description);
+        } else {
+            return super.equals(obj);
+        }
+    }
+
+    public Object clone() {
+        return new VibratoVariation(this.description);
+    }
+}

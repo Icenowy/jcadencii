@@ -11,25 +11,20 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.windows.forms.*;
 
 
-    public class PaletteToolMenuItem extends BMenuItem
-    {
-        private String mPaletteToolID;
+public class PaletteToolMenuItem extends BMenuItem {
+    private String mPaletteToolID;
 
-        public PaletteToolMenuItem( String id )
-        {
-super();
-mPaletteToolID = id;
-        }
-
-        public String getPaletteToolID()
-        {
-return mPaletteToolID;
-        }
+    public PaletteToolMenuItem(String id) {
+        super();
+        mPaletteToolID = id;
     }
 
+    public String getPaletteToolID() {
+        return mPaletteToolID;
+    }
+}

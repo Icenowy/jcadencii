@@ -11,18 +11,15 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.vsq;
 
 
-    /// <summary>
-    /// テンポテーブルに基づき，時刻とゲートタイムを相互変換する際の検索量を小さくするための検索コンテキスト
-    /// </summary>
-    public class TempoVectorSearchContext
-    {
-        public int mSec2ClockIndex = 0;
-        public double mSec2ClockSec = 0.0;
-        public int mClock2SecIndex = 0;
-        public double mClock2SecClock = 0.0;
-    }
-
+/// <summary>
+/// テンポテーブルに基づき，時刻とゲートタイムを相互変換する際の検索量を小さくするための検索コンテキスト
+/// </summary>
+public class TempoVectorSearchContext {
+    public int mSec2ClockIndex = 0;
+    public double mSec2ClockSec = 0.0;
+    public int mClock2SecIndex = 0;
+    public double mClock2SecClock = 0.0;
+}

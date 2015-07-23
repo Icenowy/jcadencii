@@ -13,10 +13,8 @@
  */
 package org.kbinani.cadencii;
 
+public interface IAmplifierView {
+    double getAmplifyL();
 
-    public interface IAmplifierView {
-        double getAmplifyL();
-
-        double getAmplifyR();
-    }
-
+    double getAmplifyR();
+}

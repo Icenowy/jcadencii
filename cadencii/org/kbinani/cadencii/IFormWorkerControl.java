@@ -11,12 +11,8 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
-
-    public interface IFormWorkerControl
-    {
-        void cancelJobSlot();
-    }
-
+public interface IFormWorkerControl {
+    void cancelJobSlot();
+}

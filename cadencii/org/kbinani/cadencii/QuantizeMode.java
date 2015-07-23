@@ -13,13 +13,11 @@
  */
 package org.kbinani.cadencii;
 
-    public enum QuantizeMode {
-        p4,
-        p8,
-        p16,
-        p32,
-        p64,
-        off,
-        p128,
-    }
-
+public enum QuantizeMode {p4,
+    p8,
+    p16,
+    p32,
+    p64,
+    off,
+    p128;
+}

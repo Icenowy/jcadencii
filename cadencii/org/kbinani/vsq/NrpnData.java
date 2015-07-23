@@ -13,27 +13,22 @@
  */
 package org.kbinani.vsq;
 
-    public class NrpnData
-    {
-        int m_clock;
-        byte m_parameter;
-        public byte Value;
+public class NrpnData {
+    int m_clock;
+    byte m_parameter;
+    public byte Value;
 
-        public NrpnData( int clock_, byte parameter, byte value )
-        {
-m_clock = clock_;
-m_parameter = parameter;
-Value = value;
-        }
-
-        public int getClock()
-        {
-return m_clock;
-        }
-
-        public byte getParameter()
-        {
-return m_parameter;
-        }
+    public NrpnData(int clock_, byte parameter, byte value) {
+        m_clock = clock_;
+        m_parameter = parameter;
+        Value = value;
     }
 
+    public int getClock() {
+        return m_clock;
+    }
+
+    public byte getParameter() {
+        return m_parameter;
+    }
+}

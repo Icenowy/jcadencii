@@ -13,11 +13,8 @@
  */
 package org.kbinani.cadencii;
 
-
-    public enum DrawObjectType {
-        Note,
-        Dynaff,
-        Crescend,
-        Decrescend,
-    }
-
+public enum DrawObjectType {Note,
+    Dynaff,
+    Crescend,
+    Decrescend;
+}

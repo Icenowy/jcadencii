@@ -13,30 +13,30 @@
  */
 package org.kbinani.cadencii;
 
-import java.awt.*;
 import org.kbinani.*;
+
 import org.kbinani.xml.*;
 
-    /// <summary>
-    /// toolStrip*の位置を保存します
-    /// </summary>
-    public class ToolStripLocation {
-        public enum ParentPanel {
-Top,
-Bottom,
-        }
+import java.awt.*;
 
-        public XmlPoint Location;
-        public ParentPanel Parent;
 
-        public ToolStripLocation() {
-Location = new XmlPoint( 0, 0 );
-Parent = ParentPanel.Top;
-        }
+/// <summary>
+/// toolStrip*の位置を保存します
+/// </summary>
+public class ToolStripLocation {
+    public XmlPoint Location;
+    public ParentPanel Parent;
 
-        public ToolStripLocation( Point location, ParentPanel parent ) {
-Location = new XmlPoint( location );
-Parent = parent;
-        }
+    public ToolStripLocation() {
+        Location = new XmlPoint(0, 0);
+        Parent = ParentPanel.Top;
     }
 
+    public ToolStripLocation(Point location, ParentPanel parent) {
+        Location = new XmlPoint(location);
+        Parent = parent;
+    }
+    public enum ParentPanel {Top,
+        Bottom;
+    }
+}

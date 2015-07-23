@@ -11,7 +11,6 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import java.util.*;
@@ -20,8 +19,7 @@ import java.util.*;
 /// <summary>
 /// 編集操作の履歴を管理するModel
 /// </summary>
-public class EditHistoryModel
-{
+public class EditHistoryModel {
     private static Vector<ICommand> mCommands = new Vector<ICommand>();
     private static int mCommandIndex = -1;
 
@@ -29,18 +27,19 @@ public class EditHistoryModel
     /// ヒストリーに編集履歴を登録する
     /// </summary>
     /// <param name="command">登録する履歴</param>
-    public void register( ICommand command )
-    {
-        if( mCommandIndex == mCommands.size() - 1 ) {
+    public void register(ICommand command) {
+        if (mCommandIndex == (mCommands.size() - 1)) {
             // 新しいコマンドバッファを追加する場合
-            mCommands.add( command );
+            mCommands.add(command);
             mCommandIndex = mCommands.size() - 1;
         } else {
             // 既にあるコマンドバッファを上書きする場合
-            mCommands.set( mCommandIndex + 1, command );
-            for( int i = mCommands.size() - 1; i >= mCommandIndex + 2; i-- ) {
-                mCommands.removeElementAt( i );
+            mCommands.set(mCommandIndex + 1, command);
+
+            for (int i = mCommands.size() - 1; i >= (mCommandIndex + 2); i--) {
+                mCommands.removeElementAt(i);
             }
+
             mCommandIndex++;
         }
     }
@@ -48,8 +47,7 @@ public class EditHistoryModel
     /// <summary>
     /// 編集履歴を消去する
     /// </summary>
-    public void clear()
-    {
+    public void clear() {
         mCommands.clear();
         mCommandIndex = -1;
     }
@@ -58,9 +56,9 @@ public class EditHistoryModel
     /// UNDO用のヒストリーを取得できるかどうか調べる
     /// </summary>
     /// <returns>UNDO用のヒストリーを取得できる場合trueを，そうでなければfalseを返す</returns>
-    public boolean hasUndoHistory()
-    {
-        if( mCommands.size() > 0 && 0 <= mCommandIndex && mCommandIndex < mCommands.size() ) {
+    public boolean hasUndoHistory() {
+        if ((mCommands.size() > 0) && (0 <= mCommandIndex) &&
+                (mCommandIndex < mCommands.size())) {
             return true;
         } else {
             return false;
@@ -71,9 +69,9 @@ public class EditHistoryModel
     /// REDO用のヒストリーを取得できるかどうか調べる
     /// </summary>
     /// <returns>REDO用のヒストリーを取得できる場合trueを，そうでなければfalseを返す</returns>
-    public boolean hasRedoHistory()
-    {
-        if( mCommands.size() > 0 && 0 <= mCommandIndex + 1 && mCommandIndex + 1 < mCommands.size() ) {
+    public boolean hasRedoHistory() {
+        if ((mCommands.size() > 0) && (0 <= (mCommandIndex + 1)) &&
+                ((mCommandIndex + 1) < mCommands.size())) {
             return true;
         } else {
             return false;
@@ -84,27 +82,24 @@ public class EditHistoryModel
     /// UNDO用のコマンドを取得する
     /// </summary>
     /// <returns></returns>
-    public ICommand getUndo()
-    {
-        return mCommands.get( mCommandIndex );
+    public ICommand getUndo() {
+        return mCommands.get(mCommandIndex);
     }
 
     /// <summary>
     /// REDO用のコマンドを取得する
     /// </summary>
     /// <returns></returns>
-    public ICommand getRedo()
-    {
-        return mCommands.get( mCommandIndex + 1 );
+    public ICommand getRedo() {
+        return mCommands.get(mCommandIndex + 1);
     }
 
     /// <summary>
     /// UNDO処理後に発生したコマンドを登録する
     /// </summary>
     /// <param name="command"></param>
-    public void registerAfterUndo( ICommand command )
-    {
-        mCommands.set( mCommandIndex, command );
+    public void registerAfterUndo(ICommand command) {
+        mCommands.set(mCommandIndex, command);
         mCommandIndex--;
     }
 
@@ -112,10 +107,8 @@ public class EditHistoryModel
     /// REDO処理後に発生したコマンドを登録する
     /// </summary>
     /// <param name="command"></param>
-    public void registerAfterRedo( ICommand command )
-    {
-        mCommands.set( mCommandIndex + 1, command );
+    public void registerAfterRedo(ICommand command) {
+        mCommands.set(mCommandIndex + 1, command);
         mCommandIndex++;
     }
 }
-

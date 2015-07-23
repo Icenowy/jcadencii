@@ -15,12 +15,13 @@ package org.kbinani.cadencii;
 
 import org.kbinani.BEventHandler;
 
-public class FederChangedEventHandler extends BEventHandler{
-    public FederChangedEventHandler( Object sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Integer.TYPE, Integer.TYPE );
+
+public class FederChangedEventHandler extends BEventHandler {
+    public FederChangedEventHandler(Object sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Integer.TYPE, Integer.TYPE);
     }
-    
-    public FederChangedEventHandler( Class<?> sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Integer.TYPE, Integer.TYPE );
+
+    public FederChangedEventHandler(Class<?> sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Integer.TYPE, Integer.TYPE);
     }
 }

@@ -13,18 +13,17 @@
  */
 package org.kbinani.vsq;
 
-    /// <summary>
-    /// Represents the voice language of singer.
-    /// </summary>
-    public enum VsqVoiceLanguage
-    {
-        /// <summary>
-        /// Japanese
-        /// </summary>
-        Japanese,
-        /// <summary>
-        /// English
-        /// </summary>
-        English,
-    }
 
+/// <summary>
+/// Represents the voice language of singer.
+/// </summary>
+public enum VsqVoiceLanguage { /// <summary>
+                               /// Japanese
+                               /// </summary>
+    Japanese,
+
+    /// <summary>
+    /// English
+    /// </summary>
+    English;
+}

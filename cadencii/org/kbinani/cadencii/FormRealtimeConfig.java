@@ -13,83 +13,31 @@
  */
 package org.kbinani.cadencii;
 
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import org.kbinani.*;
+
+import org.kbinani.apputil.*;
+
+import org.kbinani.windows.forms.*;
 import org.kbinani.windows.forms.BButton;
 import org.kbinani.windows.forms.BForm;
 import org.kbinani.windows.forms.BLabel;
 import org.kbinani.windows.forms.BNumericUpDown;
 
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
-import org.kbinani.*;
-import org.kbinani.apputil.*;
-import org.kbinani.windows.forms.*;
-
-    public class FormRealtimeConfig extends BDialog {
-        private boolean m_game_ctrl_enabled = false;
-        private double m_last_event_processed;
-        private BTimer timer;
-
-        public FormRealtimeConfig()
-        {
-super();
-initialize();
-timer = new BTimer();
-timer.setDelay( 10 );
-registerEventHandlers();
-setResources();
-Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
-        }
-
-        public float getSpeed()
-        {
-return (float)numSpeed.getFloatValue();
-        }
-
-        public void FormRealtimeConfig_Load( Object sender, BEventArgs e )
-        {
-System.err.println( "info; FormRealtimeConfig#FormRealtimeConfig_Load; not implemented yet; \"int num_joydev = 0\"" );
-int num_joydev = 0;
-m_game_ctrl_enabled = (num_joydev > 0);
-if ( m_game_ctrl_enabled ) {
-    timer.start();
-}
-        }
-
-        public void timer_Tick( Object sender, BEventArgs e )
-        {
-        }
-
-        public void btnStart_Click( Object sender, BEventArgs e )
-        {
-setDialogResult( BDialogResult.OK );
-close();
-        }
-
-        public void btnCancel_Click( Object sender, BEventArgs e )
-        {
-setDialogResult( BDialogResult.CANCEL );
-        }
-
-        private void registerEventHandlers()
-        {
-this.loadEvent.add( new BEventHandler( this, "FormRealtimeConfig_Load" ) );
-timer.tickEvent.add( new BEventHandler( this, "timer_Tick" ) );
-btnStart.clickEvent.add( new BEventHandler( this, "btnStart_Click" ) );
-btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
-        }
-
-        private void setResources()
-        {
-        }
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 
+public class FormRealtimeConfig extends BDialog {
     private static final long serialVersionUID = 1L;
+    private boolean m_game_ctrl_enabled = false;
+    private double m_last_event_processed;
+    private BTimer timer;
     private JLabel lblRealTimeInput = null;
     private JPanel jPanel = null;
     private BButton btnStart = null;
@@ -99,9 +47,57 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
     private BNumericUpDown numSpeed = null;
     private JPanel jPanel2 = null;
 
+    public FormRealtimeConfig() {
+        super();
+        initialize();
+        timer = new BTimer();
+        timer.setDelay(10);
+        registerEventHandlers();
+        setResources();
+        Util.applyFontRecurse(this, AppManager.editorConfig.getBaseFont());
+    }
+
+    public float getSpeed() {
+        return (float) numSpeed.getFloatValue();
+    }
+
+    public void FormRealtimeConfig_Load(Object sender, BEventArgs e) {
+        System.err.println(
+            "info; FormRealtimeConfig#FormRealtimeConfig_Load; not implemented yet; \"int num_joydev = 0\"");
+
+        int num_joydev = 0;
+        m_game_ctrl_enabled = (num_joydev > 0);
+
+        if (m_game_ctrl_enabled) {
+            timer.start();
+        }
+    }
+
+    public void timer_Tick(Object sender, BEventArgs e) {
+    }
+
+    public void btnStart_Click(Object sender, BEventArgs e) {
+        setDialogResult(BDialogResult.OK);
+        close();
+    }
+
+    public void btnCancel_Click(Object sender, BEventArgs e) {
+        setDialogResult(BDialogResult.CANCEL);
+    }
+
+    private void registerEventHandlers() {
+        this.loadEvent.add(new BEventHandler(this, "FormRealtimeConfig_Load"));
+        timer.tickEvent.add(new BEventHandler(this, "timer_Tick"));
+        btnStart.clickEvent.add(new BEventHandler(this, "btnStart_Click"));
+        btnCancel.clickEvent.add(new BEventHandler(this, "btnCancel_Click"));
+    }
+
+    private void setResources() {
+    }
+
     /**
      * This method initializes this
-     * 
+     *
      */
     private void initialize() {
         lblRealTimeInput = new JLabel();
@@ -109,13 +105,12 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
         lblRealTimeInput.setFont(new Font("Dialog", Font.PLAIN, 18));
         this.setSize(new Dimension(320, 182));
         this.setContentPane(getJPanel());
-    		
     }
 
     /**
-     * This method initializes jPanel	
-     * 	
-     * @return javax.swing.JPanel	
+     * This method initializes jPanel
+     *
+     * @return javax.swing.JPanel
      */
     private JPanel getJPanel() {
         if (jPanel == null) {
@@ -124,6 +119,7 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             gridBagConstraints6.weightx = 1.0D;
             gridBagConstraints6.fill = GridBagConstraints.HORIZONTAL;
             gridBagConstraints6.gridy = 1;
+
             GridBagConstraints gridBagConstraints5 = new GridBagConstraints();
             gridBagConstraints5.gridx = 0;
             gridBagConstraints5.gridwidth = 2;
@@ -131,6 +127,7 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             gridBagConstraints5.fill = GridBagConstraints.NONE;
             gridBagConstraints5.weighty = 1.0D;
             gridBagConstraints5.gridy = 2;
+
             GridBagConstraints gridBagConstraints = new GridBagConstraints();
             gridBagConstraints.gridx = 0;
             gridBagConstraints.gridwidth = 2;
@@ -142,13 +139,14 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             jPanel.add(getJPanel1(), gridBagConstraints5);
             jPanel.add(getJPanel2(), gridBagConstraints6);
         }
+
         return jPanel;
     }
 
     /**
-     * This method initializes btnStart	
-     * 	
-     * @return javax.swing.JButton	
+     * This method initializes btnStart
+     *
+     * @return javax.swing.JButton
      */
     private BButton getBtnStart() {
         if (btnStart == null) {
@@ -157,13 +155,14 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             btnStart.setPreferredSize(new Dimension(120, 33));
             btnStart.setFont(new Font("Dialog", Font.PLAIN, 12));
         }
+
         return btnStart;
     }
 
     /**
-     * This method initializes btnCancel	
-     * 	
-     * @return javax.swing.JButton	
+     * This method initializes btnCancel
+     *
+     * @return javax.swing.JButton
      */
     private BButton getBtnCancel() {
         if (btnCancel == null) {
@@ -172,13 +171,14 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             btnCancel.setPreferredSize(new Dimension(120, 33));
             btnCancel.setFont(new Font("Dialog", Font.PLAIN, 12));
         }
+
         return btnCancel;
     }
 
     /**
-     * This method initializes jPanel1	
-     * 	
-     * @return javax.swing.JPanel	
+     * This method initializes jPanel1
+     *
+     * @return javax.swing.JPanel
      */
     private JPanel getJPanel1() {
         if (jPanel1 == null) {
@@ -188,6 +188,7 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             gridBagConstraints4.weightx = 1.0;
             gridBagConstraints4.insets = new Insets(0, 6, 0, 0);
             gridBagConstraints4.gridx = 1;
+
             GridBagConstraints gridBagConstraints3 = new GridBagConstraints();
             gridBagConstraints3.gridx = 0;
             gridBagConstraints3.insets = new Insets(0, 0, 0, 6);
@@ -200,26 +201,28 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             jPanel1.add(lblSpeed, gridBagConstraints3);
             jPanel1.add(getNumSpeed(), gridBagConstraints4);
         }
+
         return jPanel1;
     }
 
     /**
-     * This method initializes numSpeed	
-     * 	
-     * @return javax.swing.JComboBox	
+     * This method initializes numSpeed
+     *
+     * @return javax.swing.JComboBox
      */
     private BNumericUpDown getNumSpeed() {
         if (numSpeed == null) {
             numSpeed = new BNumericUpDown();
             numSpeed.setPreferredSize(new Dimension(120, 19));
         }
+
         return numSpeed;
     }
 
     /**
-     * This method initializes jPanel2	
-     * 	
-     * @return javax.swing.JPanel	
+     * This method initializes jPanel2
+     *
+     * @return javax.swing.JPanel
      */
     private JPanel getJPanel2() {
         if (jPanel2 == null) {
@@ -229,6 +232,7 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             gridBagConstraints2.insets = new Insets(0, 12, 12, 0);
             gridBagConstraints2.anchor = GridBagConstraints.WEST;
             gridBagConstraints2.gridy = 0;
+
             GridBagConstraints gridBagConstraints1 = new GridBagConstraints();
             gridBagConstraints1.gridx = 0;
             gridBagConstraints1.weightx = 1.0D;
@@ -240,8 +244,7 @@ btnCancel.clickEvent.add( new BEventHandler( this, "btnCancel_Click" ) );
             jPanel2.add(getBtnStart(), gridBagConstraints1);
             jPanel2.add(getBtnCancel(), gridBagConstraints2);
         }
+
         return jPanel2;
     }
-
-    }
-
+}

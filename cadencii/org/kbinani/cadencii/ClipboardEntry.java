@@ -13,32 +13,40 @@
  */
 package org.kbinani.cadencii;
 
-import java.io.*;
-import java.util.*;
 import org.kbinani.*;
+
 import org.kbinani.vsq.*;
 
-    public class ClipboardEntry implements Serializable {
-        public Vector<VsqEvent> events;
-        /// <summary>
-        /// コピーorカットで複製されたテンポ
-        /// </summary>
-        public Vector<TempoTableEntry> tempo;
-        /// <summary>
-        /// コピーorカットで複製された拍子
-        /// </summary>
-        public Vector<TimeSigTableEntry> timesig;
-        /// <summary>
-        /// コピーorカットで複製されたカーブ
-        /// </summary>
-        public TreeMap<CurveType, VsqBPList> points;
-        /// <summary>
-        /// コピーorカットで複製されたベジエ曲線
-        /// </summary>
-        public TreeMap<CurveType, Vector<BezierChain>> beziers;
-        /// <summary>
-        /// コピーの開始位置。貼付け時に、この値をもとにクロックのシフトを行う
-        /// </summary>
-        public int copyStartedClock;
-    }
+import java.io.*;
 
+import java.util.*;
+
+
+public class ClipboardEntry implements Serializable {
+    public Vector<VsqEvent> events;
+
+    /// <summary>
+    /// コピーorカットで複製されたテンポ
+    /// </summary>
+    public Vector<TempoTableEntry> tempo;
+
+    /// <summary>
+    /// コピーorカットで複製された拍子
+    /// </summary>
+    public Vector<TimeSigTableEntry> timesig;
+
+    /// <summary>
+    /// コピーorカットで複製されたカーブ
+    /// </summary>
+    public TreeMap<CurveType, VsqBPList> points;
+
+    /// <summary>
+    /// コピーorカットで複製されたベジエ曲線
+    /// </summary>
+    public TreeMap<CurveType, Vector<BezierChain>> beziers;
+
+    /// <summary>
+    /// コピーの開始位置。貼付け時に、この値をもとにクロックのシフトを行う
+    /// </summary>
+    public int copyStartedClock;
+}

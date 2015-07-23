@@ -11,15 +11,11 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
-
-public interface FormMainUiListener
-{
+public interface FormMainUiListener {
     /// <summary>
     /// ナビゲーションパネルがフォーカスを得たときに呼ばれる
     /// </summary>
     void navigationPanelGotFocus();
 }
-

@@ -11,35 +11,28 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.componentmodel.*;
 
 
-    @TypeConverterAnnotation( NoteNumberPropertyConverter.class )
-    public class NoteNumberProperty
-    {
-        public int noteNumber = 60;
+@TypeConverterAnnotation(NoteNumberPropertyConverter.class)
+public class NoteNumberProperty {
+    public int noteNumber = 60;
 
-
-        public int hashCode()
-        {
-return Integer.valueOf( noteNumber ).hashCode();
-        }
-
-
-        public boolean equals( Object obj )
-        {
-if ( obj instanceof NoteNumberProperty ) {
-    if ( noteNumber == ((NoteNumberProperty)obj).noteNumber ) {
-        return true;
-    } else {
-        return false;
+    public int hashCode() {
+        return Integer.valueOf(noteNumber).hashCode();
     }
-} else {
-    return super.equals( obj );
+
+    public boolean equals(Object obj) {
+        if (obj instanceof NoteNumberProperty) {
+            if (noteNumber == ((NoteNumberProperty) obj).noteNumber) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return super.equals(obj);
+        }
+    }
 }
-        }
-    }
-

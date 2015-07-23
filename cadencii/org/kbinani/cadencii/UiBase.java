@@ -11,13 +11,9 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
-
-public interface UiBase
-{
-    int showDialog( Object parent_form );
-};
-
-
+public interface UiBase {
+    int showDialog(Object parent_form);
+}
+;

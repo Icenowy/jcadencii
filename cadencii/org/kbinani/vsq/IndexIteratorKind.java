@@ -13,17 +13,13 @@
  */
 package org.kbinani.vsq;
 
+public class IndexIteratorKind {
+    public static final int SINGER = 1 << 0;
+    public static final int NOTE = 1 << 1;
+    public static final int CRESCEND = 1 << 2;
+    public static final int DECRESCEND = 1 << 3;
+    public static final int DYNAFF = 1 << 4;
 
-    public class IndexIteratorKind
-    {
-        public static final int SINGER = 1 << 0;
-        public static final int NOTE = 1 << 1;
-        public static final int CRESCEND = 1 << 2;
-        public static final int DECRESCEND = 1 << 3;
-        public static final int DYNAFF = 1 << 4;
-
-        private IndexIteratorKind()
-        {
-        }
+    private IndexIteratorKind() {
     }
-
+}

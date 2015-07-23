@@ -15,24 +15,26 @@ package org.kbinani.cadencii;
 
 import org.kbinani.vsq.*;
 
-    public class VConnectRenderingQueue {
-        /// <summary>
-        /// このキューのレンダリング結果のwavを、曲頭から何フレーム目にmixしたらよいかを表す
-        /// </summary>
-        public long startSample;
-        /// <summary>
-        /// 音源のフォルダ
-        /// </summary>
-        public String oto_ini;
-        /// <summary>
-        /// このキューのレンダリング結果の、おおよその長さ。正確な長さはレンダリング結果が出るまでは不明。
-        /// </summary>
-        public long abstractSamples;
-        /// <summary>
-        /// メタテキストの生成に必要なトラックデータ
-        /// </summary>
-        public VsqTrack track;
-        public int endClock;
 
-    }
+public class VConnectRenderingQueue {
+    /// <summary>
+    /// このキューのレンダリング結果のwavを、曲頭から何フレーム目にmixしたらよいかを表す
+    /// </summary>
+    public long startSample;
 
+    /// <summary>
+    /// 音源のフォルダ
+    /// </summary>
+    public String oto_ini;
+
+    /// <summary>
+    /// このキューのレンダリング結果の、おおよその長さ。正確な長さはレンダリング結果が出るまでは不明。
+    /// </summary>
+    public long abstractSamples;
+
+    /// <summary>
+    /// メタテキストの生成に必要なトラックデータ
+    /// </summary>
+    public VsqTrack track;
+    public int endClock;
+}

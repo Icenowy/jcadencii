@@ -13,10 +13,8 @@
  */
 package org.kbinani.vsq;
 
-    public class VsqBPPairSearchContext
-    {
-        public int clock;
-        public int index;
-        public VsqBPPair point;
-    }
-
+public class VsqBPPairSearchContext {
+    public int clock;
+    public int index;
+    public VsqBPPair point;
+}

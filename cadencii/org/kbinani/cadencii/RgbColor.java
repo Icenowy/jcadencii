@@ -15,24 +15,24 @@ package org.kbinani.cadencii;
 
 import java.awt.*;
 
-    public class RgbColor {
-        public int R;
-        public int G;
-        public int B;
 
-        public RgbColor( int r, int g, int b ) {
-R = r;
-G = g;
-B = b;
-        }
+public class RgbColor {
+    public int R;
+    public int G;
+    public int B;
 
-        public RgbColor() {
-// XmlSrializeのために必要
-this( 0, 0, 0 );
-        }
-
-        public Color getColor() {
-return new Color( R, G, B );
-        }
+    public RgbColor(int r, int g, int b) {
+        R = r;
+        G = g;
+        B = b;
     }
 
+    public RgbColor() {
+        // XmlSrializeのために必要
+        this(0, 0, 0);
+    }
+
+    public Color getColor() {
+        return new Color(R, G, B);
+    }
+}

@@ -16,26 +16,23 @@ package org.kbinani.cadencii;
 import java.io.*;
 
 
-    public class EditedZoneUnit implements Cloneable, Comparable<EditedZoneUnit> {
-        public int mStart;
-        public int mEnd;
+public class EditedZoneUnit implements Cloneable, Comparable<EditedZoneUnit> {
+    public int mStart;
+    public int mEnd;
 
-        private EditedZoneUnit(){
-        }
-
-        public EditedZoneUnit( int start, int end ){
-this.mStart = start;
-this.mEnd = end;
-        }
-
-        public int compareTo( EditedZoneUnit item ) {
-return this.mStart - item.mStart;
-        }
-
-
-        public Object clone() {
-return new EditedZoneUnit( mStart, mEnd );
-        }
-
+    private EditedZoneUnit() {
     }
 
+    public EditedZoneUnit(int start, int end) {
+        this.mStart = start;
+        this.mEnd = end;
+    }
+
+    public int compareTo(EditedZoneUnit item) {
+        return this.mStart - item.mStart;
+    }
+
+    public Object clone() {
+        return new EditedZoneUnit(mStart, mEnd);
+    }
+}

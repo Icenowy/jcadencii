@@ -13,15 +13,17 @@
  */
 package org.kbinani.cadencii;
 
-import java.lang.reflect.*;
 import org.kbinani.*;
 
-public class SoloChangedEventHandler extends BEventHandler{
-    public SoloChangedEventHandler( Object sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Integer.TYPE, Boolean.TYPE );
+import java.lang.reflect.*;
+
+
+public class SoloChangedEventHandler extends BEventHandler {
+    public SoloChangedEventHandler(Object sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Integer.TYPE, Boolean.TYPE);
     }
-    
-    public SoloChangedEventHandler( Class<?> sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Integer.TYPE, Boolean.TYPE );
+
+    public SoloChangedEventHandler(Class<?> sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Integer.TYPE, Boolean.TYPE);
     }
 }

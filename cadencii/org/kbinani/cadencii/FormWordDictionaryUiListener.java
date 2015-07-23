@@ -11,12 +11,9 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
-
-public interface FormWordDictionaryUiListener
-{
+public interface FormWordDictionaryUiListener {
     void formClosing();
 
     void formLoad();
@@ -28,6 +25,5 @@ public interface FormWordDictionaryUiListener
     void buttonDownClick();
 
     void buttonCancelClick();
-};
-
-
+}
+;

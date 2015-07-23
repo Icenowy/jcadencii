@@ -11,37 +11,33 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
-
-public interface ExceptionNotifyFormUi extends UiBase
-{
+public interface ExceptionNotifyFormUi extends UiBase {
     /// <summary>
     /// ウィンドウのタイトルを設定する
     /// </summary>
     /// <param name="vlaue"></param>
-    void setTitle( String vlaue );
+    void setTitle(String vlaue);
 
     /// <summary>
     /// 説明文を設定する
     /// </summary>
     /// <param name="value"></param>
-    void setDescription( String value );
+    void setDescription(String value);
 
     /// <summary>
     /// 例外情報を設定する
     /// </summary>
     /// <param name="value"></param>
-    void setExceptionMessage( String value );
+    void setExceptionMessage(String value);
 
-    void setCancelButtonText( String value );
+    void setCancelButtonText(String value);
 
-    void setSendButtonText( String value );
+    void setSendButtonText(String value);
 
     /// <summary>
     /// ダイアログを閉じる
     /// </summary>
     void close();
 }
-

@@ -11,95 +11,103 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
 import java.io.FileWriter;
+import java.io.OutputStreamWriter;
 
 
-    public class Logger {
-        private static BufferedWriter log = null;
-        private static String path = "";
-        private static boolean is_enabled = false;
+public class Logger {
+    private static BufferedWriter log = null;
+    private static String path = "";
+    private static boolean is_enabled = false;
 
-        private Logger() {
+    private Logger() {
+    }
+
+    public static boolean isEnabled() {
+        return is_enabled;
+    }
+
+    public static void setEnabled(boolean value) {
+        is_enabled = value;
+    }
+
+    public static void write(String s) {
+        if (!is_enabled) {
+            return;
         }
 
-        public static boolean isEnabled() {
-return is_enabled;
+        if (log == null) {
+            if ((path == null) || ((path != null) && path.equals(""))) {
+                path = PortUtil.createTempFile();
+
+                //path = "C:\\log.txt";
+            }
+
+            try {
+                log = new BufferedWriter(new FileWriter(path));
+            } catch (Exception ex) {
+                serr.println("Logger#write; ex=" + ex);
+            }
         }
 
-        public static void setEnabled( boolean value ) {
-is_enabled = value;
+        if (log == null) {
+            return;
         }
 
-        public static void write( String s ) {
-if ( !is_enabled ) {
-    return;
+        try {
+            log.write(s);
+            log.flush();
+        } catch (Exception ex) {
+            serr.println("Logger#write; ex=" + ex);
+        }
+    }
+
+    public static String getPath() {
+        return path;
+    }
+
+    public static void setPath(String file) {
+        boolean append = false;
+
+        if ((log != null) && !path.equals(file)) {
+            try {
+                log.close();
+            } catch (Exception ex) {
+                serr.println("Logger#setPath; ex=" + ex);
+            }
+
+            log = null;
+
+            if (fsys.isFileExists(file)) {
+                try {
+                    PortUtil.deleteFile(file);
+                } catch (Exception ex) {
+                    serr.println("Logger#setPath; ex=" + ex);
+                }
+            }
+
+            try {
+                PortUtil.moveFile(path, file);
+            } catch (Exception ex) {
+                serr.println("Logger#setPath; ex=" + ex);
+            }
+
+            append = true;
+        }
+
+        path = file;
+
+        if (is_enabled) {
+            try {
+                log = new BufferedWriter(new OutputStreamWriter(
+                            new FileOutputStream(path, append), "UTF-8"));
+            } catch (Exception ex) {
+                serr.println("Logger#setPath; ex=" + ex);
+            }
+        }
+    }
 }
-
-if ( log == null ) {
-    if ( path == null || (path != null && path.equals( "" )) ) {
-        path = PortUtil.createTempFile();
-        //path = "C:\\log.txt";
-    }
-    try {
-        log = new BufferedWriter( new FileWriter( path ) );
-    } catch ( Exception ex ) {
-        serr.println( "Logger#write; ex=" + ex );
-    }
-}
-
-if ( log == null ) {
-    return;
-}
-try {
-    log.write( s );
-    log.flush();
-} catch ( Exception ex ) {
-    serr.println( "Logger#write; ex=" + ex );
-}
-        }
-
-        public static String getPath() {
-return path;
-        }
-
-        public static void setPath( String file ) {
-boolean append = false;
-if ( log != null && !path.equals( file ) ) {
-    try {
-        log.close();
-    } catch ( Exception ex ) {
-        serr.println( "Logger#setPath; ex=" + ex );
-    }
-    log = null;
-    if( fsys.isFileExists( file ) ){
-        try{
-            PortUtil.deleteFile( file );
-        }catch( Exception ex ){
-            serr.println( "Logger#setPath; ex=" + ex );
-        }
-    }
-    try {
-        PortUtil.moveFile( path, file );
-    } catch ( Exception ex ) {
-        serr.println( "Logger#setPath; ex=" + ex );
-    }
-    append = true;
-}
-path = file;
-
-if ( is_enabled ) {
-    try {
-    log = new BufferedWriter( new OutputStreamWriter( new FileOutputStream( path, append ), "UTF-8" ) );
-    } catch ( Exception ex ) {
-        serr.println( "Logger#setPath; ex=" + ex );
-    }
-}
-        }
-    }
-

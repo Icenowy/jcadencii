@@ -13,15 +13,13 @@
  */
 package org.kbinani.cadencii;
 
-    public enum PencilModeEnum {
-        Off,
-        L1,
-        L2,
-        L4,
-        L8,
-        L16,
-        L32,
-        L64,
-        L128,
-    }
-
+public enum PencilModeEnum {Off,
+    L1,
+    L2,
+    L4,
+    L8,
+    L16,
+    L32,
+    L64,
+    L128;
+}

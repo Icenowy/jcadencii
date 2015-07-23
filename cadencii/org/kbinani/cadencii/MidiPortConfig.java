@@ -13,8 +13,7 @@
  */
 package org.kbinani.cadencii;
 
-    public class MidiPortConfig {
-        public int PortNumber;
-        public String PortName;
-    }
-
+public class MidiPortConfig {
+    public int PortNumber;
+    public String PortName;
+}

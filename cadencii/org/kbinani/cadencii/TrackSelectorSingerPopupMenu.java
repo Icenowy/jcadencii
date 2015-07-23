@@ -11,17 +11,13 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.windows.forms.*;
 
 
-    public class TrackSelectorSingerPopupMenu extends BPopupMenu
-    {
-        public boolean SingerChangeExists;
-        public int Clock;
-        public int InternalID;
-
-    }
-
+public class TrackSelectorSingerPopupMenu extends BPopupMenu {
+    public boolean SingerChangeExists;
+    public int Clock;
+    public int InternalID;
+}

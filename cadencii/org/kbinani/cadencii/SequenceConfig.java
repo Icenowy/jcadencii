@@ -13,65 +13,71 @@
  */
 package org.kbinani.cadencii;
 
+public class SequenceConfig {
+    public int SamplingRate = 44100;
 
-    public class SequenceConfig
-    {
-        public int SamplingRate = 44100;
-        /// <summary>
-        /// waveファイル出力時のチャンネル数（1または2）
-        /// <version>3.3+</version>
-        /// </summary>
-        public int WaveFileOutputChannel = 2;
-        /// <summary>
-        /// waveファイル出力時に、全トラックをmixして出力するかどうか
-        /// <version>3.3+</version>
-        /// </summary>
-        public boolean WaveFileOutputFromMasterTrack = false;
-        /// <summary>
-        /// スタートマーカーの位置(clock)
-        /// version 3.3+
-        /// </summary>
-        public int StartMarker = 0;
-        /// <summary>
-        /// スタートマーカーが有効かどうか
-        /// version 3.3+
-        /// </summary>
-        public boolean StartMarkerEnabled = false;
-        /// <summary>
-        /// エンドマーカーの位置(clock)
-        /// version 3.3+
-        /// </summary>
-        public int EndMarker = 0;
-        /// <summary>
-        /// エンドマーカーが有効かどうか
-        /// version 3.3+
-        /// </summary>
-        public boolean EndMarkerEnabled = false;
+    /// <summary>
+    /// waveファイル出力時のチャンネル数（1または2）
+    /// <version>3.3+</version>
+    /// </summary>
+    public int WaveFileOutputChannel = 2;
 
-        public boolean equals( SequenceConfig item )
-        {
-if ( item == null ) {
-    return false;
-}
-if ( this.SamplingRate != item.SamplingRate ) {
-    return false;
-}
-if ( this.WaveFileOutputFromMasterTrack != item.WaveFileOutputFromMasterTrack ) {
-    return false;
-}
-if ( this.WaveFileOutputChannel != item.WaveFileOutputChannel ) {
-    return false;
-}
-return true;
+    /// <summary>
+    /// waveファイル出力時に、全トラックをmixして出力するかどうか
+    /// <version>3.3+</version>
+    /// </summary>
+    public boolean WaveFileOutputFromMasterTrack = false;
+
+    /// <summary>
+    /// スタートマーカーの位置(clock)
+    /// version 3.3+
+    /// </summary>
+    public int StartMarker = 0;
+
+    /// <summary>
+    /// スタートマーカーが有効かどうか
+    /// version 3.3+
+    /// </summary>
+    public boolean StartMarkerEnabled = false;
+
+    /// <summary>
+    /// エンドマーカーの位置(clock)
+    /// version 3.3+
+    /// </summary>
+    public int EndMarker = 0;
+
+    /// <summary>
+    /// エンドマーカーが有効かどうか
+    /// version 3.3+
+    /// </summary>
+    public boolean EndMarkerEnabled = false;
+
+    public boolean equals(SequenceConfig item) {
+        if (item == null) {
+            return false;
         }
 
-        public Object clone()
-        {
-SequenceConfig config = new SequenceConfig();
-config.SamplingRate = this.SamplingRate;
-config.WaveFileOutputChannel = this.WaveFileOutputChannel;
-config.WaveFileOutputFromMasterTrack = this.WaveFileOutputFromMasterTrack;
-return config;
+        if (this.SamplingRate != item.SamplingRate) {
+            return false;
         }
+
+        if (this.WaveFileOutputFromMasterTrack != item.WaveFileOutputFromMasterTrack) {
+            return false;
+        }
+
+        if (this.WaveFileOutputChannel != item.WaveFileOutputChannel) {
+            return false;
+        }
+
+        return true;
     }
 
+    public Object clone() {
+        SequenceConfig config = new SequenceConfig();
+        config.SamplingRate = this.SamplingRate;
+        config.WaveFileOutputChannel = this.WaveFileOutputChannel;
+        config.WaveFileOutputFromMasterTrack = this.WaveFileOutputFromMasterTrack;
+
+        return config;
+    }
+}

@@ -15,13 +15,14 @@ package org.kbinani.cadencii;
 
 import org.kbinani.vsq.*;
 
-    public class SelectedTimesigEntry {
-        public TimeSigTableEntry original;
-        public TimeSigTableEntry editing;
 
-        public SelectedTimesigEntry( TimeSigTableEntry original_, TimeSigTableEntry editing_ ) {
-original = original_;
-editing = editing_;
-        }
+public class SelectedTimesigEntry {
+    public TimeSigTableEntry original;
+    public TimeSigTableEntry editing;
+
+    public SelectedTimesigEntry(TimeSigTableEntry original_,
+        TimeSigTableEntry editing_) {
+        original = original_;
+        editing = editing_;
     }
-
+}

@@ -13,24 +13,23 @@
  */
 package org.kbinani.cadencii;
 
-    public class BgmFile implements Cloneable {
-        public String file;
-        public int feder;
-        public int panpot;
-        public int mute;
-        public boolean startAfterPremeasure = true;
-        public double readOffsetSeconds = 0.0;
+public class BgmFile implements Cloneable {
+    public String file;
+    public int feder;
+    public int panpot;
+    public int mute;
+    public boolean startAfterPremeasure = true;
+    public double readOffsetSeconds = 0.0;
 
-        public Object clone() {
-BgmFile ret = new BgmFile();
-ret.feder = feder;
-ret.file = file;
-ret.panpot = panpot;
-ret.mute = mute;
-ret.startAfterPremeasure = startAfterPremeasure;
-ret.readOffsetSeconds = readOffsetSeconds;
-return ret;
-        }
+    public Object clone() {
+        BgmFile ret = new BgmFile();
+        ret.feder = feder;
+        ret.file = file;
+        ret.panpot = panpot;
+        ret.mute = mute;
+        ret.startAfterPremeasure = startAfterPremeasure;
+        ret.readOffsetSeconds = readOffsetSeconds;
 
+        return ret;
     }
-
+}

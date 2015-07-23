@@ -15,23 +15,26 @@ package org.kbinani.cadencii;
 
 import org.kbinani.*;
 
+
 /// <summary>
 /// メジャー，マイナー，およびメンテナンス番号によるバージョン番号を表すクラス
 /// </summary>
-class VersionString implements Comparable<VersionString>
-{
+class VersionString implements Comparable<VersionString> {
     /// <summary>
     /// メジャーバージョンを表す
     /// </summary>
     public int major;
+
     /// <summary>
     /// マイナーバージョンを表す
     /// </summary>
     public int minor;
+
     /// <summary>
     /// メンテナンス番号を表す
     /// </summary>
     public int build;
+
     /// <summary>
     /// コンストラクタに渡された文字列のキャッシュ
     /// </summary>
@@ -41,26 +44,29 @@ class VersionString implements Comparable<VersionString>
     /// 「メジャー.マイナー.メンテナンス」の記法に基づく文字列をパースし，新しいインスタンスを作成します
     /// </summary>
     /// <param name="str"></param>
-    public VersionString( String s )
-    {
+    public VersionString(String s) {
         mRawString = s;
-        String[] spl = PortUtil.splitString( s, '.' );
-        if ( spl.length >= 1 ) {
+
+        String[] spl = PortUtil.splitString(s, '.');
+
+        if (spl.length >= 1) {
             try {
-                major = str.toi( spl[0] );
-            } catch ( Exception ex ) {
+                major = str.toi(spl[0]);
+            } catch (Exception ex) {
             }
         }
-        if ( spl.length >= 2 ) {
+
+        if (spl.length >= 2) {
             try {
-                minor = str.toi( spl[1] );
-            } catch ( Exception ex ) {
+                minor = str.toi(spl[1]);
+            } catch (Exception ex) {
             }
         }
-        if ( spl.length >= 3 ) {
+
+        if (spl.length >= 3) {
             try {
-                build = str.toi( spl[2] );
-            } catch ( Exception ex ) {
+                build = str.toi(spl[2]);
+            } catch (Exception ex) {
             }
         }
     }
@@ -69,8 +75,7 @@ class VersionString implements Comparable<VersionString>
     /// このインスタンス生成時に渡された文字列を取得します
     /// </summary>
     /// <returns></returns>
-    public String getRawString()
-    {
+    public String getRawString() {
         return mRawString;
     }
 
@@ -78,8 +83,7 @@ class VersionString implements Comparable<VersionString>
     /// このインスタンスを文字列で表現したものを取得します
     /// </summary>
     /// <returns></returns>
-    public String toString()
-    {
+    public String toString() {
         return major + "." + minor + "." + build;
     }
 
@@ -88,13 +92,13 @@ class VersionString implements Comparable<VersionString>
     /// </summary>
     /// <param name="item"></param>
     /// <returns>このインスタンスの表すバージョンに対して，指定したバージョンが同じであれば0，新しければ正の値，それ以外は負の値を返します</returns>
-    public int compareTo( VersionString item )
-    {
-        if ( item == null ) {
+    public int compareTo(VersionString item) {
+        if (item == null) {
             return -1;
         }
-        if ( this.major == item.major ) {
-            if ( this.minor == item.minor ) {
+
+        if (this.major == item.major) {
+            if (this.minor == item.minor) {
                 return this.build - item.build;
             } else {
                 return this.minor - item.minor;
@@ -103,6 +107,4 @@ class VersionString implements Comparable<VersionString>
             return this.major - item.major;
         }
     }
-
 }
-

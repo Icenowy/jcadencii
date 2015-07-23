@@ -15,12 +15,13 @@ package org.kbinani.cadencii;
 
 import org.kbinani.BEventHandler;
 
-public class RenderRequiredEventHandler extends BEventHandler{
-    public RenderRequiredEventHandler( Object sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Object.class, Integer.TYPE );
+
+public class RenderRequiredEventHandler extends BEventHandler {
+    public RenderRequiredEventHandler(Object sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Object.class, Integer.TYPE);
     }
-    
-    public RenderRequiredEventHandler( Class<?> sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Object.class, Integer.TYPE );
+
+    public RenderRequiredEventHandler(Class<?> sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Object.class, Integer.TYPE);
     }
 }

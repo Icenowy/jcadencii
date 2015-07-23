@@ -13,22 +13,22 @@
 */
 package org.kbinani.vsq;
 
+
+/// <summary>
+/// VOCALOID1における、ダイナミクスモードを表す定数を格納するためのクラスです。
+/// </summary>
+public class DynamicsMode {
     /// <summary>
-    /// VOCALOID1における、ダイナミクスモードを表す定数を格納するためのクラスです。
+    /// デフォルトのダイナミクスモードです。DYNカーブが非表示になるモードです。
     /// </summary>
-    public class DynamicsMode
-    {
-        /// <summary>
-        /// デフォルトのダイナミクスモードです。DYNカーブが非表示になるモードです。
-        /// </summary>
-        public static final int Standard = 0;
-        /// <summary>
-        /// エキスパートモードです。DYNカーブが表示されます。
-        /// </summary>
-        public static final int Expert = 1;
+    public static final int Standard = 0;
 
-        private DynamicsMode()
-        {
-        }
-    };
+    /// <summary>
+    /// エキスパートモードです。DYNカーブが表示されます。
+    /// </summary>
+    public static final int Expert = 1;
 
+    private DynamicsMode() {
+    }
+}
+;

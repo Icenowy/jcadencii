@@ -15,30 +15,25 @@ package org.kbinani;
 
 import java.util.*;
 
-        public class dic
-        {
-private dic()
-{
-}
 
-public static <K, V> int count( TreeMap<K, V> dict )
-{
-    return dict.size();
-}
+public class dic {
+    private dic() {
+    }
 
-public static <K, V> boolean containsKey( TreeMap<K, V> dict, K key )
-{
-    return dict.containsKey( key );
-}
+    public static <K, V> int count(TreeMap<K, V> dict) {
+        return dict.size();
+    }
 
-public static <K, V> void put( TreeMap<K, V> dict, K key, V value )
-{
-    dict.put( key, value );
-}
+    public static <K, V> boolean containsKey(TreeMap<K, V> dict, K key) {
+        return dict.containsKey(key);
+    }
 
-public static <K, V> V get( TreeMap<K, V> dict, K key )
-{
-    return dict.get( key );
-}
-        };
+    public static <K, V> void put(TreeMap<K, V> dict, K key, V value) {
+        dict.put(key, value);
+    }
 
+    public static <K, V> V get(TreeMap<K, V> dict, K key) {
+        return dict.get(key);
+    }
+}
+;

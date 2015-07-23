@@ -13,75 +13,78 @@
  */
 package org.kbinani.cadencii;
 
-import java.awt.*;
-import javax.swing.event.DocumentEvent;
 import org.kbinani.*;
+
 import org.kbinani.windows.forms.*;
 
-    public class NumberTextBox extends BTextBox {
-        public enum ValueType {
-Double,
-Float,
-Integer,
-        }
+import java.awt.*;
 
-        private ValueType m_value_type = ValueType.Double;
-        private Color m_textcolor_normal = Color.black;
-        private Color m_textcolor_invalid = Color.white;
-        private Color m_backcolor_normal = Color.white;
-        private Color m_backcolor_invalid = new Color( 240, 128, 128 );
+import javax.swing.event.DocumentEvent;
 
 
-        public ValueType getType() {
-return m_value_type;
-        }
+public class NumberTextBox extends BTextBox {
+    private ValueType m_value_type = ValueType.Double;
+    private Color m_textcolor_normal = Color.black;
+    private Color m_textcolor_invalid = Color.white;
+    private Color m_backcolor_normal = Color.white;
+    private Color m_backcolor_invalid = new Color(240, 128, 128);
 
-        public void setType( ValueType value ) {
-m_value_type = value;
-        }
-
-        public void update( DocumentEvent e ){
-super.updates( e );
-validateText();
-        }
-
-
-        private void validateText() {
-boolean valid = false;
-String text = getText();
-if ( m_value_type == ValueType.Double ) {
-    double dou;
-    try {
-        dou = str.tof( text );
-        valid = true;
-    } catch ( Exception ex ) {
-        valid = false;
+    public ValueType getType() {
+        return m_value_type;
     }
-} else if ( m_value_type == ValueType.Float ) {
-    float flo;
-    try {
-        flo = (float)str.tof( text );
-        valid = true;
-    } catch ( Exception ex ) {
-        valid = false;
+
+    public void setType(ValueType value) {
+        m_value_type = value;
     }
-} else if ( m_value_type == ValueType.Integer ) {
-    int inte;
-    try {
-        inte = str.toi( text );
-        valid = true;
-    } catch ( Exception ex ) {
-        valid = false;
+
+    public void update(DocumentEvent e) {
+        super.updates(e);
+        validateText();
+    }
+
+    private void validateText() {
+        boolean valid = false;
+        String text = getText();
+
+        if (m_value_type == ValueType.Double) {
+            double dou;
+
+            try {
+                dou = str.tof(text);
+                valid = true;
+            } catch (Exception ex) {
+                valid = false;
+            }
+        } else if (m_value_type == ValueType.Float) {
+            float flo;
+
+            try {
+                flo = (float) str.tof(text);
+                valid = true;
+            } catch (Exception ex) {
+                valid = false;
+            }
+        } else if (m_value_type == ValueType.Integer) {
+            int inte;
+
+            try {
+                inte = str.toi(text);
+                valid = true;
+            } catch (Exception ex) {
+                valid = false;
+            }
+        }
+
+        if (valid) {
+            setForeground(m_textcolor_normal);
+            setBackground(m_backcolor_normal);
+        } else {
+            setForeground(m_textcolor_invalid);
+            setBackground(m_backcolor_invalid);
+        }
+    }
+    public enum ValueType {Double,
+        Float,
+        Integer;
     }
 }
-if ( valid ) {
-    setForeground( m_textcolor_normal );
-    setBackground( m_backcolor_normal );
-} else {
-    setForeground( m_textcolor_invalid );
-    setBackground( m_backcolor_invalid );
-}
-        }
-
-    }
-

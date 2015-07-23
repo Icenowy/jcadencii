@@ -13,41 +13,42 @@
  */
 package org.kbinani.cadencii;
 
-import java.util.*;
 import org.kbinani.vsq.*;
 
-    /// <summary>
-    /// Undo/Redoを実現するためのコマンド。
-    /// Boare.Lib.Vsq.VsqFileレベルのコマンドは、Type=VsqCommandとして取り扱う。
-    /// Boare.Cadencii.VsqFileExレベルのコマンドは、Argsに処理内容を格納して取り扱う。
-    /// </summary>
-    public class CadenciiCommand implements ICommand{
-        public CadenciiCommandType type;
-        public VsqCommand vsqCommand;
-        private ICommand mParent;
-        public Object[] args;
-        private Vector<ICommand> mChild = new Vector<ICommand>();
+import java.util.*;
 
-        public CadenciiCommand( VsqCommand command ) {
-type = CadenciiCommandType.VSQ_COMMAND;
-vsqCommand = command;
-mChild = new Vector<ICommand>();
-        }
 
-        public CadenciiCommand() {
-mChild = new Vector<ICommand>();
-        }
+/// <summary>
+/// Undo/Redoを実現するためのコマンド。
+/// Boare.Lib.Vsq.VsqFileレベルのコマンドは、Type=VsqCommandとして取り扱う。
+/// Boare.Cadencii.VsqFileExレベルのコマンドは、Argsに処理内容を格納して取り扱う。
+/// </summary>
+public class CadenciiCommand implements ICommand {
+    public CadenciiCommandType type;
+    public VsqCommand vsqCommand;
+    private ICommand mParent;
+    public Object[] args;
+    private Vector<ICommand> mChild = new Vector<ICommand>();
 
-        public ICommand getParent() {
-return mParent;
-        }
-
-        public void setParent( ICommand value ) {
-mParent = value;
-        }
-
-        public Vector<ICommand> getChild() {
-return mChild;
-        }
+    public CadenciiCommand(VsqCommand command) {
+        type = CadenciiCommandType.VSQ_COMMAND;
+        vsqCommand = command;
+        mChild = new Vector<ICommand>();
     }
 
+    public CadenciiCommand() {
+        mChild = new Vector<ICommand>();
+    }
+
+    public ICommand getParent() {
+        return mParent;
+    }
+
+    public void setParent(ICommand value) {
+        mParent = value;
+    }
+
+    public Vector<ICommand> getChild() {
+        return mChild;
+    }
+}

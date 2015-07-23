@@ -15,10 +15,9 @@ package org.kbinani.vsq;
 
 import java.io.*;
 
-    public class UstPortamentoPoint implements Serializable
-    {
-        public int Step;
-        public float Value;
-        public UstPortamentoType Type;
-    }
 
+public class UstPortamentoPoint implements Serializable {
+    public int Step;
+    public float Value;
+    public UstPortamentoType Type;
+}

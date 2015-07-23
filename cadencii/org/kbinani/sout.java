@@ -13,15 +13,12 @@
  */
 package org.kbinani;
 
-        public class sout
-        {
-private sout()
-{
-}
+public class sout {
+    private sout() {
+    }
 
-public static void println( String s )
-{
-    System.out.println( s );
+    public static void println(String s) {
+        System.out.println(s);
+    }
 }
-        };
-
+;

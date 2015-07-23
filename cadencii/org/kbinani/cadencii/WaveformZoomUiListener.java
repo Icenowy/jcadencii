@@ -11,21 +11,18 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import java.awt.*;
 
 
-interface WaveformZoomUiListener
-{
-    void receivePaintSignal( Graphics g );
+interface WaveformZoomUiListener {
+    void receivePaintSignal(Graphics g);
 
-    void receiveMouseDownSignal( int x, int y );
+    void receiveMouseDownSignal(int x, int y);
 
-    void receiveMouseMoveSignal( int x, int y );
+    void receiveMouseMoveSignal(int x, int y);
 
-    void receiveMouseUpSignal( int x, int y );
-};
-
-
+    void receiveMouseUpSignal(int x, int y);
+}
+;

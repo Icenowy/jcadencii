@@ -11,17 +11,14 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.windows.forms.*;
 
 
-    public class TrackSelectorSingerDropdownMenuItem extends BMenuItem
-    {
-        public int ToolTipPxWidth;
-        public String ToolTipText;
-        public int Language;
-        public int Program;
-    }
-
+public class TrackSelectorSingerDropdownMenuItem extends BMenuItem {
+    public int ToolTipPxWidth;
+    public String ToolTipText;
+    public int Language;
+    public int Program;
+}

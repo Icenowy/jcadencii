@@ -13,10 +13,10 @@
  */
 package org.kbinani.media;
 
+public interface IWaveReceiver {
+    void append(double[] left, double[] right, int length);
 
-    public interface IWaveReceiver {
-        void append( double[] left, double[] right, int length );
-        int getSampleRate();
-        void close();
-    }
+    int getSampleRate();
 
+    void close();
+}

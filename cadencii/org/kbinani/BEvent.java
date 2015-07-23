@@ -14,48 +14,53 @@
 package org.kbinani;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Vector;
 
-public class BEvent<T extends BEventHandler>{
+
+public class BEvent<T extends BEventHandler> {
     private Vector<T> mDelegates;
 
-    public BEvent(){
+    public BEvent() {
         mDelegates = new Vector<T>();
     }
 
-    public int size()
-    {
+    public int size() {
         return mDelegates.size();
     }
-    
-    public void add( T delegate ){
-        synchronized( mDelegates ){
-            if( delegate == null ){
+
+    public void add(T delegate) {
+        synchronized (mDelegates) {
+            if (delegate == null) {
                 return;
             }
-            mDelegates.add( delegate );
+
+            mDelegates.add(delegate);
         }
     }
 
-    public void remove( T delegate ){
-        synchronized( mDelegates ){
+    public void remove(T delegate) {
+        synchronized (mDelegates) {
             int count = mDelegates.size();
-            for( int i = 0; i < count; i++ ){
-                T item = mDelegates.get( i );
-                if( delegate.equals( item ) ){
-                    mDelegates.remove( i );
+
+            for (int i = 0; i < count; i++) {
+                T item = mDelegates.get(i);
+
+                if (delegate.equals(item)) {
+                    mDelegates.remove(i);
+
                     break;
                 }
             }
         }
     }
-    
-    public void raise( Object... args ) 
-        throws IllegalAccessException, InvocationTargetException
-    {
+
+    public void raise(Object... args)
+        throws IllegalAccessException, InvocationTargetException {
         int count = mDelegates.size();
-        for( int i = 0; i < count; i++ ){
-            mDelegates.get( i ).invoke( args );
+
+        for (int i = 0; i < count; i++) {
+            mDelegates.get(i).invoke(args);
         }
     }
 }

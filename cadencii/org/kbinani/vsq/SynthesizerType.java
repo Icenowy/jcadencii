@@ -13,9 +13,6 @@
  */
 package org.kbinani.vsq;
 
-    public enum SynthesizerType
-    {
-        VOCALOID1,
-        VOCALOID2,
-    }
-
+public enum SynthesizerType {VOCALOID1,
+    VOCALOID2;
+}

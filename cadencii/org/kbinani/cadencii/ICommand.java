@@ -15,16 +15,17 @@ package org.kbinani.cadencii;
 
 import java.util.*;
 
-    public interface ICommand {
-        /// <summary>
-        /// 子コマンドのリスト
-        /// </summary>
-        Vector<ICommand> getChild();
 
-        /// <summary>
-        /// 親コマンドへの参照
-        /// </summary>
-        ICommand getParent();
-        void setParent( ICommand value );
-    }
+public interface ICommand {
+    /// <summary>
+    /// 子コマンドのリスト
+    /// </summary>
+    Vector<ICommand> getChild();
 
+    /// <summary>
+    /// 親コマンドへの参照
+    /// </summary>
+    ICommand getParent();
+
+    void setParent(ICommand value);
+}

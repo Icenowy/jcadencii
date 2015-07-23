@@ -15,37 +15,28 @@ package org.kbinani.vsq;
 
 import java.io.*;
 
-    public class WrappedStreamWriter implements ITextWriter {
-        BufferedWriter m_writer;
 
-        public WrappedStreamWriter( BufferedWriter stream_writer )
-        {
-m_writer = stream_writer;
-        }
+public class WrappedStreamWriter implements ITextWriter {
+    BufferedWriter m_writer;
 
-        public void newLine()
-throws java.io.IOException
-        {
-m_writer.newLine();
-        }
-
-        public void write( String value )
-throws IOException
-        {
-m_writer.write( value );
-        }
-
-        public void writeLine( String value )
-throws IOException
-        {
-m_writer.write( value );
-m_writer.newLine();
-        }
-
-        public void close()
-throws IOException
-        {
-m_writer.close();
-        }
+    public WrappedStreamWriter(BufferedWriter stream_writer) {
+        m_writer = stream_writer;
     }
 
+    public void newLine() throws java.io.IOException {
+        m_writer.newLine();
+    }
+
+    public void write(String value) throws IOException {
+        m_writer.write(value);
+    }
+
+    public void writeLine(String value) throws IOException {
+        m_writer.write(value);
+        m_writer.newLine();
+    }
+
+    public void close() throws IOException {
+        m_writer.close();
+    }
+}

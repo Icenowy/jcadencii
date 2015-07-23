@@ -11,30 +11,27 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
-
-public interface FormWordDictionaryUi extends UiBase
-{
+public interface FormWordDictionaryUi extends UiBase {
     /// <summary>
     /// ウィンドウのタイトル文字列を設定します
     /// </summary>
     /// <param name="value">設定する文字列</param>
-    void setTitle( String value );
+    void setTitle(String value);
 
     /// <summary>
     /// ダイアログの戻り値を設定します．
     /// </summary>
     /// <param name="value">ダイアログの戻り値を「キャンセル」にする場合はfalseを，それ以外はtreuを設定します．</param>
-    void setDialogResult( boolean value );
+    void setDialogResult(boolean value);
 
     /// <summary>
     /// TODO: comment
     /// </summary>
     /// <param name="width"></param>
     /// <param name="height"></param>
-    void setSize( int width, int height );
+    void setSize(int width, int height);
 
     /// <summary>
     /// ウィンドウの幅を取得します
@@ -53,7 +50,7 @@ public interface FormWordDictionaryUi extends UiBase
     /// </summary>
     /// <param name="x">ウィンドウのx座標</param>
     /// <param name="y">ウィンドウのy座標</param>
-    void setLocation( int x, int y );
+    void setLocation(int x, int y);
 
     /// <summary>
     /// ウィンドウを閉じます
@@ -83,14 +80,14 @@ public interface FormWordDictionaryUi extends UiBase
     /// <param name="row"></param>
     /// <param name="column"></param>
     /// <returns></returns>
-    String listDictionariesGetItemAt( int row );
+    String listDictionariesGetItemAt(int row);
 
     /// <summary>
     /// TODO: 
     /// </summary>
     /// <param name="row"></param>
     /// <returns></returns>
-    boolean listDictionariesIsRowChecked( int row );
+    boolean listDictionariesIsRowChecked(int row);
 
     /// <summary>
     /// TODO:
@@ -98,20 +95,20 @@ public interface FormWordDictionaryUi extends UiBase
     /// <param name="row"></param>
     /// <param name="column"></param>
     /// <param name="value"></param>
-    void listDictionariesSetItemAt( int row, String value );
+    void listDictionariesSetItemAt(int row, String value);
 
     /// <summary>
     /// TODO:
     /// </summary>
     /// <param name="row"></param>
     /// <param name="value"></param>
-    void listDictionariesSetRowChecked( int row, boolean isChecked );
+    void listDictionariesSetRowChecked(int row, boolean isChecked);
 
     /// <summary>
     /// TODO:
     /// </summary>
     /// <param name="row"></param>
-    void listDictionariesSetSelectedRow( int row );
+    void listDictionariesSetSelectedRow(int row);
 
     /// <summary>
     /// TODO: comment
@@ -123,36 +120,36 @@ public interface FormWordDictionaryUi extends UiBase
     /// </summary>
     /// <param name="value"></param>
     /// <param name="selected"></param>
-    void listDictionariesAddRow( String value, boolean isChecked );
+    void listDictionariesAddRow(String value, boolean isChecked);
 
     /// <summary>
     /// 「利用可能な辞書」という意味の説明文の文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列</param>
-    void labelAvailableDictionariesSetText( String value );
+    void labelAvailableDictionariesSetText(String value);
 
     /// <summary>
     /// OKボタンの表示文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列</param>
-    void buttonOkSetText( String value );
+    void buttonOkSetText(String value);
 
     /// <summary>
     /// Cancelボタンの表示文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列</param>
-    void buttonCancelSetText( String value );
+    void buttonCancelSetText(String value);
 
     /// <summary>
     /// Upボタンの表示文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列</param>
-    void buttonUpSetText( String value );
+    void buttonUpSetText(String value);
 
     /// <summary>
     /// Downボタンの表示文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列</param>
-    void buttonDownSetText( String value );
-};
-
+    void buttonDownSetText(String value);
+}
+;

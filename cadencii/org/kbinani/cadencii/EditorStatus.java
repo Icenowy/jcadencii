@@ -13,25 +13,27 @@
  */
 package org.kbinani.cadencii;
 
-    public class EditorStatus {
-        static final int NUM_TRACK = 16;
-        /// <summary>
-        /// トラックのレンダリングが必要かどうかを表すフラグ
-        /// </summary>
-        public boolean[] renderRequired = new boolean[NUM_TRACK];
+public class EditorStatus {
+    static final int NUM_TRACK = 16;
 
-        public EditorStatus() {
-for ( int i = 0; i < NUM_TRACK; i++ ) {
-    renderRequired[i] = false;
-}
-        }
+    /// <summary>
+    /// トラックのレンダリングが必要かどうかを表すフラグ
+    /// </summary>
+    public boolean[] renderRequired = new boolean[NUM_TRACK];
 
-        public EditorStatus clone() {
-EditorStatus ret = new EditorStatus();
-for ( int i = 0; i < renderRequired.length; i++ ) {
-    ret.renderRequired[i] = renderRequired[i];
-}
-return ret;
+    public EditorStatus() {
+        for (int i = 0; i < NUM_TRACK; i++) {
+            renderRequired[i] = false;
         }
     }
 
+    public EditorStatus clone() {
+        EditorStatus ret = new EditorStatus();
+
+        for (int i = 0; i < renderRequired.length; i++) {
+            ret.renderRequired[i] = renderRequired[i];
+        }
+
+        return ret;
+    }
+}

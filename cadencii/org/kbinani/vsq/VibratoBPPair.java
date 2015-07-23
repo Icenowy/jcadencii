@@ -15,27 +15,25 @@ package org.kbinani.vsq;
 
 import java.io.*;
 
-    public class VibratoBPPair implements Comparable<VibratoBPPair>, Serializable
-    {
-        public float X;
-        public int Y;
 
-        public VibratoBPPair( float x, int y )
-        {
-X = x;
-Y = y;
-        }
+public class VibratoBPPair implements Comparable<VibratoBPPair>, Serializable {
+    public float X;
+    public int Y;
 
-        public int compareTo( VibratoBPPair item )
-        {
-float v = X - item.X;
-if ( v > 0.0f ) {
-    return 1;
-} else if ( v < 0.0f ) {
-    return -1;
-}
-return 0;
-        }
-
+    public VibratoBPPair(float x, int y) {
+        X = x;
+        Y = y;
     }
 
+    public int compareTo(VibratoBPPair item) {
+        float v = X - item.X;
+
+        if (v > 0.0f) {
+            return 1;
+        } else if (v < 0.0f) {
+            return -1;
+        }
+
+        return 0;
+    }
+}

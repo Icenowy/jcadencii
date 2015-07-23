@@ -11,61 +11,66 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.windows.forms.BPanel;
+
 import java.awt.Dimension;
-import javax.swing.JProgressBar;
-import javax.swing.JLabel;
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Insets;
+
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
+
 
 public class ProgressBarWithLabelUi extends BPanel {
     private static final long serialVersionUID = -8546357483741470278L;
     private JProgressBar jProgressBar = null;
     private JLabel jLabel = null;
+
     /**
-     * This method initializes 
-     * 
+     * This method initializes
+     *
      */
     public ProgressBarWithLabelUi() {
-    	super();
-    	initialize();
+        super();
+        initialize();
     }
 
-    public void setProgress( int value )
-    {
-        if( value < jProgressBar.getMinimum() ) value = jProgressBar.getMinimum();
-        if( jProgressBar.getMaximum() < value ) value = jProgressBar.getMaximum();
-        jProgressBar.setValue( value );
+    public void setProgress(int value) {
+        if (value < jProgressBar.getMinimum()) {
+            value = jProgressBar.getMinimum();
+        }
+
+        if (jProgressBar.getMaximum() < value) {
+            value = jProgressBar.getMaximum();
+        }
+
+        jProgressBar.setValue(value);
+
         //revalidate();
     }
-    
-    public int getProgress()
-    {
+
+    public int getProgress() {
         return jProgressBar.getValue();
     }
-    
-    public void setText( String value )
-    {
-        jLabel.setText( value );
+
+    public void setText(String value) {
+        jLabel.setText(value);
     }
-    
-    public String getText()
-    {
+
+    public String getText() {
         return jLabel.getText();
     }
-    
-    public void setWidth( int value )
-    {
+
+    public void setWidth(int value) {
         // do nothing
     }
-    
+
     /**
      * This method initializes this
-     * 
+     *
      */
     private void initialize() {
         GridBagConstraints gridBagConstraints1 = new GridBagConstraints();
@@ -76,6 +81,7 @@ public class ProgressBarWithLabelUi extends BPanel {
         gridBagConstraints1.gridy = 1;
         jLabel = new JLabel();
         jLabel.setText(" ");
+
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.insets = new Insets(8, 8, 4, 8);
         gridBagConstraints.gridy = 0;
@@ -86,13 +92,12 @@ public class ProgressBarWithLabelUi extends BPanel {
         this.setSize(new Dimension(370, 59));
         this.add(getJProgressBar(), gridBagConstraints);
         this.add(jLabel, gridBagConstraints1);
-    		
     }
 
     /**
-     * This method initializes jProgressBar	
-     * 	
-     * @return javax.swing.JProgressBar	
+     * This method initializes jProgressBar
+     *
+     * @return javax.swing.JProgressBar
      */
     private JProgressBar getJProgressBar() {
         if (jProgressBar == null) {
@@ -101,8 +106,7 @@ public class ProgressBarWithLabelUi extends BPanel {
             jProgressBar.setValue(0);
             jProgressBar.setPreferredSize(new Dimension(146, 12));
         }
+
         return jProgressBar;
     }
-
-}  //  @jve:decl-index=0:visual-constraint="10,10"
-
+} //  @jve:decl-index=0:visual-constraint="10,10"

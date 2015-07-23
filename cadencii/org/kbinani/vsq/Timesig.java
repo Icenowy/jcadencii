@@ -13,18 +13,15 @@
  */
 package org.kbinani.vsq;
 
-    public class Timesig
-    {
-        public int numerator;
-        public int denominator;
+public class Timesig {
+    public int numerator;
+    public int denominator;
 
-        public Timesig(){
-        }
-
-        public Timesig( int numerator, int denominator )
-        {
-this.numerator = numerator;
-this.denominator = denominator;
-        }
+    public Timesig() {
     }
 
+    public Timesig(int numerator, int denominator) {
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+}

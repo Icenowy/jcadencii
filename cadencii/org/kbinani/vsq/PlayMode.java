@@ -13,24 +13,22 @@
 */
 package org.kbinani.vsq;
 
+public class PlayMode {
+    /// <summary>
+    /// トラックはミュートされる．(-1)
+    /// </summary>
+    public static final int Off = -1;
 
-    public class PlayMode
-    {
-        /// <summary>
-        /// トラックはミュートされる．(-1)
-        /// </summary>
-        public static final int Off = -1;
-        /// <summary>
-        /// トラックは合成された後再生される(0)
-        /// </summary>
-        public static final int PlayAfterSynth = 0;
-        /// <summary>
-        /// トラックは合成しながら再生される(1)
-        /// </summary>
-        public static final int PlayWithSynth = 1;
+    /// <summary>
+    /// トラックは合成された後再生される(0)
+    /// </summary>
+    public static final int PlayAfterSynth = 0;
 
-        private PlayMode()
-        {
-        }
+    /// <summary>
+    /// トラックは合成しながら再生される(1)
+    /// </summary>
+    public static final int PlayWithSynth = 1;
+
+    private PlayMode() {
     }
-
+}

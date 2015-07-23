@@ -15,18 +15,20 @@ package org.kbinani.componentmodel;
 
 import org.kbinani.*;
 
-public class BRunWorkerCompletedEventArgs extends BEventArgs{
+
+public class BRunWorkerCompletedEventArgs extends BEventArgs {
     private Object m_result = null;
     private Exception m_error = null;
     private boolean m_cancelled = false;
 
-    public BRunWorkerCompletedEventArgs( Object result, Exception error, boolean cancelled ){
+    public BRunWorkerCompletedEventArgs(Object result, Exception error,
+        boolean cancelled) {
         m_result = result;
         setError(error);
-        setCancelled( cancelled );
+        setCancelled(cancelled);
     }
 
-    public Object getResult(){
+    public Object getResult() {
         return m_result;
     }
 

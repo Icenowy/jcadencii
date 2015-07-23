@@ -13,128 +13,34 @@
  */
 package org.kbinani.cadencii;
 
+import org.kbinani.*;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import javax.swing.BorderFactory;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import org.kbinani.apputil.*;
+
+import org.kbinani.vsq.*;
+
+import org.kbinani.windows.forms.*;
 import org.kbinani.windows.forms.BButton;
 import org.kbinani.windows.forms.BCheckBox;
 import org.kbinani.windows.forms.BDialog;
 import org.kbinani.windows.forms.BLabel;
 import org.kbinani.windows.forms.BTextBox;
 
-
 import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
 import java.util.*;
-import org.kbinani.*;
-import org.kbinani.apputil.*;
-import org.kbinani.vsq.*;
-import org.kbinani.windows.forms.*;
 
-    public class FormCheckUnknownSingerAndResampler extends BDialog
-    {
-        /// <summary>
-        /// コンストラクタ．
-        /// </summary>
-        /// <param name="singer"></param>
-        /// <param name="apply_singer"></param>
-        /// <param name="resampler"></param>
-        /// <param name="apply_resampler"></param>
-        public FormCheckUnknownSingerAndResampler( String singer, boolean apply_singer, String resampler, boolean apply_resampler )
-        {
-super();
-initialize();
-applyLanguage();
-Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
-
-// singers
-checkSingerImport.setSelected( apply_singer );
-checkSingerImport.setEnabled( apply_singer );
-textSingerPath.setEditable( false );
-textSingerPath.setEnabled( apply_singer );
-if ( apply_singer ) {
-    textSingerPath.setText( singer );
-    SingerConfig sc = new SingerConfig();
-    String path_image = Utility.readUtauSingerConfig( singer, sc );
-    Image img = IconParader.createIconImage( path_image, sc.VOICENAME );
-    pictureSinger.setImage( img );
-    labelSingerName.setText( sc.VOICENAME );
-}
-
-// resampler
-checkResamplerImport.setSelected( apply_resampler );
-checkResamplerImport.setEnabled( apply_resampler );
-textResamplerPath.setEditable( false );
-textResamplerPath.setEnabled( apply_resampler );
-if ( apply_resampler ) {
-    textResamplerPath.setText( resampler );
-}
-
-registerEventHandlers();
-        }
-
-        /// <summary>
-        /// 原音の項目にチェックが入れられたか
-        /// </summary>
-        /// <returns></returns>
-        public boolean isSingerChecked()
-        {
-return checkSingerImport.isSelected();
-        }
-
-        /// <summary>
-        /// 原音のパスを取得します
-        /// </summary>
-        /// <returns></returns>
-        public String getSingerPath()
-        {
-return textSingerPath.getText();
-        }
-
-        /// <summary>
-        /// リサンプラーの項目にチェックが入れられたかどうか
-        /// </summary>
-        /// <returns></returns>
-        public boolean isResamplerChecked()
-        {
-return checkResamplerImport.isSelected();
-        }
-
-        /// <summary>
-        /// リサンプラーのパスを取得します
-        /// </summary>
-        /// <returns></returns>
-        public String getResamplerPath()
-        {
-return textResamplerPath.getText();
-        }
-
-        /// <summary>
-        /// イベントハンドラを登録します
-        /// </summary>
-        private void registerEventHandlers()
-        {
-        }
-
-        private static String gettext( String id )
-        {
-return Messaging.getMessage( id );
-        }
-
-        private void applyLanguage()
-        {
-setTitle( gettext( "Unknown singers and resamplers" ) );
-labelMessage.setText( gettext( "These singers and resamplers are not registered to Cadencii.\nCheck the box if you want to register them." ) );
-checkSingerImport.setText( gettext( "Import singer" ) );
-checkResamplerImport.setText( gettext( "Import resampler" ) );
-        }
+import javax.swing.BorderFactory;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 
+public class FormCheckUnknownSingerAndResampler extends BDialog {
     private static final long serialVersionUID = 5210609912644248288L;
     private JPanel jPanel1 = null;
     private JPanel jPanel3 = null;
@@ -150,18 +56,110 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
     private IconParader pictureSinger = null;
     private BLabel lblRightValue = null;
 
+    /// <summary>
+    /// コンストラクタ．
+    /// </summary>
+    /// <param name="singer"></param>
+    /// <param name="apply_singer"></param>
+    /// <param name="resampler"></param>
+    /// <param name="apply_resampler"></param>
+    public FormCheckUnknownSingerAndResampler(String singer,
+        boolean apply_singer, String resampler, boolean apply_resampler) {
+        super();
+        initialize();
+        applyLanguage();
+        Util.applyFontRecurse(this, AppManager.editorConfig.getBaseFont());
+
+        // singers
+        checkSingerImport.setSelected(apply_singer);
+        checkSingerImport.setEnabled(apply_singer);
+        textSingerPath.setEditable(false);
+        textSingerPath.setEnabled(apply_singer);
+
+        if (apply_singer) {
+            textSingerPath.setText(singer);
+
+            SingerConfig sc = new SingerConfig();
+            String path_image = Utility.readUtauSingerConfig(singer, sc);
+            Image img = IconParader.createIconImage(path_image, sc.VOICENAME);
+            pictureSinger.setImage(img);
+            labelSingerName.setText(sc.VOICENAME);
+        }
+
+        // resampler
+        checkResamplerImport.setSelected(apply_resampler);
+        checkResamplerImport.setEnabled(apply_resampler);
+        textResamplerPath.setEditable(false);
+        textResamplerPath.setEnabled(apply_resampler);
+
+        if (apply_resampler) {
+            textResamplerPath.setText(resampler);
+        }
+
+        registerEventHandlers();
+    }
+
+    /// <summary>
+    /// 原音の項目にチェックが入れられたか
+    /// </summary>
+    /// <returns></returns>
+    public boolean isSingerChecked() {
+        return checkSingerImport.isSelected();
+    }
+
+    /// <summary>
+    /// 原音のパスを取得します
+    /// </summary>
+    /// <returns></returns>
+    public String getSingerPath() {
+        return textSingerPath.getText();
+    }
+
+    /// <summary>
+    /// リサンプラーの項目にチェックが入れられたかどうか
+    /// </summary>
+    /// <returns></returns>
+    public boolean isResamplerChecked() {
+        return checkResamplerImport.isSelected();
+    }
+
+    /// <summary>
+    /// リサンプラーのパスを取得します
+    /// </summary>
+    /// <returns></returns>
+    public String getResamplerPath() {
+        return textResamplerPath.getText();
+    }
+
+    /// <summary>
+    /// イベントハンドラを登録します
+    /// </summary>
+    private void registerEventHandlers() {
+    }
+
+    private static String gettext(String id) {
+        return Messaging.getMessage(id);
+    }
+
+    private void applyLanguage() {
+        setTitle(gettext("Unknown singers and resamplers"));
+        labelMessage.setText(gettext(
+                "These singers and resamplers are not registered to Cadencii.\nCheck the box if you want to register them."));
+        checkSingerImport.setText(gettext("Import singer"));
+        checkResamplerImport.setText(gettext("Import resampler"));
+    }
 
     private void initialize() {
         this.setSize(new Dimension(419, 349));
         this.setTitle("Unknown singers and resamplers");
         this.setContentPane(getJPanel1());
-        setCancelButton( buttonCancel );
+        setCancelButton(buttonCancel);
     }
 
     /**
-     * This method initializes jPanel1	
-     * 	
-     * @return javax.swing.JPanel	
+     * This method initializes jPanel1
+     *
+     * @return javax.swing.JPanel
      */
     private JPanel getJPanel1() {
         if (jPanel1 == null) {
@@ -171,21 +169,25 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             gridBagConstraints31.weightx = 1.0;
             gridBagConstraints31.insets = new Insets(6, 36, 6, 12);
             gridBagConstraints31.gridx = 1;
+
             GridBagConstraints gridBagConstraints2 = new GridBagConstraints();
             gridBagConstraints2.gridx = 1;
             gridBagConstraints2.fill = GridBagConstraints.HORIZONTAL;
             gridBagConstraints2.insets = new Insets(12, 12, 6, 12);
             gridBagConstraints2.gridy = 3;
+
             GridBagConstraints gridBagConstraints110 = new GridBagConstraints();
             gridBagConstraints110.gridx = 1;
             gridBagConstraints110.fill = GridBagConstraints.HORIZONTAL;
             gridBagConstraints110.insets = new Insets(6, 36, 12, 12);
             gridBagConstraints110.gridy = 2;
+
             GridBagConstraints gridBagConstraints5 = new GridBagConstraints();
             gridBagConstraints5.gridx = 1;
             gridBagConstraints5.fill = GridBagConstraints.HORIZONTAL;
             gridBagConstraints5.insets = new Insets(6, 12, 6, 12);
             gridBagConstraints5.gridy = 1;
+
             GridBagConstraints gridBagConstraints = new GridBagConstraints();
             gridBagConstraints.gridx = 1;
             gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
@@ -193,10 +195,12 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
             gridBagConstraints.gridy = 0;
             labelMessage = new BLabel();
-            labelMessage.setText("These singers and resamplers are not registered to Cadencii. Check the box if you want to register them.");
+            labelMessage.setText(
+                "These singers and resamplers are not registered to Cadencii. Check the box if you want to register them.");
             labelMessage.setVerticalAlignment(SwingConstants.TOP);
             labelMessage.setAutoEllipsis(true);
             labelMessage.setPreferredSize(new Dimension(56, 57));
+
             GridBagConstraints gridBagConstraints20 = new GridBagConstraints();
             gridBagConstraints20.gridy = 5;
             gridBagConstraints20.gridheight = 1;
@@ -219,13 +223,14 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             jPanel1.add(getCheckResamplerImport(), gridBagConstraints2);
             jPanel1.add(getTextResamplerPath(), gridBagConstraints31);
         }
+
         return jPanel1;
     }
 
     /**
-     * This method initializes jPanel3	
-     * 	
-     * @return javax.swing.JPanel	
+     * This method initializes jPanel3
+     *
+     * @return javax.swing.JPanel
      */
     private JPanel getJPanel3() {
         if (jPanel3 == null) {
@@ -236,10 +241,12 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             lblRightValue = new BLabel();
             lblRightValue.setText("");
             lblRightValue.setPreferredSize(new Dimension(4, 4));
+
             GridBagConstraints gridBagConstraints111 = new GridBagConstraints();
             gridBagConstraints111.insets = new Insets(0, 0, 0, 0);
             gridBagConstraints111.gridy = 0;
             gridBagConstraints111.gridx = 2;
+
             GridBagConstraints gridBagConstraints1211 = new GridBagConstraints();
             gridBagConstraints1211.insets = new Insets(0, 0, 0, 0);
             gridBagConstraints1211.gridy = 0;
@@ -250,13 +257,14 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             jPanel3.add(getButtonOk(), gridBagConstraints111);
             jPanel3.add(lblRightValue, gridBagConstraints4);
         }
+
         return jPanel3;
     }
 
     /**
-     * This method initializes buttonCancel	
-     * 	
-     * @return org.kbinani.windows.forms.BButton	
+     * This method initializes buttonCancel
+     *
+     * @return org.kbinani.windows.forms.BButton
      */
     private BButton getButtonCancel() {
         if (buttonCancel == null) {
@@ -264,13 +272,14 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             buttonCancel.setText("Cancel");
             buttonCancel.setPreferredSize(new Dimension(100, 29));
         }
+
         return buttonCancel;
     }
 
     /**
-     * This method initializes buttonOk	
-     * 	
-     * @return org.kbinani.windows.forms.BButton	
+     * This method initializes buttonOk
+     *
+     * @return org.kbinani.windows.forms.BButton
      */
     private BButton getButtonOk() {
         if (buttonOk == null) {
@@ -278,13 +287,14 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             buttonOk.setText("OK");
             buttonOk.setPreferredSize(new Dimension(100, 29));
         }
+
         return buttonOk;
     }
 
     /**
-     * This method initializes jPanel2	
-     * 	
-     * @return javax.swing.JPanel	
+     * This method initializes jPanel2
+     *
+     * @return javax.swing.JPanel
      */
     private JPanel getJPanel2() {
         if (jPanel2 == null) {
@@ -293,12 +303,14 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             gridBagConstraints3.gridy = 1;
             gridBagConstraints3.weightx = 1.0;
             gridBagConstraints3.gridx = 1;
+
             GridBagConstraints gridBagConstraints1 = new GridBagConstraints();
             gridBagConstraints1.gridx = 1;
             gridBagConstraints1.fill = GridBagConstraints.HORIZONTAL;
             gridBagConstraints1.gridy = 0;
             labelSingerName = new BLabel();
             labelSingerName.setText("(name)");
+
             GridBagConstraints gridBagConstraints6 = new GridBagConstraints();
             gridBagConstraints6.gridx = 0;
             gridBagConstraints6.gridheight = 2;
@@ -317,26 +329,28 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             jPanel2.add(labelSingerName, gridBagConstraints1);
             jPanel2.add(getTextSingerPath(), gridBagConstraints3);
         }
+
         return jPanel2;
     }
 
     /**
-     * This method initializes checkSingerImport	
-     * 	
-     * @return org.kbinani.windows.forms.BCheckBox	
+     * This method initializes checkSingerImport
+     *
+     * @return org.kbinani.windows.forms.BCheckBox
      */
     private BCheckBox getCheckSingerImport() {
         if (checkSingerImport == null) {
             checkSingerImport = new BCheckBox();
             checkSingerImport.setText("Import singer");
         }
+
         return checkSingerImport;
     }
 
     /**
-     * This method initializes pictureSinger	
-     * 	
-     * @return org.kbinani.cadencii.IconParader	
+     * This method initializes pictureSinger
+     *
+     * @return org.kbinani.cadencii.IconParader
      */
     private IconParader getPictureSinger() {
         if (pictureSinger == null) {
@@ -344,47 +358,49 @@ checkResamplerImport.setText( gettext( "Import resampler" ) );
             pictureSinger.setBorder(BorderFactory.createLineBorder(Color.gray, 1));
             pictureSinger.setPreferredSize(new Dimension(48, 48));
         }
+
         return pictureSinger;
     }
 
     /**
-     * This method initializes textSingerPath	
-     * 	
-     * @return org.kbinani.windows.forms.BTextBox	
+     * This method initializes textSingerPath
+     *
+     * @return org.kbinani.windows.forms.BTextBox
      */
     private BTextBox getTextSingerPath() {
         if (textSingerPath == null) {
             textSingerPath = new BTextBox();
             textSingerPath.setPreferredSize(new Dimension(169, 19));
         }
+
         return textSingerPath;
     }
 
     /**
-     * This method initializes checkResamplerImport	
-     * 	
-     * @return org.kbinani.windows.forms.BCheckBox	
+     * This method initializes checkResamplerImport
+     *
+     * @return org.kbinani.windows.forms.BCheckBox
      */
     private BCheckBox getCheckResamplerImport() {
         if (checkResamplerImport == null) {
             checkResamplerImport = new BCheckBox();
             checkResamplerImport.setText("Import resampler");
         }
+
         return checkResamplerImport;
     }
 
     /**
-     * This method initializes textResamplerPath	
-     * 	
-     * @return org.kbinani.windows.forms.BTextBox	
+     * This method initializes textResamplerPath
+     *
+     * @return org.kbinani.windows.forms.BTextBox
      */
     private BTextBox getTextResamplerPath() {
         if (textResamplerPath == null) {
             textResamplerPath = new BTextBox();
             textResamplerPath.setPreferredSize(new Dimension(169, 19));
         }
+
         return textResamplerPath;
     }
-
-    }
-
+}

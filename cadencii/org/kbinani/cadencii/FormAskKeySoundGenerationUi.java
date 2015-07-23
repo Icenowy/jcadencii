@@ -11,16 +11,14 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 
 /// <summary>
 /// FormAskKeySoundGenerationフォームのビューが実装すべきメソッドを規定します．
 /// </summary>
-public interface FormAskKeySoundGenerationUi extends UiBase
-{
-    void setAlwaysPerformThisCheck( boolean value );
+public interface FormAskKeySoundGenerationUi extends UiBase {
+    void setAlwaysPerformThisCheck(boolean value);
 
     boolean isAlwaysPerformThisCheck();
 
@@ -28,30 +26,30 @@ public interface FormAskKeySoundGenerationUi extends UiBase
     /// フォームを閉じます．
     /// valueがtrueのときダイアログの結果をCancelに，それ以外の場合はOKとなるようにします．
     /// </summary>
-    void close( boolean value );
+    void close(boolean value);
 
     /// <summary>
     /// メッセージの文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列．</param>
-    void setMessageLabelText( String value );
+    void setMessageLabelText(String value);
 
     /// <summary>
     /// チェックボックスの文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列．</param>
-    void setAlwaysPerformThisCheckCheckboxText( String value );
+    void setAlwaysPerformThisCheckCheckboxText(String value);
 
     /// <summary>
     /// 「はい」ボタンの文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列．</param>
-    void setYesButtonText( String value );
+    void setYesButtonText(String value);
 
     /// <summary>
     /// 「いいえ」ボタンの文字列を設定します．
     /// </summary>
     /// <param name="value">設定する文字列．</param>
-    void setNoButtonText( String value );
-};
-
+    void setNoButtonText(String value);
+}
+;

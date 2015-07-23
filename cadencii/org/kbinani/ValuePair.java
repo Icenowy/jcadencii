@@ -13,38 +13,35 @@
  */
 package org.kbinani;
 
-    public class ValuePair<K extends Comparable<K>, V> implements Comparable<ValuePair<K, V>>{
-        private K m_key;
-        private V m_value;
+public class ValuePair<K extends Comparable<K>, V> implements Comparable<ValuePair<K, V>> {
+    private K m_key;
+    private V m_value;
 
-        public ValuePair() {
-        }
-
-        public ValuePair( K key_, V value_ ) {
-m_key = key_;
-m_value = value_;
-        }
-
-        public int compareTo( ValuePair<K, V> item ) {
-return m_key.compareTo( item.m_key );
-        }
-
-
-        public K getKey() {
-return m_key;
-        }
-
-        public void setKey( K value ) {
-m_key = value;
-        }
-
-        public V getValue() {
-return m_value;
-        }
-
-        public void setValue( V v ) {
-m_value = v;
-        }
-
+    public ValuePair() {
     }
 
+    public ValuePair(K key_, V value_) {
+        m_key = key_;
+        m_value = value_;
+    }
+
+    public int compareTo(ValuePair<K, V> item) {
+        return m_key.compareTo(item.m_key);
+    }
+
+    public K getKey() {
+        return m_key;
+    }
+
+    public void setKey(K value) {
+        m_key = value;
+    }
+
+    public V getValue() {
+        return m_value;
+    }
+
+    public void setValue(V v) {
+        m_value = v;
+    }
+}

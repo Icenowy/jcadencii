@@ -13,39 +13,41 @@
  */
 package org.kbinani.cadencii;
 
-import java.util.*;
 import org.kbinani.*;
+
 import org.kbinani.vsq.*;
+
 import org.kbinani.xml.*;
 
+import java.util.*;
 
-    public class RenderedStatus
-    {
-        public VsqTrack track;
-        @XmlGenericType( TempoTableEntry.class )
-        public TempoVector tempo;
-        public SequenceConfig config;
 
-        /// <summary>
-        /// コンストラクタ。trackはcloneされないが、tempoはcloneされる。
-        /// </summary>
-        /// <param name="track"></param>
-        /// <param name="tempo"></param>
-        public RenderedStatus( VsqTrack track, TempoVector tempo, SequenceConfig config )
-        {
-this.track = track;
-this.tempo = new TempoVector();
-for ( Iterator<TempoTableEntry> itr = tempo.iterator(); itr.hasNext(); ) {
-    vec.add( this.tempo, (TempoTableEntry)itr.next().clone() );
-}
-this.config = config;
+public class RenderedStatus {
+    public VsqTrack track;
+    @XmlGenericType(TempoTableEntry.class)
+    public TempoVector tempo;
+    public SequenceConfig config;
+
+    /// <summary>
+    /// コンストラクタ。trackはcloneされないが、tempoはcloneされる。
+    /// </summary>
+    /// <param name="track"></param>
+    /// <param name="tempo"></param>
+    public RenderedStatus(VsqTrack track, TempoVector tempo,
+        SequenceConfig config) {
+        this.track = track;
+        this.tempo = new TempoVector();
+
+        for (Iterator<TempoTableEntry> itr = tempo.iterator(); itr.hasNext();) {
+            vec.add(this.tempo, (TempoTableEntry) itr.next().clone());
         }
 
-        public RenderedStatus()
-        {
-track = new VsqTrack( 0, 0, 0 );
-tempo = new TempoVector();
-config = new SequenceConfig();
-        }
+        this.config = config;
     }
 
+    public RenderedStatus() {
+        track = new VsqTrack(0, 0, 0);
+        tempo = new TempoVector();
+        config = new SequenceConfig();
+    }
+}

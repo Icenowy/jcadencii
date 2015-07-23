@@ -11,29 +11,24 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.windows.forms.BMenuItem;
 
 
-    public class BgmMenuItem extends BMenuItem
-    {
-        private int mBgmIndex;
+public class BgmMenuItem extends BMenuItem {
+    private int mBgmIndex;
 
-        public BgmMenuItem( int bgm_index )
-        {
-super();
-mBgmIndex = bgm_index;
-        }
-
-        /// <summary>
-        /// このメニューアイテムが担当しているBGMのインデックスを取得します
-        /// </summary>
-        /// <returns>BGMのインデックス</returns>
-        public int getBgmIndex()
-        {
-return mBgmIndex;
-        }
+    public BgmMenuItem(int bgm_index) {
+        super();
+        mBgmIndex = bgm_index;
     }
 
+    /// <summary>
+    /// このメニューアイテムが担当しているBGMのインデックスを取得します
+    /// </summary>
+    /// <returns>BGMのインデックス</returns>
+    public int getBgmIndex() {
+        return mBgmIndex;
+    }
+}

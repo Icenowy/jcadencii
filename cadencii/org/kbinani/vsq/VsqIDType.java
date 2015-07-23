@@ -13,11 +13,8 @@
 */
 package org.kbinani.vsq;
 
-    public enum VsqIDType
-    {
-        Singer,
-        Anote,
-        Aicon,
-        Unknown
-    }
-
+public enum VsqIDType {Singer,
+    Anote,
+    Aicon,
+    Unknown;
+}

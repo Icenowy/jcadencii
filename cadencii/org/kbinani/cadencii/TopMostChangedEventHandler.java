@@ -15,12 +15,13 @@ package org.kbinani.cadencii;
 
 import org.kbinani.BEventHandler;
 
-public class TopMostChangedEventHandler extends BEventHandler{
-    public TopMostChangedEventHandler( Object sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Object.class, Boolean.TYPE );
+
+public class TopMostChangedEventHandler extends BEventHandler {
+    public TopMostChangedEventHandler(Object sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Object.class, Boolean.TYPE);
     }
-    
-    public TopMostChangedEventHandler( Class<?> sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Object.class, Boolean.TYPE );
+
+    public TopMostChangedEventHandler(Class<?> sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Object.class, Boolean.TYPE);
     }
 }

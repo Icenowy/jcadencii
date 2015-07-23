@@ -13,14 +13,13 @@
  */
 package org.kbinani;
 
-    public class ByRef<T> {
-        public T value;
+public class ByRef<T> {
+    public T value;
 
-        public ByRef() {
-        }
-
-        public ByRef( T value_ ) {
-value = value_;
-        }
+    public ByRef() {
     }
 
+    public ByRef(T value_) {
+        value = value_;
+    }
+}

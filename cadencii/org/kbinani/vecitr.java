@@ -11,37 +11,32 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani;
 
 import java.util.Vector;
 
 
-        public class vecitr<T>
-        {
-Vector<T> list;
-int index = 0;
+public class vecitr<T> {
+    Vector<T> list;
+    int index = 0;
 
-public vecitr( Vector<T> list )
-{
-    this.list = list;
-    index = 0;
-}
+    public vecitr(Vector<T> list) {
+        this.list = list;
+        index = 0;
+    }
 
-public boolean hasNext()
-{
-    if ( index + 1 < list.size() ) {
-        return true;
-    } else {
-        return false;
+    public boolean hasNext() {
+        if ((index + 1) < list.size()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public T next() {
+        index++;
+
+        return list.get(index);
     }
 }
-
-public T next()
-{
-    index++;
-    return list.get( index );
-
-}
-        };
-
+;

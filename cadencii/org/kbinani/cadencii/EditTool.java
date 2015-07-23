@@ -13,25 +13,24 @@
  */
 package org.kbinani.cadencii;
 
-    /// <summary>
-    /// 編集ツールを表す列挙型
-    /// </summary>
-    public enum EditTool {
-        /// <summary>
-        /// 矢印ツール
-        /// </summary>
-        ARROW,
-        /// <summary>
-        /// 鉛筆ツール
-        /// </summary>
-        PENCIL,
-        /// <summary>
-        /// 直線ツール
-        /// </summary>
-        LINE,
-        /// <summary>
-        /// 消しゴムツール
-        /// </summary>
-        ERASER,
-    }
 
+/// <summary>
+/// 編集ツールを表す列挙型
+/// </summary>
+public enum EditTool {/// <summary>
+    /// 矢印ツール
+    /// </summary>
+    ARROW,
+    /// <summary>
+    /// 鉛筆ツール
+    /// </summary>
+    PENCIL,
+    /// <summary>
+    /// 直線ツール
+    /// </summary>
+    LINE,
+    /// <summary>
+    /// 消しゴムツール
+    /// </summary>
+    ERASER;
+}

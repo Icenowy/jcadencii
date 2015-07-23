@@ -15,12 +15,13 @@ package org.kbinani.cadencii;
 
 import org.kbinani.BEventHandler;
 
-public class MuteChangedEventHandler extends BEventHandler{
-    public MuteChangedEventHandler( Object sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Integer.TYPE, Boolean.TYPE );
+
+public class MuteChangedEventHandler extends BEventHandler {
+    public MuteChangedEventHandler(Object sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Integer.TYPE, Boolean.TYPE);
     }
-    
-    public MuteChangedEventHandler( Class<?> sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Integer.TYPE, Boolean.TYPE );
+
+    public MuteChangedEventHandler(Class<?> sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Integer.TYPE, Boolean.TYPE);
     }
 }

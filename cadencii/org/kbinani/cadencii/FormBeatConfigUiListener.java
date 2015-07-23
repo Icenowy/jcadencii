@@ -11,16 +11,13 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
-
-public interface FormBeatConfigUiListener
-{
+public interface FormBeatConfigUiListener {
     void buttonCancelClickedSlot();
 
     void buttonOkClickedSlot();
 
     void checkboxEndCheckedChangedSlot();
-};
-
+}
+;

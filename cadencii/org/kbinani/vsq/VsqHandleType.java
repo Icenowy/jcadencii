@@ -13,12 +13,9 @@
 */
 package org.kbinani.vsq;
 
-    public enum VsqHandleType
-    {
-        Lyric,
-        Vibrato,
-        Singer,
-        NoteHeadHandle,
-        DynamicsHandle,
-    }
-
+public enum VsqHandleType {Lyric,
+    Vibrato,
+    Singer,
+    NoteHeadHandle,
+    DynamicsHandle;
+}

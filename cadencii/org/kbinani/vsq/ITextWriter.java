@@ -15,11 +15,13 @@ package org.kbinani.vsq;
 
 import java.io.*;
 
-    public interface ITextWriter
-    {
-        void write( String value ) throws IOException;
-        void writeLine( String value ) throws IOException;
-        void close() throws IOException;
-        void newLine() throws IOException;
-    }
 
+public interface ITextWriter {
+    void write(String value) throws IOException;
+
+    void writeLine(String value) throws IOException;
+
+    void close() throws IOException;
+
+    void newLine() throws IOException;
+}

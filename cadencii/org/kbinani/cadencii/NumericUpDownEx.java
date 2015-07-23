@@ -15,16 +15,13 @@ package org.kbinani.cadencii;
 
 import org.kbinani.windows.forms.*;
 
-    /// <summary>
-    /// MouseWheel��Increment���l�𑝌������邱�Ƃ̂ł���NumericUpDown
-    /// </summary>
-    public class NumericUpDownEx extends BNumericUpDown {
-        private static final long serialVersionUID = -4608658084088065812L;
 
-        public NumericUpDownEx()
-        {
-        }
+/// <summary>
+/// MouseWheel��Increment���l�𑝌������邱�Ƃ̂ł���NumericUpDown
+/// </summary>
+public class NumericUpDownEx extends BNumericUpDown {
+    private static final long serialVersionUID = -4608658084088065812L;
 
-
+    public NumericUpDownEx() {
     }
-
+}

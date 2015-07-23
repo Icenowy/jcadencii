@@ -13,19 +13,16 @@
  */
 package org.kbinani.cadencii;
 
-
-    public enum ClockResolution {
-        L1,
-        L2,
-        L4,
-        L8,
-        L16,
-        L30,
-        L60,
-        L90,
-        L120,
-        L240,
-        L480,
-        Free,
-    }
-
+public enum ClockResolution {L1,
+    L2,
+    L4,
+    L8,
+    L16,
+    L30,
+    L60,
+    L90,
+    L120,
+    L240,
+    L480,
+    Free;
+}

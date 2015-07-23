@@ -11,24 +11,20 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.vsq;
 
 import java.io.*;
 
-    public class UstEventProperty implements Serializable
-    {
-        public String Name;
-        public String Value;
 
-        public UstEventProperty()
-        {
-        }
+public class UstEventProperty implements Serializable {
+    public String Name;
+    public String Value;
 
-        public UstEventProperty( String name, String value )
-        {
-Name = name;
-Value = value;
-        }
+    public UstEventProperty() {
     }
 
+    public UstEventProperty(String name, String value) {
+        Name = name;
+        Value = value;
+    }
+}

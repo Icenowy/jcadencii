@@ -15,45 +15,37 @@ package org.kbinani.vsq;
 
 import java.io.*;
 
+
+/// <summary>
+/// ゲートタイムと、何らかのパラメータ値とのペアを表します。主にVsqBPListで使用します。
+/// </summary>
+public class BPPair implements Comparable<BPPair>, Serializable {
+    public int Clock;
+    public int Value;
+
     /// <summary>
-    /// ゲートタイムと、何らかのパラメータ値とのペアを表します。主にVsqBPListで使用します。
+    /// 指定されたゲートタイムとパラメータ値を使って、新しいインスタンスを初期化します。
     /// </summary>
-    public class BPPair implements Comparable<BPPair>, Serializable
-    {
-        public int Clock;
-        public int Value;
+    /// <param name="clock_"></param>
+    /// <param name="value_"></param>
+    public BPPair(int clock_, int value_) {
+        Clock = clock_;
+        Value = value_;
+    }
 
-        /// <summary>
-        /// このインスタンスと、指定したオブジェクトを比較します
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public int compareTo( BPPair item )
-        {
-if ( Clock > item.Clock )
-{
-    return 1;
-}
-else if ( Clock < item.Clock )
-{
-    return -1;
-}
-else
-{
-    return 0;
-}
+    /// <summary>
+    /// このインスタンスと、指定したオブジェクトを比較します
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    public int compareTo(BPPair item) {
+        if (Clock > item.Clock) {
+            return 1;
+        } else if (Clock < item.Clock) {
+            return -1;
+        } else {
+            return 0;
         }
-
-
-        /// <summary>
-        /// 指定されたゲートタイムとパラメータ値を使って、新しいインスタンスを初期化します。
-        /// </summary>
-        /// <param name="clock_"></param>
-        /// <param name="value_"></param>
-        public BPPair( int clock_, int value_ )
-        {
-Clock = clock_;
-Value = value_;
-        }
-    };
-
+    }
+}
+;

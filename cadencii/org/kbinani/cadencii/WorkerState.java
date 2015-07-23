@@ -11,47 +11,44 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 
+/// <summary>
+/// FormWorkerに登録されている1個のジョブについての状態を表現します
+/// </summary>
+public interface WorkerState {
     /// <summary>
-    /// FormWorkerに登録されている1個のジョブについての状態を表現します
+    /// workerスレッドから呼び出し元に進捗を通知します
     /// </summary>
-    public interface WorkerState
-    {
-        /// <summary>
-        /// workerスレッドから呼び出し元に進捗を通知します
-        /// </summary>
-        /// <param name="processed_job">ジョブの処理済み量</param>
-        void reportProgress( double processed_job );
-        
-        /// <summary>
-        /// workerスレッドから呼び出し元に，workerスレッドの処理が完了したことを通知します
-        /// </summary>
-        void reportComplete();
+    /// <param name="processed_job">ジョブの処理済み量</param>
+    void reportProgress(double processed_job);
 
-        /// <summary>
-        /// workerスレッドが，キャンセル要求の有無を呼び出し元に問い合せるためのメソッド
-        /// </summary>
-        /// <returns></returns>
-        boolean isCancelRequested();
-        
-        /// <summary>
-        /// 呼び出し元が，workerスレッドにキャンセル要求を出すためのメソッド
-        /// </summary>
-        void requestCancel();
+    /// <summary>
+    /// workerスレッドから呼び出し元に，workerスレッドの処理が完了したことを通知します
+    /// </summary>
+    void reportComplete();
 
-        /// <summary>
-        /// ジョブの現在の処理量を取得します
-        /// </summary>
-        /// <returns></returns>
-        double getProcessedAmount();
+    /// <summary>
+    /// workerスレッドが，キャンセル要求の有無を呼び出し元に問い合せるためのメソッド
+    /// </summary>
+    /// <returns></returns>
+    boolean isCancelRequested();
 
-        /// <summary>
-        /// ジョブの総処理量を取得します
-        /// </summary>
-        /// <returns></returns>
-        double getJobAmount();
-    }
+    /// <summary>
+    /// 呼び出し元が，workerスレッドにキャンセル要求を出すためのメソッド
+    /// </summary>
+    void requestCancel();
 
+    /// <summary>
+    /// ジョブの現在の処理量を取得します
+    /// </summary>
+    /// <returns></returns>
+    double getProcessedAmount();
+
+    /// <summary>
+    /// ジョブの総処理量を取得します
+    /// </summary>
+    /// <returns></returns>
+    double getJobAmount();
+}

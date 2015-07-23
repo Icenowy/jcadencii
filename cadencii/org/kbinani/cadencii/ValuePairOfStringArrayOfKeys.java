@@ -15,16 +15,16 @@ package org.kbinani.cadencii;
 
 import org.kbinani.windows.forms.*;
 
-    public class ValuePairOfStringArrayOfKeys {
-        public String Key;
-        public BKeys[] Value;
 
-        public ValuePairOfStringArrayOfKeys() {
-        }
+public class ValuePairOfStringArrayOfKeys {
+    public String Key;
+    public BKeys[] Value;
 
-        public ValuePairOfStringArrayOfKeys( String key, BKeys[] value ) {
-Key = key;
-Value = value;
-        }
+    public ValuePairOfStringArrayOfKeys() {
     }
 
+    public ValuePairOfStringArrayOfKeys(String key, BKeys[] value) {
+        Key = key;
+        Value = value;
+    }
+}

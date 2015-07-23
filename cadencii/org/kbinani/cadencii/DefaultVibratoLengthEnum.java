@@ -13,10 +13,8 @@
  */
 package org.kbinani.cadencii;
 
-    public enum DefaultVibratoLengthEnum {
-        L50,
-        L66,
-        L75,
-        L100,
-    }
-
+public enum DefaultVibratoLengthEnum {L50,
+    L66,
+    L75,
+    L100;
+}

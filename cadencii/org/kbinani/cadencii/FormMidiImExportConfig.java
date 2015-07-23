@@ -13,8 +13,7 @@
  */
 package org.kbinani.cadencii;
 
-    public class FormMidiImExportConfig {
-        public boolean LastPremeasureCheckStatus = true;
-        public boolean LastMetatextCheckStatus = true;
-    }
-
+public class FormMidiImExportConfig {
+    public boolean LastPremeasureCheckStatus = true;
+    public boolean LastMetatextCheckStatus = true;
+}

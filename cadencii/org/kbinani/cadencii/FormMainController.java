@@ -11,25 +11,24 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 
 /// <summary>
 /// メイン画面のコントローラ
 /// </summary>
-public class FormMainController extends ControllerBase implements FormMainUiListener
-{
+public class FormMainController extends ControllerBase
+    implements FormMainUiListener {
     /// <summary>
     /// x方向の表示倍率(pixel/clock)
     /// </summary>
     private float mScaleX;
-    
+
     /// <summary>
     /// mScaleXの逆数
     /// </summary>
     private float mInvScaleX;
-    
+
     /// <summary>
     /// 画面左端位置での、仮想画面上の画面左端から測ったピクセル数．
     /// FormMain.hScroll.ValueとFormMain.trackBar.Valueで決まる．
@@ -46,28 +45,22 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// MIDIステップ入力モードがONかどうか
     /// </summary>
     private boolean mStepSequencerEnabled = false;
-
     private FormMainUi ui;
 
-    public FormMainController()
-    {
+    public FormMainController() {
         mScaleX = 0.1f;
         mInvScaleX = 1.0f / mScaleX;
     }
 
-
-    public void navigationPanelGotFocus()
-    {
+    public void navigationPanelGotFocus() {
         ui.focusPianoRoll();
     }
-
 
     /// <summary>
     /// MIDIステップ入力モードがONかどうかを取得します
     /// </summary>
     /// <returns></returns>
-    public boolean isStepSequencerEnabled()
-    {
+    public boolean isStepSequencerEnabled() {
         return mStepSequencerEnabled;
     }
 
@@ -75,13 +68,11 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// MIDIステップ入力モードがONかどうかを設定する
     /// </summary>
     /// <param name="value"></param>
-    public void setStepSequencerEnabled( boolean value )
-    {
+    public void setStepSequencerEnabled(boolean value) {
         mStepSequencerEnabled = value;
     }
 
-    public void setupUi( FormMainUi ui )
-    {
+    public void setupUi(FormMainUi ui) {
         this.ui = ui;
     }
 
@@ -89,8 +80,7 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// ピアノロールの，X方向のスケールを取得します(pixel/clock)
     /// </summary>
     /// <returns></returns>
-    public float getScaleX()
-    {
+    public float getScaleX() {
         return mScaleX;
     }
 
@@ -98,8 +88,7 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// ピアノロールの，X方向のスケールの逆数を取得します(clock/pixel)
     /// </summary>
     /// <returns></returns>
-    public float getScaleXInv()
-    {
+    public float getScaleXInv() {
         return mInvScaleX;
     }
 
@@ -107,8 +96,7 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// ピアノロールの，X方向のスケールを設定します
     /// </summary>
     /// <param name="scale_x"></param>
-    public void setScaleX( float scale_x )
-    {
+    public void setScaleX(float scale_x) {
         mScaleX = scale_x;
         mInvScaleX = 1.0f / mScaleX;
     }
@@ -117,19 +105,19 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// ピアノロールの，Y方向のスケールを取得します(pixel/cent)
     /// </summary>
     /// <returns></returns>
-    public float getScaleY()
-    {
-        if ( AppManager.editorConfig.PianoRollScaleY < EditorConfig.MIN_PIANOROLL_SCALEY ) {
-             AppManager.editorConfig.PianoRollScaleY = EditorConfig.MIN_PIANOROLL_SCALEY;
-        } else if ( EditorConfig.MAX_PIANOROLL_SCALEY < AppManager.editorConfig.PianoRollScaleY ) {
+    public float getScaleY() {
+        if (AppManager.editorConfig.PianoRollScaleY < EditorConfig.MIN_PIANOROLL_SCALEY) {
+            AppManager.editorConfig.PianoRollScaleY = EditorConfig.MIN_PIANOROLL_SCALEY;
+        } else if (EditorConfig.MAX_PIANOROLL_SCALEY < AppManager.editorConfig.PianoRollScaleY) {
             AppManager.editorConfig.PianoRollScaleY = EditorConfig.MAX_PIANOROLL_SCALEY;
         }
-        if ( AppManager.editorConfig.PianoRollScaleY == 0 ) {
+
+        if (AppManager.editorConfig.PianoRollScaleY == 0) {
             return AppManager.editorConfig.PxTrackHeight / 100.0f;
-        } else if ( AppManager.editorConfig.PianoRollScaleY > 0 ) {
-            return (2 * AppManager.editorConfig.PianoRollScaleY + 5) * AppManager.editorConfig.PxTrackHeight / 5 / 100.0f;
+        } else if (AppManager.editorConfig.PianoRollScaleY > 0) {
+            return (((2 * AppManager.editorConfig.PianoRollScaleY) + 5) * AppManager.editorConfig.PxTrackHeight) / 5 / 100.0f;
         } else {
-            return (AppManager.editorConfig.PianoRollScaleY + 8) * AppManager.editorConfig.PxTrackHeight / 8 / 100.0f;
+            return ((AppManager.editorConfig.PianoRollScaleY + 8) * AppManager.editorConfig.PxTrackHeight) / 8 / 100.0f;
         }
     }
 
@@ -137,8 +125,7 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// ピアノロール画面の，ビューポートと仮想スクリーンとの横方向のオフセットを取得します
     /// </summary>
     /// <returns></returns>
-    public int getStartToDrawX()
-    {
+    public int getStartToDrawX() {
         return mStartToDrawX;
     }
 
@@ -146,8 +133,7 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// ピアノロール画面の，ビューポートと仮想スクリーンとの横方向のオフセットを設定します
     /// </summary>
     /// <param name="value"></param>
-    public void setStartToDrawX( int value )
-    {
+    public void setStartToDrawX(int value) {
         mStartToDrawX = value;
     }
 
@@ -155,8 +141,7 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// ピアノロール画面の，ビューポートと仮想スクリーンとの縦方向のオフセットを取得します
     /// </summary>
     /// <returns></returns>
-    public int getStartToDrawY()
-    {
+    public int getStartToDrawY() {
         return mStartToDrawY;
     }
 
@@ -164,9 +149,7 @@ public class FormMainController extends ControllerBase implements FormMainUiList
     /// ピアノロール画面の，ビューポートと仮想スクリーンとの縦方向のオフセットを設定します
     /// </summary>
     /// <param name="value"></param>
-    public void setStartToDrawY( int value )
-    {
+    public void setStartToDrawY(int value) {
         mStartToDrawY = value;
     }
 }
-

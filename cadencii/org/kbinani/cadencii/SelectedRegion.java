@@ -13,32 +13,31 @@
  */
 package org.kbinani.cadencii;
 
-    public class SelectedRegion {
-        private int m_begin;
-        private int m_end;
+public class SelectedRegion {
+    private int m_begin;
+    private int m_end;
 
-        public void setEnd( int value ) {
-m_end = value;
-        }
+    public SelectedRegion(int begin) {
+        m_begin = begin;
+    }
 
-        public int getStart() {
-if ( m_end < m_begin ) {
-    return m_end;
-} else {
-    return m_begin;
-}
-        }
+    public void setEnd(int value) {
+        m_end = value;
+    }
 
-        public int getEnd() {
-if ( m_end < m_begin ) {
-    return m_begin;
-} else {
-    return m_end;
-}
-        }
-        
-        public SelectedRegion( int begin ) {
-m_begin = begin;
+    public int getStart() {
+        if (m_end < m_begin) {
+            return m_end;
+        } else {
+            return m_begin;
         }
     }
 
+    public int getEnd() {
+        if (m_end < m_begin) {
+            return m_begin;
+        } else {
+            return m_end;
+        }
+    }
+}

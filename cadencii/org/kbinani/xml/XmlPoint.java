@@ -15,43 +15,41 @@ package org.kbinani.xml;
 
 import java.awt.*;
 
-    public class XmlPoint {
-        public int x;
-        public int y;
 
-        public XmlPoint() {
-        }
+public class XmlPoint {
+    public int x;
+    public int y;
 
-        public XmlPoint( int x_, int y_ ) {
-x = x_;
-y = y_;
-        }
-
-        public XmlPoint( Point p ) {
-x = p.x;
-y = p.y;
-        }
-
-        public Point toPoint() {
-return new Point( x, y );
-        }
-
-        public int getX() {
-return x;
-        }
-
-        public void setX( int value ) {
-x = value;
-        }
-
-        public int getY() {
-return y;
-        }
-
-        public void setY( int value ) {
-y = value;
-        }
-
-
+    public XmlPoint() {
     }
 
+    public XmlPoint(int x_, int y_) {
+        x = x_;
+        y = y_;
+    }
+
+    public XmlPoint(Point p) {
+        x = p.x;
+        y = p.y;
+    }
+
+    public Point toPoint() {
+        return new Point(x, y);
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int value) {
+        x = value;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int value) {
+        y = value;
+    }
+}

@@ -11,19 +11,20 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
 import org.kbinani.*;
 
 
-    public class CommandExecuteRequiredEventHandler extends BEventHandler{
-        public CommandExecuteRequiredEventHandler( Object invoker, String method_name ){
-super( invoker, method_name, Void.TYPE, Object.class, CadenciiCommand.class );
-        }
-        
-        public CommandExecuteRequiredEventHandler( Class<?> invoker, String method_name ){
-super( invoker, method_name, Void.TYPE, Object.class, CadenciiCommand.class );
-        }
+public class CommandExecuteRequiredEventHandler extends BEventHandler {
+    public CommandExecuteRequiredEventHandler(Object invoker, String method_name) {
+        super(invoker, method_name, Void.TYPE, Object.class,
+            CadenciiCommand.class);
     }
 
+    public CommandExecuteRequiredEventHandler(Class<?> invoker,
+        String method_name) {
+        super(invoker, method_name, Void.TYPE, Object.class,
+            CadenciiCommand.class);
+    }
+}

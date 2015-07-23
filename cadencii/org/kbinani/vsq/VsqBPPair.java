@@ -15,19 +15,17 @@ package org.kbinani.vsq;
 
 import java.io.*;
 
-    public class VsqBPPair implements Cloneable, Serializable
-    {
-        public int value;
-        public long id;
 
-        public VsqBPPair( int value_, long id_ )
-        {
-value = value_;
-id = id_;
-        }
+public class VsqBPPair implements Cloneable, Serializable {
+    public int value;
+    public long id;
 
-        public Object clone(){
-return new VsqBPPair( value, id );
-        }
+    public VsqBPPair(int value_, long id_) {
+        value = value_;
+        id = id_;
     }
 
+    public Object clone() {
+        return new VsqBPPair(value, id);
+    }
+}

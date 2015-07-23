@@ -11,12 +11,9 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 package org.kbinani.cadencii;
 
-
-public interface ExceptionNotifyFormUiListener
-{
+public interface ExceptionNotifyFormUiListener {
     /// <summary>
     /// 例外情報を送信するボタンが押された
     /// </summary>
@@ -27,4 +24,3 @@ public interface ExceptionNotifyFormUiListener
     /// </summary>
     void cancelButtonClick();
 }
-

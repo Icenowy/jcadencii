@@ -15,12 +15,13 @@ package org.kbinani.cadencii;
 
 import org.kbinani.BEventHandler;
 
-public class PanpotChangedEventHandler extends BEventHandler{
-    public PanpotChangedEventHandler( Object sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Integer.TYPE, Integer.TYPE );
+
+public class PanpotChangedEventHandler extends BEventHandler {
+    public PanpotChangedEventHandler(Object sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Integer.TYPE, Integer.TYPE);
     }
-    
-    public PanpotChangedEventHandler( Class<?> sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Integer.TYPE, Integer.TYPE );
+
+    public PanpotChangedEventHandler(Class<?> sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Integer.TYPE, Integer.TYPE);
     }
 }

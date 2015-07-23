@@ -16,15 +16,15 @@ package org.kbinani.apputil;
 import java.util.Vector;
 
 
-    public class MessageBodyEntry {
-        public String message;
-        public Vector<String> location = new Vector<String>();
+public class MessageBodyEntry {
+    public String message;
+    public Vector<String> location = new Vector<String>();
 
-        public MessageBodyEntry( String message_, String[] location_ ) {
-message = message_;
-for ( int i = 0; i < location_.length; i++ ) {
-    location.add( location_[i] );
-}
+    public MessageBodyEntry(String message_, String[] location_) {
+        message = message_;
+
+        for (int i = 0; i < location_.length; i++) {
+            location.add(location_[i]);
         }
     }
-
+}

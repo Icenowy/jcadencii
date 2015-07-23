@@ -15,12 +15,13 @@ package org.kbinani.cadencii;
 
 import org.kbinani.BEventHandler;
 
-public class SelectedTrackChangedEventHandler extends BEventHandler{
-    public SelectedTrackChangedEventHandler( Object sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Object.class, Integer.TYPE );
+
+public class SelectedTrackChangedEventHandler extends BEventHandler {
+    public SelectedTrackChangedEventHandler(Object sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Object.class, Integer.TYPE);
     }
-    
-    public SelectedTrackChangedEventHandler( Class<?> sender, String method_name ){
-        super( sender, method_name, Void.TYPE, Object.class, Integer.TYPE );
+
+    public SelectedTrackChangedEventHandler(Class<?> sender, String method_name) {
+        super(sender, method_name, Void.TYPE, Object.class, Integer.TYPE);
     }
 }
