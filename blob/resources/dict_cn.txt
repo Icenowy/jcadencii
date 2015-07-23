@@ -1,0 +1,399 @@
+a		a
+ai		aI
+an		a n
+ang		A N
+ao		AU
+ba		p a
+bai		p aI
+ban		p a n
+bang		p A N
+bao		p AU
+bei		p eI
+ben		p @ n
+beng		p 7 N
+bi		p i
+bian		p iE n
+biao		p iaU
+bie		p iE
+bin		p i n
+bing		p iM N
+bo		p uO
+bu		p u
+ca		ts_h a
+cai		ts_h aI
+can		ts_h a n
+cang		ts_h A N
+cao		ts_h AU
+ce		ts_h MV
+cen		ts_h @ n
+ceng		ts_h 7 N
+cha		ts`_h a
+chai		ts`_h aI
+chan		ts`_h a n
+chang		ts`_h A N
+chao		ts`_h AU
+che		ts`_h MV
+chen		ts`_h @ n
+cheng		ts`_h 7 N
+chong		ts`_h o N
+chou		ts`_h 7U
+chu		ts`_h u
+chua		ts`_h ua
+chuai		ts`_h uaI
+chuan		ts`_h ua n
+chuang		ts`_h uA N
+chui		ts`_h ueI
+chun		ts`_h u@ n
+chuo		ts`_h uO
+cong		ts_h o N
+cou		ts_h 7U
+cu		ts_h u
+cuan		ts_h ua n
+cui		ts_h ueI
+cun		ts_h u@ n
+cuo		ts_h uO
+da		t a
+dai		t aI
+dan		t a n
+dang		t A N
+dao		t AU
+de		t MV
+dei		t eI
+den		t @ n
+deng		t 7 N
+di		t i
+dian		t iE n
+diao		t iaU
+die		t iE
+ding		t iM N
+diu		t i7U
+dong		t o N
+dou		t 7U
+du		t u
+duan		t ua n
+dui		t ueI
+dun		t u@ n
+duo		t uO
+e		MV
+ei		eI
+en		@ n
+eng		7 N
+er		A r\
+fa		f a
+fan		f a n
+fang		f A N
+fei		f eI
+fen		f @ n
+feng		f 7 N
+fo		f uO
+fou		f 7U
+fu		f u
+ga		k a
+gai		k aI
+gan		k a n
+gang		k A N
+gao		k AU
+ge		k MV
+gei		k eI
+gen		k @ n
+geng		k 7 N
+gong		k o N
+gou		k 7U
+gu		k u
+gua		k ua
+guai		k uaI
+guan		k ua n
+guang		k uA N
+gui		k ueI
+gun		k u@ n
+guo		k uO
+ha		x a
+hai		x aI
+han		x a n
+hang		x A N
+hao		x AU
+he		x MV
+hei		x eI
+hen		x @ n
+heng		x 7 N
+hong		x o N
+hou		x 7U
+hu		x u
+hua		x ua
+huai		x uaI
+huan		x ua n
+huang		x uA N
+hui		x ueI
+hun		x u@ n
+huo		x uO
+ji		ts\ i
+jia		ts\ ia
+jian		ts\ iE n
+jiang		ts\ iA N
+jiao		ts\ iaU
+jie		ts\ iE
+jin		ts\ i n
+jing		ts\ iM N
+jiong		ts\ iU N
+jiu		ts\ i7U
+ju		ts\ y
+juan		ts\ yE n
+jue		ts\ yE
+jun		ts\ yi n
+ka		k_h a
+kai		k_h aI
+kan		k_h a n
+kang		k_h A N
+kao		k_h AU
+ke		k_h MV
+ken		k_h @ n
+keng		k_h 7 N
+kong		k_h o N
+kou		k_h 7U
+ku		k_h u
+kua		k_h ua
+kuai		k_h uaI
+kuan		k_h ua n
+kuang		k_h uA N
+kui		k_h ueI
+kun		k_h u@ n
+kuo		k_h uO
+la		l a
+lai		l aI
+lan		l a n
+lang		l A N
+lao		l AU
+le		l MV
+lei		l eI
+leng		l 7 N
+li		l i
+lia		l ia
+lian		l iE n
+liang		l iA N
+liao		l iaU
+lie		l iE
+lin		l i n
+ling		l iM N
+liu		l i7U
+long		l o N
+lou		l 7U
+lu		l u
+lü		l y
+luan		l ua n
+lüe		l yE
+lun		l u@ n
+luo		l uO
+ma		m a
+mai		m aI
+man		m a n
+mang		m A N
+mao		m AU
+me		m MV
+mei		m eI
+men		m @ n
+meng		m 7 N
+mi		m i
+mian		m iE n
+miao		m iaU
+mie		m iE
+min		m i n
+ming		m iM N
+miu		m i7U
+mo		m uO
+mou		m 7U
+mu		m u
+na		n a
+nai		n aI
+nan		n a n
+nang		n A N
+nao		n AU
+ne		n MV
+nei		n eI
+nen		n @ n
+neng		n 7 N
+ni		n i
+nian		n iE n
+niang		n iA N
+niao		n iaU
+nie		n iE
+nin		n i n
+ning		n iM N
+niu		n i7U
+nong		n o N
+nou		n 7U
+nu		n u
+nü		n y
+nuan		n ua n
+nüe		n yE
+nuo		n uO
+o		o
+ou		7U
+pa		p_h a
+pai		p_h aI
+pan		p_h a n
+pang		p_h A N
+pao		p_h AU
+pei		p_h eI
+pen		p_h @ n
+peng		p_h 7 N
+pi		p_h i
+pian		p_h iE n
+piao		p_h iaU
+pie		p_h iE
+pin		p_h i n
+ping		p_h iM N
+po		p_h uO
+pou		p_h 7U
+pu		p_h u
+qi		ts\_h i
+qia		ts\_h ia
+qian		ts\_h iE n
+qiang		ts\_h iA N
+qiao		ts\_h iaU
+qie		ts\_h iE
+qin		ts\_h i n
+qing		ts\_h iM N
+qiong		ts\_h iU N
+qiu		ts\_h i7U
+qu		ts\_h y
+quan		ts\_h yE n
+que		ts\_h yE
+qun		ts\_h yi n
+ran		z` a n
+rang		z` A N
+rao		z` AU
+re		z` MV
+ren		z` @ n
+reng		z` 7 N
+ri		z` 1
+rong		z` o N
+rou		z` 7U
+ru		z` u
+ruan		z` ua n
+rui		z` ueI
+run		z` u@ n
+ruo		z` uO
+sa		s a
+sai		s aI
+san		s a n
+sang		s A N
+sao		s AU
+se		s MV
+sen		s @ n
+seng		s 7 N
+sha		s` a
+shai		s` aI
+shan		s` a n
+shang		s` A N
+shao		s` AU
+she		s` MV
+shei		s` eI
+shen		s` @ n
+sheng		s` 7 N
+shou		s` 7U
+shu		s` u
+shua		s` ua
+shuai		s` uaI
+shuan		s` ua n
+shuang		s` uA N
+shui		s` ueI
+shun		s` u@ n
+shuo		s` uO
+song		s o N
+sou		s 7U
+su		s u
+suan		s ua n
+sui		s ueI
+sun		s u@ n
+suo		s uO
+ta		t_h a
+tai		t_h aI
+tan		t_h a n
+tang		t_h A N
+tao		t_h AU
+te		t_h MV
+teng		t_h 7 N
+ti		t_h i
+tian		t_h iE n
+tiao		t_h iaU
+tie		t_h iE
+ting		t_h iM N
+tong		t_h o N
+tou		t_h 7U
+tu		t_h u
+tuan		t_h ua n
+tui		t_h ueI
+tun		t_h u@ n
+tuo		t_h uO
+wa		ua
+wai		uaI
+wan		ua n
+wang		uA N
+wei		ueI
+wen		u@ n
+weng		u7 N
+wo		uO
+wu		u
+xi		s\ i
+xia		s\ ia
+xian		s\ iE n
+xiang		s\ iA N
+xiao		s\ iaU
+xie		s\ iE
+xin		s\ i n
+xing		s\ iM N
+xiong		s\ iU N
+xiu		s\ i7U
+xu		s\ y
+xuan		s\ yE n
+xue		s\ yE
+xun		s\ yi n
+ya		ia
+yan		iE n
+yang		iA N
+yao		iaU
+ye		iE
+yi		i
+yin		i n
+ying		iM N
+yong		iU N
+you		i7U
+yu		y
+yuan		yE n
+yue		yE
+yun		yi n
+za		ts a
+zai		ts aI
+zan		ts a n
+zang		ts A N
+zao		ts AU
+ze		ts MV
+zei		ts eI
+zen		ts @ n
+zeng		ts 7 N
+zha		ts` a
+zhai		ts` aI
+zhan		ts` a n
+zhang		ts` A N
+zhao		ts` AU
+zhe		ts` MV
+zhei		ts` eI
+zhen		ts` @ n
+zheng		ts` 7 N
+zhong		ts` o N
+zhou		ts` 7U
+zhu		ts` u
+zhua		ts` ua
+zhuai		ts` uaI
+zhuan		ts` ua n
+zhuang		ts` uA N
+zhui		ts` ueI
+zhun		ts` u@ n
+zhuo		ts` uO
+zong		ts o N
+zou		ts 7U
+zu		ts u
+zuan		ts ua n
+zui		ts ueI
+zun		ts u@ n
+zuo		ts uO
