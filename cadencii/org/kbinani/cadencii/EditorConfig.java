@@ -681,7 +681,7 @@ return ret;
         /// <summary>
         /// wineの実行ファイルのパスを取得します
         /// </summary>
-        public String getBuiltinWineExecutable__()
+        public String getBuiltinWineExecutable_gettext()
         {
 String ret = getBuiltinWineTop( "Wine.bundle" );
 ret = fsys.combine( ret, "bin" );

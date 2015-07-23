@@ -46,10 +46,10 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-lblMasterTuning.setText( _( "Master Tuning in Cent" ) );
-setTitle( _( "Track Property" ) );
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
+lblMasterTuning.setText( gettext( "Master Tuning in Cent" ) );
+setTitle( gettext( "Track Property" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
         }
 
         public int getMasterTuningInCent()
@@ -57,7 +57,7 @@ btnCancel.setText( _( "Cancel" ) );
 return m_master_tuning;
         }
 
-        private String _( String id )
+        private String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

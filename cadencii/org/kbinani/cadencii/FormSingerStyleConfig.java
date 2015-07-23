@@ -65,30 +65,30 @@ Dimension current_size = getClientSize();
 
         public void applyLanguage()
         {
-lblTemplate.setText( _( "Template" ) );
+lblTemplate.setText( gettext( "Template" ) );
 lblTemplate.setMnemonic( KeyEvent.VK_T, comboTemplate );
-groupPitchControl.setTitle( _( "Pitch Control" ) );
-lblBendDepth.setText( _( "Bend Depth" ) );
+groupPitchControl.setTitle( gettext( "Pitch Control" ) );
+lblBendDepth.setText( gettext( "Bend Depth" ) );
 lblBendDepth.setMnemonic( KeyEvent.VK_B, txtBendDepth );
-lblBendLength.setText( _( "Bend Length" ) );
+lblBendLength.setText( gettext( "Bend Length" ) );
 lblBendLength.setMnemonic( KeyEvent.VK_L, txtBendLength );
-chkUpPortamento.setText( _( "Add portamento in rising movement" ) );
+chkUpPortamento.setText( gettext( "Add portamento in rising movement" ) );
 chkUpPortamento.setMnemonic( KeyEvent.VK_R );
-chkDownPortamento.setText( _( "Add portamento in falling movement" ) );
+chkDownPortamento.setText( gettext( "Add portamento in falling movement" ) );
 chkDownPortamento.setMnemonic( KeyEvent.VK_F );
 
-groupDynamicsControl.setTitle( _( "Dynamics Control" ) );
-lblDecay.setText( _( "Decay" ) );
+groupDynamicsControl.setTitle( gettext( "Dynamics Control" ) );
+lblDecay.setText( gettext( "Decay" ) );
 lblDecay.setMnemonic( KeyEvent.VK_D, txtDecay );
-lblAccent.setText( _( "Accent" ) );
+lblAccent.setText( gettext( "Accent" ) );
 lblAccent.setMnemonic( KeyEvent.VK_A, txtAccent );
 
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
-btnApply.setText( _( "Apply to current track" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
+btnApply.setText( gettext( "Apply to current track" ) );
 btnApply.setMnemonic( KeyEvent.VK_C );
 
-setTitle( _( "Default Singer Style" ) );
+setTitle( gettext( "Default Singer Style" ) );
         }
 
         public int getPMBendDepth()
@@ -166,7 +166,7 @@ txtAccent.setText( value + "" );
 return m_apply_current_track;
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }
@@ -324,7 +324,7 @@ setDEMaccent( dem_accent[index] );
 
         public void btnApply_Click( Object sender, BEventArgs e )
         {
-if ( AppManager.showMessageBox( _( "Would you like to change singer style for all events?" ),
+if ( AppManager.showMessageBox( gettext( "Would you like to change singer style for all events?" ),
                       FormMain._APP_NAME,
                       org.kbinani.windows.forms.Utility.MSGBOX_YES_NO_OPTION,
                       org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE ) == BDialogResult.YES ) {

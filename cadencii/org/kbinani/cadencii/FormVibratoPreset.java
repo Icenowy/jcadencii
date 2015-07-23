@@ -446,32 +446,32 @@ buttonOk.clickEvent.add( new BEventHandler( this, "buttonOk_Click" ) );
 buttonCancel.clickEvent.add( new BEventHandler( this, "buttonCancel_Click" ) );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }
 
         private void applyLanguage()
         {
-this.setTitle( _( "Vibrato preset" ) );
+this.setTitle( gettext( "Vibrato preset" ) );
 
-labelPresets.setText( _( "List of vibrato preset" ) );
+labelPresets.setText( gettext( "List of vibrato preset" ) );
 
-groupEdit.setTitle( _( "Edit" ) );
-labelName.setText( _( "Name" ) );
+groupEdit.setTitle( gettext( "Edit" ) );
+labelName.setText( gettext( "Name" ) );
 
-groupPreview.setTitle( _( "Preview" ) );
-labelDepthCurve.setText( _( "Depth curve" ) );
-labelRateCurve.setText( _( "Rate curve" ) );
-labelResulting.setText( _( "Resulting pitch bend" ) );
+groupPreview.setTitle( gettext( "Preview" ) );
+labelDepthCurve.setText( gettext( "Depth curve" ) );
+labelRateCurve.setText( gettext( "Rate curve" ) );
+labelResulting.setText( gettext( "Resulting pitch bend" ) );
 
-buttonAdd.setText( _( "Add" ) );
-buttonRemove.setText( _( "Remove" ) );
-buttonUp.setText( _( "Up" ) );
-buttonDown.setText( _( "Down" ) );
+buttonAdd.setText( gettext( "Add" ) );
+buttonRemove.setText( gettext( "Remove" ) );
+buttonUp.setText( gettext( "Up" ) );
+buttonDown.setText( gettext( "Down" ) );
 
-buttonOk.setText( _( "OK" ) );
-buttonCancel.setText( _( "Cancel" ) );
+buttonOk.setText( gettext( "OK" ) );
+buttonCancel.setText( gettext( "Cancel" ) );
         }
 
         /// <summary>

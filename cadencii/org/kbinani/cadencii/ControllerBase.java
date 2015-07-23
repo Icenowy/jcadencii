@@ -28,7 +28,7 @@ public abstract class ControllerBase
     /// </summary>
     /// <param name="message">翻訳元の英語のメッセージ文字列．</param>
     /// <returns>翻訳後のメッセージ文字列．デフォルトではmessageと同じ値を返します．</returns>
-    /*protected static String _( String message )
+    /*protected static String gettext( String message )
     {
         return Messaging.getMessage( message );
     }*/

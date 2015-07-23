@@ -114,13 +114,13 @@ public class ExceptionNotifyFormController extends ControllerBase implements Exc
 
     protected void applyLanguage()
     {
-        this.ui.setTitle( _( "Problem Report for Cadencii" ) );
-        this.ui.setDescription( _( "Problem Details" ) );
-        this.ui.setCancelButtonText( _( "Cancel" ) );
-        this.ui.setSendButtonText( _( "Send to Developper" ) );
+        this.ui.setTitle( gettext( "Problem Report for Cadencii" ) );
+        this.ui.setDescription( gettext( "Problem Details" ) );
+        this.ui.setCancelButtonText( gettext( "Cancel" ) );
+        this.ui.setSendButtonText( gettext( "Send to Developper" ) );
     }
 
-    protected String _( String id )
+    protected String gettext( String id )
     {
         return Messaging.getMessage( id );
     }

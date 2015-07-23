@@ -1736,13 +1736,13 @@ if ( count > 0 ) {
         menu.setToolTipText( item.file );
 
         BgmMenuItem menu_remove = new BgmMenuItem( i );
-        menu_remove.setText( _( "Remove" ) );
+        menu_remove.setText( gettext( "Remove" ) );
         menu_remove.setToolTipText( item.file );
         menu_remove.clickEvent.add( new BEventHandler( this, "handleBgmRemove_Click" ) );
         menu.add( menu_remove );
 
         BgmMenuItem menu_start_after_premeasure = new BgmMenuItem( i );
-        menu_start_after_premeasure.setText( _( "Start After Premeasure" ) );
+        menu_start_after_premeasure.setText( gettext( "Start After Premeasure" ) );
         menu_start_after_premeasure.setName( "menu_start_after_premeasure" + i );
         menu_start_after_premeasure.setCheckOnClick( true );
         menu_start_after_premeasure.setSelected( item.startAfterPremeasure );
@@ -1750,8 +1750,8 @@ if ( count > 0 ) {
         menu.add( menu_start_after_premeasure );
 
         BgmMenuItem menu_offset_second = new BgmMenuItem( i );
-        menu_offset_second.setText( _( "Set Offset Seconds" ) );
-        menu_offset_second.setToolTipText( item.readOffsetSeconds + " " + _( "seconds" ) );
+        menu_offset_second.setText( gettext( "Set Offset Seconds" ) );
+        menu_offset_second.setToolTipText( item.readOffsetSeconds + " " + gettext( "seconds" ) );
         menu_offset_second.clickEvent.add( new BEventHandler( this, "handleBgmOffsetSeconds_Click" ) );
         menu.add( menu_offset_second );
 
@@ -1760,7 +1760,7 @@ if ( count > 0 ) {
     menuTrackBgm.addSeparator();
 }
 BMenuItem menu_add = new BMenuItem();
-menu_add.setText( _( "Add" ) );
+menu_add.setText( gettext( "Add" ) );
 menu_add.clickEvent.add( new BEventHandler( this, "handleBgmAdd_Click" ) );
 menuTrackBgm.add( menu_add );
         }
@@ -2234,8 +2234,8 @@ if ( mEdited ) {
     } else {
         file = PortUtil.getFileName( file );
     }
-    BDialogResult dr = AppManager.showMessageBox( _( "Save this sequence?" ),
-                                                  _( "Affirmation" ),
+    BDialogResult dr = AppManager.showMessageBox( gettext( "Save this sequence?" ),
+                                                  gettext( "Affirmation" ),
                                                   org.kbinani.windows.forms.Utility.MSGBOX_YES_NO_CANCEL_OPTION,
                                                   org.kbinani.windows.forms.Utility.MSGBOX_QUESTION_MESSAGE );
     if ( dr == BDialogResult.YES ) {
@@ -3239,8 +3239,8 @@ KeySoundPlayer.play( note );
         {
 openXmlVsqDialog.clearChoosableFileFilter();
 try {
-    openXmlVsqDialog.addFileFilter( _( "XML-VSQ Format(*.xvsq)|*.xvsq" ) );
-    openXmlVsqDialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    openXmlVsqDialog.addFileFilter( gettext( "XML-VSQ Format(*.xvsq)|*.xvsq" ) );
+    openXmlVsqDialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".applyLanguage; ex=" + ex + "\n" );
     openXmlVsqDialog.addFileFilter( "XML-VSQ Format(*.xvsq)|*.xvsq" );
@@ -3249,8 +3249,8 @@ try {
 
 saveXmlVsqDialog.clearChoosableFileFilter();
 try {
-    saveXmlVsqDialog.addFileFilter( _( "XML-VSQ Format(*.xvsq)|*.xvsq" ) );
-    saveXmlVsqDialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    saveXmlVsqDialog.addFileFilter( gettext( "XML-VSQ Format(*.xvsq)|*.xvsq" ) );
+    saveXmlVsqDialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".applyLanguage; ex=" + ex + "\n" );
     saveXmlVsqDialog.addFileFilter( "XML-VSQ Format(*.xvsq)|*.xvsq" );
@@ -3259,8 +3259,8 @@ try {
 
 openUstDialog.clearChoosableFileFilter();
 try {
-    openUstDialog.addFileFilter( _( "UTAU Script Format(*.ust)|*.ust" ) );
-    openUstDialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    openUstDialog.addFileFilter( gettext( "UTAU Script Format(*.ust)|*.ust" ) );
+    openUstDialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".applyLanguage; ex=" + ex + "\n" );
     openUstDialog.addFileFilter( "UTAU Script Format(*.ust)|*.ust" );
@@ -3269,9 +3269,9 @@ try {
 
 openMidiDialog.clearChoosableFileFilter();
 try {
-    openMidiDialog.addFileFilter( _( "MIDI Format(*.mid)|*.mid" ) );
-    openMidiDialog.addFileFilter( _( "VSQ Format(*.vsq)|*.vsq" ) );
-    openMidiDialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    openMidiDialog.addFileFilter( gettext( "MIDI Format(*.mid)|*.mid" ) );
+    openMidiDialog.addFileFilter( gettext( "VSQ Format(*.vsq)|*.vsq" ) );
+    openMidiDialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".applyLanguage; ex=" + ex + "\n" );
     openMidiDialog.addFileFilter( "MIDI Format(*.mid)|*.mid" );
@@ -3281,9 +3281,9 @@ try {
 
 saveMidiDialog.clearChoosableFileFilter();
 try {
-    saveMidiDialog.addFileFilter( _( "MIDI Format(*.mid)|*.mid" ) );
-    saveMidiDialog.addFileFilter( _( "VSQ Format(*.vsq)|*.vsq" ) );
-    saveMidiDialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    saveMidiDialog.addFileFilter( gettext( "MIDI Format(*.mid)|*.mid" ) );
+    saveMidiDialog.addFileFilter( gettext( "VSQ Format(*.vsq)|*.vsq" ) );
+    saveMidiDialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".applyLanguage; ex=" + ex + "\n" );
     saveMidiDialog.addFileFilter( "MIDI Format(*.mid)|*.mid" );
@@ -3293,8 +3293,8 @@ try {
 
 openWaveDialog.clearChoosableFileFilter();
 try {
-    openWaveDialog.addFileFilter( _( "Wave File(*.wav)|*.wav" ) );
-    openWaveDialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    openWaveDialog.addFileFilter( gettext( "Wave File(*.wav)|*.wav" ) );
+    openWaveDialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".applyLanguage; ex=" + ex + "\n" );
     openWaveDialog.addFileFilter( "Wave File(*.wav)|*.wav" );
@@ -3304,136 +3304,136 @@ try {
 
 updateGameControlerStatus( this, new BEventArgs() );
 
-stripBtnPointer.setText( _( "Pointer" ) );
-stripBtnPointer.setToolTipText( _( "Pointer" ) );
-stripBtnPencil.setText( _( "Pencil" ) );
-stripBtnPencil.setToolTipText( _( "Pencil" ) );
-stripBtnLine.setText( _( "Line" ) );
-stripBtnLine.setToolTipText( _( "Line" ) );
-stripBtnEraser.setText( _( "Eraser" ) );
-stripBtnEraser.setToolTipText( _( "Eraser" ) );
-//stripBtnCurve.setText( _( "Curve" ) );
-stripBtnCurve.setToolTipText( _( "Curve" ) );
-//stripBtnGrid.setText( _( "Grid" ) );
-stripBtnGrid.setToolTipText( _( "Grid" ) );
+stripBtnPointer.setText( gettext( "Pointer" ) );
+stripBtnPointer.setToolTipText( gettext( "Pointer" ) );
+stripBtnPencil.setText( gettext( "Pencil" ) );
+stripBtnPencil.setToolTipText( gettext( "Pencil" ) );
+stripBtnLine.setText( gettext( "Line" ) );
+stripBtnLine.setToolTipText( gettext( "Line" ) );
+stripBtnEraser.setText( gettext( "Eraser" ) );
+stripBtnEraser.setToolTipText( gettext( "Eraser" ) );
+//stripBtnCurve.setText( gettext( "Curve" ) );
+stripBtnCurve.setToolTipText( gettext( "Curve" ) );
+//stripBtnGrid.setText( gettext( "Grid" ) );
+stripBtnGrid.setToolTipText( gettext( "Grid" ) );
 if ( AppManager.isPlaying() ) {
-    stripBtnPlay.setText( _( "Stop" ) );
+    stripBtnPlay.setText( gettext( "Stop" ) );
 } else {
-    stripBtnPlay.setText( _( "Play" ) );
+    stripBtnPlay.setText( gettext( "Play" ) );
 }
 
 
-menuFile.setText( _( "File" ) );
+menuFile.setText( gettext( "File" ) );
 menuFile.setMnemonic( KeyEvent.VK_F );
-menuFileNew.setText( _( "New" ) );
+menuFileNew.setText( gettext( "New" ) );
 menuFileNew.setMnemonic( KeyEvent.VK_N );
-menuFileOpen.setText( _( "Open" ) );
+menuFileOpen.setText( gettext( "Open" ) );
 menuFileOpen.setMnemonic( KeyEvent.VK_O );
-menuFileOpenVsq.setText( _( "Open VSQ/Vocaloid MIDI" ) );
+menuFileOpenVsq.setText( gettext( "Open VSQ/Vocaloid MIDI" ) );
 menuFileOpenVsq.setMnemonic( KeyEvent.VK_V );
-menuFileOpenUst.setText( _( "Open UTAU project file" ) );
+menuFileOpenUst.setText( gettext( "Open UTAU project file" ) );
 menuFileOpenUst.setMnemonic( KeyEvent.VK_U );
-menuFileSave.setText( _( "Save" ) );
+menuFileSave.setText( gettext( "Save" ) );
 menuFileSave.setMnemonic( KeyEvent.VK_S );
-menuFileSaveNamed.setText( _( "Save as" ) );
+menuFileSaveNamed.setText( gettext( "Save as" ) );
 menuFileSaveNamed.setMnemonic( KeyEvent.VK_A );
-menuFileImport.setText( _( "Import" ) );
+menuFileImport.setText( gettext( "Import" ) );
 menuFileImport.setMnemonic( KeyEvent.VK_I );
-menuFileImportVsq.setText( _( "VSQ / Vocaloid Midi" ) );
-menuFileExport.setText( _( "Export" ) );
+menuFileImportVsq.setText( gettext( "VSQ / Vocaloid Midi" ) );
+menuFileExport.setText( gettext( "Export" ) );
 menuFileExport.setMnemonic( KeyEvent.VK_E );
-menuFileExportWave.setText( _( "WAVE" ) );
-menuFileExportParaWave.setText( _( "Serial numbered WAVEs" ) );
-menuFileExportUst.setText( _( "UTAU project file" ) );
-menuFileExportVxt.setText( _( "Metatext for vConnect" ) );
-menuFileRecent.setText( _( "Open Recent" ) );
+menuFileExportWave.setText( gettext( "WAVE" ) );
+menuFileExportParaWave.setText( gettext( "Serial numbered WAVEs" ) );
+menuFileExportUst.setText( gettext( "UTAU project file" ) );
+menuFileExportVxt.setText( gettext( "Metatext for vConnect" ) );
+menuFileRecent.setText( gettext( "Open Recent" ) );
 menuFileRecent.setMnemonic( KeyEvent.VK_R );
-menuFileRecentClear.setText( _( "Clear Menu" ) );
-menuFileQuit.setText( _( "Quit" ) );
+menuFileRecentClear.setText( gettext( "Clear Menu" ) );
+menuFileQuit.setText( gettext( "Quit" ) );
 menuFileQuit.setMnemonic( KeyEvent.VK_Q );
 
-menuEdit.setText( _( "Edit" ) );
+menuEdit.setText( gettext( "Edit" ) );
 menuEdit.setMnemonic( KeyEvent.VK_E );
-menuEditUndo.setText( _( "Undo" ) );
+menuEditUndo.setText( gettext( "Undo" ) );
 menuEditUndo.setMnemonic( KeyEvent.VK_U );
-menuEditRedo.setText( _( "Redo" ) );
+menuEditRedo.setText( gettext( "Redo" ) );
 menuEditRedo.setMnemonic( KeyEvent.VK_R );
-menuEditCut.setText( _( "Cut" ) );
+menuEditCut.setText( gettext( "Cut" ) );
 menuEditCut.setMnemonic( KeyEvent.VK_T );
-menuEditCopy.setText( _( "Copy" ) );
+menuEditCopy.setText( gettext( "Copy" ) );
 menuEditCopy.setMnemonic( KeyEvent.VK_C );
-menuEditPaste.setText( _( "Paste" ) );
+menuEditPaste.setText( gettext( "Paste" ) );
 menuEditPaste.setMnemonic( KeyEvent.VK_P );
-menuEditDelete.setText( _( "Delete" ) );
+menuEditDelete.setText( gettext( "Delete" ) );
 menuEditDelete.setMnemonic( KeyEvent.VK_D );
-menuEditAutoNormalizeMode.setText( _( "Auto normalize mode" ) );
+menuEditAutoNormalizeMode.setText( gettext( "Auto normalize mode" ) );
 menuEditAutoNormalizeMode.setMnemonic( KeyEvent.VK_N );
-menuEditSelectAll.setText( _( "Select All" ) );
+menuEditSelectAll.setText( gettext( "Select All" ) );
 menuEditSelectAll.setMnemonic( KeyEvent.VK_A );
-menuEditSelectAllEvents.setText( _( "Select all events" ) );
+menuEditSelectAllEvents.setText( gettext( "Select all events" ) );
 menuEditSelectAllEvents.setMnemonic( KeyEvent.VK_E );
 
-menuVisual.setText( _( "View" ) );
+menuVisual.setText( gettext( "View" ) );
 menuVisual.setMnemonic( KeyEvent.VK_V );
-menuVisualControlTrack.setText( _( "Control track" ) );
+menuVisualControlTrack.setText( gettext( "Control track" ) );
 menuVisualControlTrack.setMnemonic( KeyEvent.VK_C );
-menuVisualMixer.setText( _( "Mixer" ) );
+menuVisualMixer.setText( gettext( "Mixer" ) );
 menuVisualMixer.setMnemonic( KeyEvent.VK_X );
-menuVisualWaveform.setText( _( "Waveform" ) );
+menuVisualWaveform.setText( gettext( "Waveform" ) );
 menuVisualWaveform.setMnemonic( KeyEvent.VK_W );
-menuVisualProperty.setText( _( "Property window" ) );
-menuVisualOverview.setText( _( "Navigation" ) );
+menuVisualProperty.setText( gettext( "Property window" ) );
+menuVisualOverview.setText( gettext( "Navigation" ) );
 menuVisualOverview.setMnemonic( KeyEvent.VK_V );
-menuVisualGridline.setText( _( "Grid line" ) );
+menuVisualGridline.setText( gettext( "Grid line" ) );
 menuVisualGridline.setMnemonic( KeyEvent.VK_G );
-menuVisualStartMarker.setText( _( "Start marker" ) );
+menuVisualStartMarker.setText( gettext( "Start marker" ) );
 menuVisualStartMarker.setMnemonic( KeyEvent.VK_S );
-menuVisualEndMarker.setText( _( "End marker" ) );
+menuVisualEndMarker.setText( gettext( "End marker" ) );
 menuVisualEndMarker.setMnemonic( KeyEvent.VK_E );
-menuVisualLyrics.setText( _( "Lyrics/Phoneme" ) );
+menuVisualLyrics.setText( gettext( "Lyrics/Phoneme" ) );
 menuVisualLyrics.setMnemonic( KeyEvent.VK_L );
-menuVisualNoteProperty.setText( _( "Note expression/vibrato" ) );
+menuVisualNoteProperty.setText( gettext( "Note expression/vibrato" ) );
 menuVisualNoteProperty.setMnemonic( KeyEvent.VK_N );
-menuVisualPitchLine.setText( _( "Pitch line" ) );
+menuVisualPitchLine.setText( gettext( "Pitch line" ) );
 menuVisualPitchLine.setMnemonic( KeyEvent.VK_P );
-menuVisualPluginUi.setText( _( "VSTi plugin UI" ) );
+menuVisualPluginUi.setText( gettext( "VSTi plugin UI" ) );
 menuVisualPluginUi.setMnemonic( KeyEvent.VK_U );
-menuVisualIconPalette.setText( _( "Icon palette" ) );
+menuVisualIconPalette.setText( gettext( "Icon palette" ) );
 menuVisualIconPalette.setMnemonic( KeyEvent.VK_I );
 
-menuJob.setText( _( "Job" ) );
+menuJob.setText( gettext( "Job" ) );
 menuJob.setMnemonic( KeyEvent.VK_J );
-menuJobNormalize.setText( _( "Normalize notes" ) );
+menuJobNormalize.setText( gettext( "Normalize notes" ) );
 menuJobNormalize.setMnemonic( KeyEvent.VK_N );
-menuJobInsertBar.setText( _( "Insert bars" ) );
+menuJobInsertBar.setText( gettext( "Insert bars" ) );
 menuJobInsertBar.setMnemonic( KeyEvent.VK_I );
-menuJobDeleteBar.setText( _( "Delete bars" ) );
+menuJobDeleteBar.setText( gettext( "Delete bars" ) );
 menuJobDeleteBar.setMnemonic( KeyEvent.VK_D );
-menuJobRandomize.setText( _( "Randomize" ) );
+menuJobRandomize.setText( gettext( "Randomize" ) );
 menuJobRandomize.setMnemonic( KeyEvent.VK_R );
-menuJobConnect.setText( _( "Connect notes" ) );
+menuJobConnect.setText( gettext( "Connect notes" ) );
 menuJobConnect.setMnemonic( KeyEvent.VK_C );
-menuJobLyric.setText( _( "Insert lyrics" ) );
+menuJobLyric.setText( gettext( "Insert lyrics" ) );
 menuJobLyric.setMnemonic( KeyEvent.VK_L );
 
-menuTrack.setText( _( "Track" ) );
+menuTrack.setText( gettext( "Track" ) );
 menuTrack.setMnemonic( KeyEvent.VK_T );
-menuTrackOn.setText( _( "Track on" ) );
+menuTrackOn.setText( gettext( "Track on" ) );
 menuTrackOn.setMnemonic( KeyEvent.VK_K );
-menuTrackAdd.setText( _( "Add track" ) );
+menuTrackAdd.setText( gettext( "Add track" ) );
 menuTrackAdd.setMnemonic( KeyEvent.VK_A );
-menuTrackCopy.setText( _( "Copy track" ) );
+menuTrackCopy.setText( gettext( "Copy track" ) );
 menuTrackCopy.setMnemonic( KeyEvent.VK_C );
-menuTrackChangeName.setText( _( "Rename track" ) );
-menuTrackDelete.setText( _( "Delete track" ) );
+menuTrackChangeName.setText( gettext( "Rename track" ) );
+menuTrackDelete.setText( gettext( "Delete track" ) );
 menuTrackDelete.setMnemonic( KeyEvent.VK_D );
-menuTrackRenderCurrent.setText( _( "Render current track" ) );
+menuTrackRenderCurrent.setText( gettext( "Render current track" ) );
 menuTrackRenderCurrent.setMnemonic( KeyEvent.VK_T );
-menuTrackRenderAll.setText( _( "Render all tracks" ) );
+menuTrackRenderAll.setText( gettext( "Render all tracks" ) );
 menuTrackRenderAll.setMnemonic( KeyEvent.VK_S );
-menuTrackOverlay.setText( _( "Overlay" ) );
+menuTrackOverlay.setText( gettext( "Overlay" ) );
 menuTrackOverlay.setMnemonic( KeyEvent.VK_O );
-menuTrackRenderer.setText( _( "Renderer" ) );
+menuTrackRenderer.setText( gettext( "Renderer" ) );
 menuTrackRenderer.setMnemonic( KeyEvent.VK_R );
 menuTrackRendererVOCALOID1.setMnemonic( KeyEvent.VK_1 );
 menuTrackRendererVOCALOID2.setMnemonic( KeyEvent.VK_3 );
@@ -3441,194 +3441,194 @@ menuTrackRendererUtau.setMnemonic( KeyEvent.VK_4 );
 menuTrackRendererVCNT.setMnemonic( KeyEvent.VK_5 );
 menuTrackRendererAquesTone.setMnemonic( KeyEvent.VK_6 );
 
-menuLyric.setText( _( "Lyrics" ) );
+menuLyric.setText( gettext( "Lyrics" ) );
 menuLyric.setMnemonic( KeyEvent.VK_L );
-menuLyricExpressionProperty.setText( _( "Note expression property" ) );
+menuLyricExpressionProperty.setText( gettext( "Note expression property" ) );
 menuLyricExpressionProperty.setMnemonic( KeyEvent.VK_E );
-menuLyricVibratoProperty.setText( _( "Note vibrato property" ) );
+menuLyricVibratoProperty.setText( gettext( "Note vibrato property" ) );
 menuLyricVibratoProperty.setMnemonic( KeyEvent.VK_V );
-menuLyricApplyUtauParameters.setText( _( "Apply UTAU Parameters" ) );
+menuLyricApplyUtauParameters.setText( gettext( "Apply UTAU Parameters" ) );
 menuLyricApplyUtauParameters.setMnemonic( KeyEvent.VK_A );
-menuLyricPhonemeTransformation.setText( _( "Phoneme transformation" ) );
+menuLyricPhonemeTransformation.setText( gettext( "Phoneme transformation" ) );
 menuLyricPhonemeTransformation.setMnemonic( KeyEvent.VK_T );
-menuLyricDictionary.setText( _( "User word dictionary" ) );
+menuLyricDictionary.setText( gettext( "User word dictionary" ) );
 menuLyricDictionary.setMnemonic( KeyEvent.VK_C );
-menuLyricCopyVibratoToPreset.setText( _( "Copy vibrato config to preset" ) );
+menuLyricCopyVibratoToPreset.setText( gettext( "Copy vibrato config to preset" ) );
 menuLyricCopyVibratoToPreset.setMnemonic( KeyEvent.VK_P );
 
-menuScript.setText( _( "Script" ) );
+menuScript.setText( gettext( "Script" ) );
 menuScript.setMnemonic( KeyEvent.VK_C );
-menuScriptUpdate.setText( _( "Update script list" ) );
+menuScriptUpdate.setText( gettext( "Update script list" ) );
 menuScriptUpdate.setMnemonic( KeyEvent.VK_U );
 
-menuSetting.setText( _( "Setting" ) );
+menuSetting.setText( gettext( "Setting" ) );
 menuSetting.setMnemonic( KeyEvent.VK_S );
-menuSettingPreference.setText( _( "Preference" ) );
+menuSettingPreference.setText( gettext( "Preference" ) );
 menuSettingPreference.setMnemonic( KeyEvent.VK_P );
-menuSettingGameControler.setText( _( "Game controler" ) );
+menuSettingGameControler.setText( gettext( "Game controler" ) );
 menuSettingGameControler.setMnemonic( KeyEvent.VK_G );
-menuSettingGameControlerLoad.setText( _( "Load" ) );
+menuSettingGameControlerLoad.setText( gettext( "Load" ) );
 menuSettingGameControlerLoad.setMnemonic( KeyEvent.VK_L );
-menuSettingGameControlerRemove.setText( _( "Remove" ) );
+menuSettingGameControlerRemove.setText( gettext( "Remove" ) );
 menuSettingGameControlerRemove.setMnemonic( KeyEvent.VK_R );
-menuSettingGameControlerSetting.setText( _( "Setting" ) );
+menuSettingGameControlerSetting.setText( gettext( "Setting" ) );
 menuSettingGameControlerSetting.setMnemonic( KeyEvent.VK_S );
-menuSettingSequence.setText( _( "Sequence config" ) );
+menuSettingSequence.setText( gettext( "Sequence config" ) );
 menuSettingSequence.setMnemonic( KeyEvent.VK_S );
-menuSettingShortcut.setText( _( "Shortcut key" ) );
+menuSettingShortcut.setText( gettext( "Shortcut key" ) );
 menuSettingShortcut.setMnemonic( KeyEvent.VK_K );
-menuSettingDefaultSingerStyle.setText( _( "Singing style defaults" ) );
+menuSettingDefaultSingerStyle.setText( gettext( "Singing style defaults" ) );
 menuSettingDefaultSingerStyle.setMnemonic( KeyEvent.VK_D );
-menuSettingPositionQuantize.setText( _( "Quantize" ) );
+menuSettingPositionQuantize.setText( gettext( "Quantize" ) );
 menuSettingPositionQuantize.setMnemonic( KeyEvent.VK_Q );
-menuSettingPositionQuantizeOff.setText( _( "Off" ) );
-menuSettingPositionQuantizeTriplet.setText( _( "Triplet" ) );
-//menuSettingSingerProperty.setText( _( "Singer Properties" ) );
+menuSettingPositionQuantizeOff.setText( gettext( "Off" ) );
+menuSettingPositionQuantizeTriplet.setText( gettext( "Triplet" ) );
+//menuSettingSingerProperty.setText( gettext( "Singer Properties" ) );
 //menuSettingSingerProperty.setMnemonic( KeyEvent.VK_S );
-menuSettingPaletteTool.setText( _( "Palette Tool" ) );
+menuSettingPaletteTool.setText( gettext( "Palette Tool" ) );
 menuSettingPaletteTool.setMnemonic( KeyEvent.VK_T );
-menuSettingVibratoPreset.setText( _( "Vibrato preset" ) );
+menuSettingVibratoPreset.setText( gettext( "Vibrato preset" ) );
 menuSettingVibratoPreset.setMnemonic( KeyEvent.VK_V );
 
-menuWindow.setText( _( "Window" ) );
-menuWindowMinimize.setText( _( "Minimize" ) );
+menuWindow.setText( gettext( "Window" ) );
+menuWindowMinimize.setText( gettext( "Minimize" ) );
 
-menuHelp.setText( _( "Help" ) );
+menuHelp.setText( gettext( "Help" ) );
 menuHelp.setMnemonic( KeyEvent.VK_H );
-menuHelpLog.setText( _( "Log" ) );
+menuHelpLog.setText( gettext( "Log" ) );
 menuHelpLog.setMnemonic( KeyEvent.VK_L );
-menuHelpLogSwitch.setText( Logger.isEnabled() ? _( "Disable" ) : _( "Enable" ) );
+menuHelpLogSwitch.setText( Logger.isEnabled() ? gettext( "Disable" ) : gettext( "Enable" ) );
 menuHelpLogSwitch.setMnemonic( KeyEvent.VK_L );
-menuHelpLogOpen.setText( _( "Open" ) );
+menuHelpLogOpen.setText( gettext( "Open" ) );
 menuHelpLogOpen.setMnemonic( KeyEvent.VK_O );
-menuHelpAbout.setText( _( "About Cadencii" ) );
+menuHelpAbout.setText( gettext( "About Cadencii" ) );
 menuHelpAbout.setMnemonic( KeyEvent.VK_A );
-menuHelpManual.setText( _( "Manual" ) + " (PDF)" );
+menuHelpManual.setText( gettext( "Manual" ) + " (PDF)" );
 
-menuHiddenCopy.setText( _( "Copy" ) );
-menuHiddenCut.setText( _( "Cut" ) );
-menuHiddenEditFlipToolPointerEraser.setText( _( "Chagne tool pointer / eraser" ) );
-menuHiddenEditFlipToolPointerPencil.setText( _( "Change tool pointer / pencil" ) );
-menuHiddenEditLyric.setText( _( "Start lyric input" ) );
-menuHiddenGoToEndMarker.setText( _( "GoTo end marker" ) );
-menuHiddenGoToStartMarker.setText( _( "Goto start marker" ) );
-menuHiddenLengthen.setText( _( "Lengthen" ) );
-menuHiddenMoveDown.setText( _( "Move down" ) );
-menuHiddenMoveLeft.setText( _( "Move left" ) );
-menuHiddenMoveRight.setText( _( "Move right" ) );
-menuHiddenMoveUp.setText( _( "Move up" ) );
-menuHiddenPaste.setText( _( "Paste" ) );
-menuHiddenPlayFromStartMarker.setText( _( "Play from start marker" ) );
-menuHiddenSelectBackward.setText( _( "Select backward" ) );
-menuHiddenSelectForward.setText( _( "Select forward" ) );
-menuHiddenShorten.setText( _( "Shorten" ) );
-menuHiddenTrackBack.setText( _( "Previous track" ) );
-menuHiddenTrackNext.setText( _( "Next track" ) );
-menuHiddenVisualBackwardParameter.setText( _( "Previous control curve" ) );
-menuHiddenVisualForwardParameter.setText( _( "Next control curve" ) );
-menuHiddenFlipCurveOnPianorollMode.setText( _( "Change pitch drawing mode" ) );
+menuHiddenCopy.setText( gettext( "Copy" ) );
+menuHiddenCut.setText( gettext( "Cut" ) );
+menuHiddenEditFlipToolPointerEraser.setText( gettext( "Chagne tool pointer / eraser" ) );
+menuHiddenEditFlipToolPointerPencil.setText( gettext( "Change tool pointer / pencil" ) );
+menuHiddenEditLyric.setText( gettext( "Start lyric input" ) );
+menuHiddenGoToEndMarker.setText( gettext( "GoTo end marker" ) );
+menuHiddenGoToStartMarker.setText( gettext( "Goto start marker" ) );
+menuHiddenLengthen.setText( gettext( "Lengthen" ) );
+menuHiddenMoveDown.setText( gettext( "Move down" ) );
+menuHiddenMoveLeft.setText( gettext( "Move left" ) );
+menuHiddenMoveRight.setText( gettext( "Move right" ) );
+menuHiddenMoveUp.setText( gettext( "Move up" ) );
+menuHiddenPaste.setText( gettext( "Paste" ) );
+menuHiddenPlayFromStartMarker.setText( gettext( "Play from start marker" ) );
+menuHiddenSelectBackward.setText( gettext( "Select backward" ) );
+menuHiddenSelectForward.setText( gettext( "Select forward" ) );
+menuHiddenShorten.setText( gettext( "Shorten" ) );
+menuHiddenTrackBack.setText( gettext( "Previous track" ) );
+menuHiddenTrackNext.setText( gettext( "Next track" ) );
+menuHiddenVisualBackwardParameter.setText( gettext( "Previous control curve" ) );
+menuHiddenVisualForwardParameter.setText( gettext( "Next control curve" ) );
+menuHiddenFlipCurveOnPianorollMode.setText( gettext( "Change pitch drawing mode" ) );
 
-cMenuPianoPointer.setText( _( "Arrow" ) );
+cMenuPianoPointer.setText( gettext( "Arrow" ) );
 cMenuPianoPointer.setMnemonic( KeyEvent.VK_A );
-cMenuPianoPencil.setText( _( "Pencil" ) );
+cMenuPianoPencil.setText( gettext( "Pencil" ) );
 cMenuPianoPencil.setMnemonic( KeyEvent.VK_W );
-cMenuPianoEraser.setText( _( "Eraser" ) );
+cMenuPianoEraser.setText( gettext( "Eraser" ) );
 cMenuPianoEraser.setMnemonic( KeyEvent.VK_E );
-cMenuPianoPaletteTool.setText( _( "Palette Tool" ) );
+cMenuPianoPaletteTool.setText( gettext( "Palette Tool" ) );
 
-cMenuPianoCurve.setText( _( "Curve" ) );
+cMenuPianoCurve.setText( gettext( "Curve" ) );
 cMenuPianoCurve.setMnemonic( KeyEvent.VK_V );
 
-cMenuPianoFixed.setText( _( "Note Fixed Length" ) );
+cMenuPianoFixed.setText( gettext( "Note Fixed Length" ) );
 cMenuPianoFixed.setMnemonic( KeyEvent.VK_N );
-cMenuPianoFixedTriplet.setText( _( "Triplet" ) );
-cMenuPianoFixedOff.setText( _( "Off" ) );
-cMenuPianoFixedDotted.setText( _( "Dot" ) );
-cMenuPianoQuantize.setText( _( "Quantize" ) );
+cMenuPianoFixedTriplet.setText( gettext( "Triplet" ) );
+cMenuPianoFixedOff.setText( gettext( "Off" ) );
+cMenuPianoFixedDotted.setText( gettext( "Dot" ) );
+cMenuPianoQuantize.setText( gettext( "Quantize" ) );
 cMenuPianoQuantize.setMnemonic( KeyEvent.VK_Q );
-cMenuPianoQuantizeTriplet.setText( _( "Triplet" ) );
-cMenuPianoQuantizeOff.setText( _( "Off" ) );
-cMenuPianoGrid.setText( _( "Show/Hide Grid Line" ) );
+cMenuPianoQuantizeTriplet.setText( gettext( "Triplet" ) );
+cMenuPianoQuantizeOff.setText( gettext( "Off" ) );
+cMenuPianoGrid.setText( gettext( "Show/Hide Grid Line" ) );
 cMenuPianoGrid.setMnemonic( KeyEvent.VK_S );
 
-cMenuPianoUndo.setText( _( "Undo" ) );
+cMenuPianoUndo.setText( gettext( "Undo" ) );
 cMenuPianoUndo.setMnemonic( KeyEvent.VK_U );
-cMenuPianoRedo.setText( _( "Redo" ) );
+cMenuPianoRedo.setText( gettext( "Redo" ) );
 cMenuPianoRedo.setMnemonic( KeyEvent.VK_R );
 
-cMenuPianoCut.setText( _( "Cut" ) );
+cMenuPianoCut.setText( gettext( "Cut" ) );
 cMenuPianoCut.setMnemonic( KeyEvent.VK_T );
-cMenuPianoPaste.setText( _( "Paste" ) );
+cMenuPianoPaste.setText( gettext( "Paste" ) );
 cMenuPianoPaste.setMnemonic( KeyEvent.VK_P );
-cMenuPianoCopy.setText( _( "Copy" ) );
+cMenuPianoCopy.setText( gettext( "Copy" ) );
 cMenuPianoCopy.setMnemonic( KeyEvent.VK_C );
-cMenuPianoDelete.setText( _( "Delete" ) );
+cMenuPianoDelete.setText( gettext( "Delete" ) );
 cMenuPianoDelete.setMnemonic( KeyEvent.VK_D );
 
-cMenuPianoSelectAll.setText( _( "Select All" ) );
+cMenuPianoSelectAll.setText( gettext( "Select All" ) );
 cMenuPianoSelectAll.setMnemonic( KeyEvent.VK_A );
-cMenuPianoSelectAllEvents.setText( _( "Select All Events" ) );
+cMenuPianoSelectAllEvents.setText( gettext( "Select All Events" ) );
 cMenuPianoSelectAllEvents.setMnemonic( KeyEvent.VK_E );
 
-cMenuPianoExpressionProperty.setText( _( "Note Expression Property" ) );
+cMenuPianoExpressionProperty.setText( gettext( "Note Expression Property" ) );
 cMenuPianoExpressionProperty.setMnemonic( KeyEvent.VK_P );
-cMenuPianoVibratoProperty.setText( _( "Note Vibrato Property" ) );
-cMenuPianoImportLyric.setText( _( "Insert Lyrics" ) );
+cMenuPianoVibratoProperty.setText( gettext( "Note Vibrato Property" ) );
+cMenuPianoImportLyric.setText( gettext( "Insert Lyrics" ) );
 cMenuPianoImportLyric.setMnemonic( KeyEvent.VK_P );
 
-cMenuTrackTabTrackOn.setText( _( "Track On" ) );
+cMenuTrackTabTrackOn.setText( gettext( "Track On" ) );
 cMenuTrackTabTrackOn.setMnemonic( KeyEvent.VK_K );
-cMenuTrackTabAdd.setText( _( "Add Track" ) );
+cMenuTrackTabAdd.setText( gettext( "Add Track" ) );
 cMenuTrackTabAdd.setMnemonic( KeyEvent.VK_A );
-cMenuTrackTabCopy.setText( _( "Copy Track" ) );
+cMenuTrackTabCopy.setText( gettext( "Copy Track" ) );
 cMenuTrackTabCopy.setMnemonic( KeyEvent.VK_C );
-cMenuTrackTabChangeName.setText( _( "Rename Track" ) );
-cMenuTrackTabDelete.setText( _( "Delete Track" ) );
+cMenuTrackTabChangeName.setText( gettext( "Rename Track" ) );
+cMenuTrackTabDelete.setText( gettext( "Delete Track" ) );
 cMenuTrackTabDelete.setMnemonic( KeyEvent.VK_D );
 
-cMenuTrackTabRenderCurrent.setText( _( "Render Current Track" ) );
+cMenuTrackTabRenderCurrent.setText( gettext( "Render Current Track" ) );
 cMenuTrackTabRenderCurrent.setMnemonic( KeyEvent.VK_T );
-cMenuTrackTabRenderAll.setText( _( "Render All Tracks" ) );
+cMenuTrackTabRenderAll.setText( gettext( "Render All Tracks" ) );
 cMenuTrackTabRenderAll.setMnemonic( KeyEvent.VK_S );
-cMenuTrackTabOverlay.setText( _( "Overlay" ) );
+cMenuTrackTabOverlay.setText( gettext( "Overlay" ) );
 cMenuTrackTabOverlay.setMnemonic( KeyEvent.VK_O );
-cMenuTrackTabRenderer.setText( _( "Renderer" ) );
+cMenuTrackTabRenderer.setText( gettext( "Renderer" ) );
 cMenuTrackTabRenderer.setMnemonic( KeyEvent.VK_R );
 
-cMenuTrackSelectorPointer.setText( _( "Arrow" ) );
+cMenuTrackSelectorPointer.setText( gettext( "Arrow" ) );
 cMenuTrackSelectorPointer.setMnemonic( KeyEvent.VK_A );
-cMenuTrackSelectorPencil.setText( _( "Pencil" ) );
+cMenuTrackSelectorPencil.setText( gettext( "Pencil" ) );
 cMenuTrackSelectorPencil.setMnemonic( KeyEvent.VK_W );
-cMenuTrackSelectorLine.setText( _( "Line" ) );
+cMenuTrackSelectorLine.setText( gettext( "Line" ) );
 cMenuTrackSelectorLine.setMnemonic( KeyEvent.VK_L );
-cMenuTrackSelectorEraser.setText( _( "Eraser" ) );
+cMenuTrackSelectorEraser.setText( gettext( "Eraser" ) );
 cMenuTrackSelectorEraser.setMnemonic( KeyEvent.VK_E );
-cMenuTrackSelectorPaletteTool.setText( _( "Palette Tool" ) );
+cMenuTrackSelectorPaletteTool.setText( gettext( "Palette Tool" ) );
 
-cMenuTrackSelectorCurve.setText( _( "Curve" ) );
+cMenuTrackSelectorCurve.setText( gettext( "Curve" ) );
 cMenuTrackSelectorCurve.setMnemonic( KeyEvent.VK_V );
 
-cMenuTrackSelectorUndo.setText( _( "Undo" ) );
+cMenuTrackSelectorUndo.setText( gettext( "Undo" ) );
 cMenuTrackSelectorUndo.setMnemonic( KeyEvent.VK_U );
-cMenuTrackSelectorRedo.setText( _( "Redo" ) );
+cMenuTrackSelectorRedo.setText( gettext( "Redo" ) );
 cMenuTrackSelectorRedo.setMnemonic( KeyEvent.VK_R );
 
-cMenuTrackSelectorCut.setText( _( "Cut" ) );
+cMenuTrackSelectorCut.setText( gettext( "Cut" ) );
 cMenuTrackSelectorCut.setMnemonic( KeyEvent.VK_T );
-cMenuTrackSelectorCopy.setText( _( "Copy" ) );
+cMenuTrackSelectorCopy.setText( gettext( "Copy" ) );
 cMenuTrackSelectorCopy.setMnemonic( KeyEvent.VK_C );
-cMenuTrackSelectorPaste.setText( _( "Paste" ) );
+cMenuTrackSelectorPaste.setText( gettext( "Paste" ) );
 cMenuTrackSelectorPaste.setMnemonic( KeyEvent.VK_P );
-cMenuTrackSelectorDelete.setText( _( "Delete" ) );
+cMenuTrackSelectorDelete.setText( gettext( "Delete" ) );
 cMenuTrackSelectorDelete.setMnemonic( KeyEvent.VK_D );
-cMenuTrackSelectorDeleteBezier.setText( _( "Delete Bezier Point" ) );
+cMenuTrackSelectorDeleteBezier.setText( gettext( "Delete Bezier Point" ) );
 cMenuTrackSelectorDeleteBezier.setMnemonic( KeyEvent.VK_B );
 
-cMenuTrackSelectorSelectAll.setText( _( "Select All Events" ) );
+cMenuTrackSelectorSelectAll.setText( gettext( "Select All Events" ) );
 cMenuTrackSelectorSelectAll.setMnemonic( KeyEvent.VK_E );
 
-cMenuPositionIndicatorStartMarker.setText( _( "Set start marker" ) );
-cMenuPositionIndicatorEndMarker.setText( _( "Set end marker" ) );
+cMenuPositionIndicatorStartMarker.setText( gettext( "Set start marker" ) );
+cMenuPositionIndicatorEndMarker.setText( gettext( "Set end marker" ) );
 
 
 // Palette Tool
@@ -4021,7 +4021,7 @@ if ( AppManager.itemSelection.getEventCount() > 0 ) {
     for ( Iterator<ValuePair<Integer, SelectedTempoEntry>> itr = AppManager.itemSelection.getTempoIterator(); itr.hasNext(); ) {
         ValuePair<Integer, SelectedTempoEntry> item = itr.next();
         if ( item.getKey() <= 0 ) {
-            String msg = _( "Cannot remove first symbol of track!" );
+            String msg = gettext( "Cannot remove first symbol of track!" );
             statusLabel.setText( msg );
             return;
         }
@@ -4052,7 +4052,7 @@ if ( AppManager.itemSelection.getEventCount() > 0 ) {
         barcounts[count] = key;
         if ( key <= 0 ) {
             String msg = "Cannot remove first symbol of track!";
-            statusLabel.setText( _( msg ) );
+            statusLabel.setText( gettext( msg ) );
             return;
         }
         numerators[count] = -1;
@@ -4661,7 +4661,7 @@ InputBox ib = null;
 try{
     int selected = AppManager.getSelected();
     VsqFileEx vsq = AppManager.getVsqFile();
-    ib = new InputBox( _( "Input new name of track" ) );
+    ib = new InputBox( gettext( "Input new name of track" ) );
     ib.setResult( vsq.Track.get( selected ).getName() );
     ib.setLocation( getFormPreferedLocation( ib ) );
     BDialogResult dr = AppManager.showModalDialog( ib, this );
@@ -4719,7 +4719,7 @@ mTextBoxTrackName.selectAll();*/
 int selected = AppManager.getSelected();
 VsqFileEx vsq = AppManager.getVsqFile();
 if ( AppManager.showMessageBox(
-        PortUtil.formatMessage( _( "Do you wish to remove track? {0} : '{1}'" ), selected, vsq.Track.get( selected ).getName() ),
+        PortUtil.formatMessage( gettext( "Do you wish to remove track? {0} : '{1}'" ), selected, vsq.Track.get( selected ).getName() ),
         _APP_NAME,
         org.kbinani.windows.forms.Utility.MSGBOX_YES_NO_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_QUESTION_MESSAGE ) == BDialogResult.YES ) {
@@ -5160,7 +5160,7 @@ if ( AppManager.editorConfig.RecentFiles != null ) {
             itm.setText( short_name );
             String tooltip = "";
             if ( !available ) {
-                tooltip = _( "[file not found]" ) + " ";
+                tooltip = gettext( "[file not found]" ) + " ";
             }
             tooltip += item;
             itm.setToolTipText( tooltip );
@@ -5371,8 +5371,8 @@ if ( AppManager.editorConfig.UseProjectCache ) {
             } catch ( Exception ex ) {
                 Logger.write( FormMain.class + ".openVsqCor; ex=" + ex + "\n" );
                 serr.println( "FormMain#openVsqCor; ex=" + ex );
-                AppManager.showMessageBox( PortUtil.formatMessage( _( "cannot create cache directory: '{0}'" ), estimatedCacheDir ),
-                                           _( "Info." ),
+                AppManager.showMessageBox( PortUtil.formatMessage( gettext( "cannot create cache directory: '{0}'" ), estimatedCacheDir ),
+                                           gettext( "Info." ),
                                            PortUtil.OK_OPTION,
                                            org.kbinani.windows.forms.Utility.MSGBOX_INFORMATION_MESSAGE );
                 return true;
@@ -5413,8 +5413,8 @@ if ( AppManager.editorConfig.UseProjectCache ) {
         } catch ( Exception ex ) {
             Logger.write( FormMain.class + ".openVsqCor; ex=" + ex + "\n" );
             serr.println( "FormMain#openVsqCor; ex=" + ex );
-            AppManager.showMessageBox( PortUtil.formatMessage( _( "cannot create cache directory: '{0}'" ), estimatedCacheDir ),
-                                       _( "Info." ),
+            AppManager.showMessageBox( PortUtil.formatMessage( gettext( "cannot create cache directory: '{0}'" ), estimatedCacheDir ),
+                                       gettext( "Info." ),
                                        PortUtil.OK_OPTION,
                                        org.kbinani.windows.forms.Utility.MSGBOX_INFORMATION_MESSAGE );
             return true;
@@ -6262,7 +6262,7 @@ this.requestFocus();
         public void AppManager_PreviewAborted( Object sender, BEventArgs e )
         {
 stripBtnPlay.setIcon( new ImageIcon( Resources.get_control() ) );
-stripBtnPlay.setText( _( "Play" ) );
+stripBtnPlay.setText( gettext( "Play" ) );
 timer.stop();
 
 for ( int i = 0; i < AppManager.mDrawStartIndex.length; i++ ) {
@@ -6283,7 +6283,7 @@ double now = PortUtil.getCurrentTime();
 AppManager.mPreviewStartedTime = now;
 timer.start();
 stripBtnPlay.setIcon( new ImageIcon( Resources.get_control_pause() ) );
-stripBtnPlay.setText( _( "Stop" ) );
+stripBtnPlay.setText( gettext( "Stop" ) );
         }
 
         public void AppManager_SelectedToolChanged( Object sender, BEventArgs e )
@@ -8297,8 +8297,8 @@ if ( isEdited() ) {
     } else {
         file = PortUtil.getFileName( file );
     }
-    BDialogResult ret = AppManager.showMessageBox( _( "Save this sequence?" ),
-                                                   _( "Affirmation" ),
+    BDialogResult ret = AppManager.showMessageBox( gettext( "Save this sequence?" ),
+                                                   gettext( "Affirmation" ),
                                                    org.kbinani.windows.forms.Utility.MSGBOX_YES_NO_CANCEL_OPTION,
                                                    org.kbinani.windows.forms.Utility.MSGBOX_QUESTION_MESSAGE );
     if ( ret == BDialogResult.YES ) {
@@ -8475,7 +8475,7 @@ for ( int track = 1; track < AppManager.getVsqFile().Track.size(); track++ ) {
     if ( AppManager.getVsqFile().Track.get( track ).getEventCount() == 0 ) {
         AppManager.showMessageBox(
             PortUtil.formatMessage(
-                _( "Invalid note data.\nTrack {0} : {1}\n\n-> Piano roll : Blank sequence." ), track, AppManager.getVsqFile().Track.get( track ).getName()
+                gettext( "Invalid note data.\nTrack {0} : {1}\n\n-> Piano roll : Blank sequence." ), track, AppManager.getVsqFile().Track.get( track ).getName()
             ),
             _APP_NAME,
             org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION,
@@ -8763,8 +8763,8 @@ try {
     String first = AppManager.editorConfig.getLastUsedPathOut( "xml" );
     dialog = new BFileChooser();
     dialog.setSelectedFile( first );
-    dialog.addFileFilter( _( "MusicXML(*.xml)|*.xml" ) );
-    dialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    dialog.addFileFilter( gettext( "MusicXML(*.xml)|*.xml" ) );
+    dialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
     int result = AppManager.showModalDialog( dialog, false, this );
     if ( result != BFileChooser.APPROVE_OPTION ) {
         return;
@@ -8795,7 +8795,7 @@ BFolderBrowser file_dialog = null;
 try {
     file_dialog = new BFolderBrowser();
     String initial_dir = AppManager.editorConfig.getLastUsedPathOut( "wav" );
-    file_dialog.setDescription( _( "Choose destination directory" ) );
+    file_dialog.setDescription( gettext( "Choose destination directory" ) );
     file_dialog.setSelectedPath( initial_dir );
     BDialogResult ret = AppManager.showModalDialog( file_dialog, this );
     if ( ret != BDialogResult.OK ) {
@@ -8829,8 +8829,8 @@ int clockStart = vsq.config.StartMarkerEnabled ? vsq.config.StartMarker : 0;
 int clockEnd = vsq.config.EndMarkerEnabled ? vsq.config.EndMarker : vsq.TotalClocks + 240;
 if ( clockStart > clockEnd ) {
     AppManager.showMessageBox(
-        _( "invalid rendering region; start>=end" ),
-        _( "Error" ),
+        gettext( "invalid rendering region; start>=end" ),
+        gettext( "Error" ),
         PortUtil.OK_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_INFORMATION_MESSAGE );
     return;
@@ -8851,8 +8851,8 @@ FormWorker fw = null;
 try {
     fw = new FormWorker();
     fw.setupUi( new FormWorkerUi( fw ) );
-    fw.getUi().setTitle( _( "Synthesize" ) );
-    fw.getUi().setText( _( "now synthesizing..." ) );
+    fw.getUi().setTitle( gettext( "Synthesize" ) );
+    fw.getUi().setText( gettext( "now synthesizing..." ) );
 
     SynthesizeWorker worker = new SynthesizeWorker( this );
 
@@ -8890,9 +8890,9 @@ try {
     String last_path = AppManager.editorConfig.getLastUsedPathOut( "ust" );
     dialog = new BFileChooser();
     dialog.setSelectedFile( last_path );
-    dialog.setDialogTitle( _( "Export UTAU (*.ust)" ) );
-    dialog.addFileFilter( _( "UTAU Script Format(*.ust)|*.ust" ) );
-    dialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    dialog.setDialogTitle( gettext( "Export UTAU (*.ust)" ) );
+    dialog.addFileFilter( gettext( "UTAU Script Format(*.ust)|*.ust" ) );
+    dialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
     dialog_result = AppManager.showModalDialog( dialog, false, this );
     if ( dialog_result != BFileChooser.APPROVE_OPTION ) {
         return;
@@ -8947,9 +8947,9 @@ try {
     String last_path = AppManager.editorConfig.getLastUsedPathOut( "vsq" );
     dialog = new BFileChooser();
     dialog.setSelectedFile( last_path );
-    dialog.setDialogTitle( _( "Export VSQ (*.vsq)" ) );
-    dialog.addFileFilter( _( "VSQ Format(*.vsq)|*.vsq" ) );
-    dialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    dialog.setDialogTitle( gettext( "Export VSQ (*.vsq)" ) );
+    dialog.addFileFilter( gettext( "VSQ Format(*.vsq)|*.vsq" ) );
+    dialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
     dialog_result = AppManager.showModalDialog( dialog, false, this );
     if ( dialog_result != BFileChooser.APPROVE_OPTION ) {
         return;
@@ -8977,8 +8977,8 @@ tvsq.write( file_name, AppManager.editorConfig.PreSendTime, "Shift_JIS" );
 // UTAUの歌手が登録されていない場合は警告を表示
 if ( AppManager.editorConfig.UtauSingers.size() <= 0 ) {
     BDialogResult dr = AppManager.showMessageBox(
-        _( "UTAU singer not registered yet.\nContinue ?" ),
-        _( "Info" ),
+        gettext( "UTAU singer not registered yet.\nContinue ?" ),
+        gettext( "Info" ),
         org.kbinani.windows.forms.Utility.MSGBOX_YES_NO_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_INFORMATION_MESSAGE );
     if ( dr != BDialogResult.YES ) {
@@ -8996,9 +8996,9 @@ try {
     String last_path = AppManager.editorConfig.getLastUsedPathOut( "txt" );
     dialog = new BFileChooser();
     dialog.setSelectedFile( last_path );
-    dialog.setDialogTitle( _( "Metatext for vConnect" ) );
-    dialog.addFileFilter( _( "Text File(*.txt)|*.txt" ) );
-    dialog.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    dialog.setDialogTitle( gettext( "Metatext for vConnect" ) );
+    dialog.addFileFilter( gettext( "Text File(*.txt)|*.txt" ) );
+    dialog.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
     dialog_result = AppManager.showModalDialog( dialog, false, this );
     if ( dialog_result != BFileChooser.APPROVE_OPTION ) {
         return;
@@ -9071,9 +9071,9 @@ try {
     String last_path = AppManager.editorConfig.getLastUsedPathOut( "wav" );
     sfd = new BFileChooser();
     sfd.setSelectedFile( last_path );
-    sfd.setDialogTitle( _( "Wave Export" ) );
-    sfd.addFileFilter( _( "Wave File(*.wav)|*.wav" ) );
-    sfd.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    sfd.setDialogTitle( gettext( "Wave Export" ) );
+    sfd.addFileFilter( gettext( "Wave File(*.wav)|*.wav" ) );
+    sfd.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
     dialog_result = AppManager.showModalDialog( sfd, false, this );
     if ( dialog_result != BFileChooser.APPROVE_OPTION ) {
         return;
@@ -9096,8 +9096,8 @@ int clockStart = vsq.config.StartMarkerEnabled ? vsq.config.StartMarker : 0;
 int clockEnd = vsq.config.EndMarkerEnabled ? vsq.config.EndMarker : vsq.TotalClocks + 240;
 if ( clockStart > clockEnd ) {
     AppManager.showMessageBox(
-        _( "invalid rendering region; start>=end" ),
-        _( "Error" ),
+        gettext( "invalid rendering region; start>=end" ),
+        gettext( "Error" ),
         PortUtil.OK_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_INFORMATION_MESSAGE );
     return;
@@ -9126,8 +9126,8 @@ FormWorker fs = null;
 try {
     fs = new FormWorker();
     fs.setupUi( new FormWorkerUi( fs ) );
-    fs.getUi().setTitle( _( "Synthesize" ) );
-    fs.getUi().setText( _( "now synthesizing..." ) );
+    fs.getUi().setTitle( gettext( "Synthesize" ) );
+    fs.getUi().setText( gettext( "now synthesizing..." ) );
 
     SynthesizeWorker worker = new SynthesizeWorker( this );
 
@@ -9174,16 +9174,16 @@ try {
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".menuFileImportMidi_Click; ex=" + ex + "\n" );
     AppManager.showMessageBox(
-        _( "Invalid MIDI file." ),
-        _( "Error" ),
+        gettext( "Invalid MIDI file." ),
+        gettext( "Error" ),
         org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
     return;
 }
 if ( mf == null ) {
     AppManager.showMessageBox(
-        _( "Invalid MIDI file." ),
-        _( "Error" ),
+        gettext( "Invalid MIDI file." ),
+        gettext( "Error" ),
         org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
     return;
@@ -9658,7 +9658,7 @@ try {
     vsq = new VsqFileEx( filename, "Shift_JIS" );
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".menuFileImportVsq_Click; ex=" + ex + "\n" );
-    AppManager.showMessageBox( _( "Invalid VSQ/VOCALOID MIDI file" ), _( "Error" ), org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION, org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
+    AppManager.showMessageBox( gettext( "Invalid VSQ/VOCALOID MIDI file" ), gettext( "Error" ), org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION, org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
     return;
 }
 if ( mDialogMidiImportAndExport == null ) {
@@ -9927,8 +9927,8 @@ try {
 } catch ( Exception ex ) {
     Logger.write( FormMain.class + ".menuFileOpenVsq_Click; ex=" + ex + "\n" );
     AppManager.showMessageBox(
-        _( "Invalid VSQ/VOCALOID MIDI file" ),
-        _( "Error" ),
+        gettext( "Invalid VSQ/VOCALOID MIDI file" ),
+        gettext( "Error" ),
         org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
     return;
@@ -10406,7 +10406,7 @@ BKeys[] keysGoToFirst = AppManager.editorConfig.SpecialShortcutGoToFirst;
 if ( keysGoToFirst == null ) {
     keysGoToFirst = new BKeys[] { };
 }
-dict.put( _( "Go to the first" ), new ValuePair<String, BKeys[]>( "SpecialShortcutGoToFirst", keysGoToFirst ) );
+dict.put( gettext( "Go to the first" ), new ValuePair<String, BKeys[]>( "SpecialShortcutGoToFirst", keysGoToFirst ) );
 
 FormShortcutKeys form = null;
 try {
@@ -10895,7 +10895,7 @@ try {
         {
 InputBox dialog = null;
 try {
-    dialog = new InputBox( _( "input pre-measure" ) );
+    dialog = new InputBox( gettext( "input pre-measure" ) );
     int old_pre_measure = AppManager.getVsqFile().getPreMeasure();
     dialog.setResult( old_pre_measure + "" );
     dialog.setLocation( getFormPreferedLocation( dialog ) );
@@ -11469,7 +11469,7 @@ if ( e.Button == BMouseButtons.Left ) {
             if ( index >= 0 ) {
                 if ( AppManager.getSelectedTool() == EditTool.ERASER ) {
                     if ( vsq.TempoTable.get( index ).Clock == 0 ) {
-                        String msg = _( "Cannot remove first symbol of track!" );
+                        String msg = gettext( "Cannot remove first symbol of track!" );
                         statusLabel.setText( msg );
                         return;
                     }
@@ -11602,7 +11602,7 @@ if ( e.Button == BMouseButtons.Left ) {
             }
             if ( AppManager.getSelectedTool() == EditTool.ERASER ) {
                 if ( vsq.TimesigTable.get( index ).Clock == 0 ) {
-                    String msg = _( "Cannot remove first symbol of track!" );
+                    String msg = gettext( "Cannot remove first symbol of track!" );
                     statusLabel.setText( msg );
                     return;
                 }
@@ -11936,7 +11936,7 @@ if ( e.Button == BMouseButtons.Left ) {
                 }
                 if ( index >= 0 && AppManager.getSelectedTool() == EditTool.ERASER ) {
                     if ( vsq.TempoTable.get( index ).Clock == 0 ) {
-                        String msg = _( "Cannot remove first symbol of track!" );
+                        String msg = gettext( "Cannot remove first symbol of track!" );
                         statusLabel.setText( msg );
                         return;
                     }
@@ -11963,7 +11963,7 @@ if ( e.Button == BMouseButtons.Left ) {
                 }
                 if ( AppManager.getSelectedTool() == EditTool.ERASER ) {
                     if ( vsq.TimesigTable.get( index ).Clock == 0 ) {
-                        String msg = _( "Cannot remove first symbol of track!" );
+                        String msg = gettext( "Cannot remove first symbol of track!" );
                         statusLabel.setText( msg );
                         return;
                     }
@@ -12156,7 +12156,7 @@ if( !fsys.isFileExists( pdf ) ){
 }
 if( !fsys.isFileExists( pdf ) ){
     AppManager.showMessageBox(
-        _( "file not found" ),
+        gettext( "file not found" ),
         _APP_NAME,
         org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
@@ -12174,9 +12174,9 @@ try{
         {
 Logger.setEnabled( menuHelpLogSwitch.isSelected() );
 if ( menuHelpLogSwitch.isSelected() ) {
-    menuHelpLogSwitch.setText( _( "Enabled" ) );
+    menuHelpLogSwitch.setText( gettext( "Enabled" ) );
 } else {
-    menuHelpLogSwitch.setText( _( "Disabled" ) );
+    menuHelpLogSwitch.setText( gettext( "Disabled" ) );
 }
         }
 
@@ -12186,8 +12186,8 @@ String file = Logger.getPath();
 if ( file == null || (file != null && (!fsys.isFileExists( file ))) ) {
     // ログがまだできてないのでダイアログ出す
     AppManager.showMessageBox(
-        _( "Log file has not generated yet." ),
-        _( "Info" ),
+        gettext( "Log file has not generated yet." ),
+        gettext( "Info" ),
         PortUtil.OK_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_INFORMATION_MESSAGE );
     return;
@@ -13530,7 +13530,7 @@ for ( int track = 1; track < AppManager.getVsqFile().Track.size(); track++ ) {
     if ( AppManager.getVsqFile().Track.get( track ).getEventCount() == 0 ) {
         AppManager.showMessageBox(
             PortUtil.formatMessage(
-                _( "Invalid note data.\nTrack {0} : {1}\n\n-> Piano roll : Blank sequence." ),
+                gettext( "Invalid note data.\nTrack {0} : {1}\n\n-> Piano roll : Blank sequence." ),
                 track,
                 AppManager.getVsqFile().Track.get( track ).getName() ),
             _APP_NAME,
@@ -13577,8 +13577,8 @@ String file = openXmlVsqDialog.getSelectedFile();
 AppManager.editorConfig.setLastUsedPathIn( file, ".xvsq" );
 if( openVsqCor( file ) ){
     AppManager.showMessageBox(
-        _( "Invalid XVSQ file" ),
-        _( "Error" ),
+        gettext( "Invalid XVSQ file" ),
+        gettext( "Error" ),
         org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
     return;
@@ -13713,161 +13713,161 @@ if ( sender == null ) {
 boolean notfound = false;
 String text = "";
 if ( sender == menuEditUndo ) {
-    text = _( "Undo." );
+    text = gettext( "Undo." );
 } else if ( sender == menuEditRedo ) {
-    text = _( "Redo." );
+    text = gettext( "Redo." );
 } else if ( sender == menuEditCut ) {
-    text = _( "Cut selected items." );
+    text = gettext( "Cut selected items." );
 } else if ( sender == menuEditCopy ) {
-    text = _( "Copy selected items." );
+    text = gettext( "Copy selected items." );
 } else if ( sender == menuEditPaste ) {
-    text = _( "Paste copied items to current song position." );
+    text = gettext( "Paste copied items to current song position." );
 } else if ( sender == menuEditDelete ) {
-    text = _( "Delete selected items." );
+    text = gettext( "Delete selected items." );
 } else if ( sender == menuEditAutoNormalizeMode ) {
-    text = _( "Avoid automaticaly polyphonic editing." );
+    text = gettext( "Avoid automaticaly polyphonic editing." );
 } else if ( sender == menuEditSelectAll ) {
-    text = _( "Select all items and control curves of current track." );
+    text = gettext( "Select all items and control curves of current track." );
 } else if ( sender == menuEditSelectAllEvents ) {
-    text = _( "Select all items of current track." );
+    text = gettext( "Select all items of current track." );
 } else if ( sender == menuVisualControlTrack ) {
-    text = _( "Show/Hide control curves." );
+    text = gettext( "Show/Hide control curves." );
 } else if ( sender == menuVisualEndMarker ) {
-    text = _( "Enable/Disable end marker." );
+    text = gettext( "Enable/Disable end marker." );
 } else if ( sender == menuVisualGridline ) {
-    text = _( "Show/Hide grid line." );
+    text = gettext( "Show/Hide grid line." );
 } else if ( sender == menuVisualIconPalette ) {
-    text = _( "Show/Hide icon palette" );
+    text = gettext( "Show/Hide icon palette" );
 } else if ( sender == menuVisualLyrics ) {
-    text = _( "Show/Hide lyrics." );
+    text = gettext( "Show/Hide lyrics." );
 } else if ( sender == menuVisualMixer ) {
-    text = _( "Show/Hide mixer window." );
+    text = gettext( "Show/Hide mixer window." );
 } else if ( sender == menuVisualNoteProperty ) {
-    text = _( "Show/Hide expression lines." );
+    text = gettext( "Show/Hide expression lines." );
 } else if ( sender == menuVisualOverview ) {
-    text = _( "Show/Hide navigation view" );
+    text = gettext( "Show/Hide navigation view" );
 } else if ( sender == menuVisualPitchLine ) {
-    text = _( "Show/Hide pitch bend lines." );
+    text = gettext( "Show/Hide pitch bend lines." );
 } else if ( sender == menuVisualPluginUi ) {
-    text = _( "Open VSTi plugin window" );
+    text = gettext( "Open VSTi plugin window" );
 } else if ( sender == menuVisualProperty ) {
-    text = _( "Show/Hide property window." );
+    text = gettext( "Show/Hide property window." );
 } else if ( sender == menuVisualStartMarker ) {
-    text = _( "Enable/Disable start marker." );
+    text = gettext( "Enable/Disable start marker." );
 } else if ( sender == menuVisualWaveform ) {
-    text = _( "Show/Hide waveform." );
+    text = gettext( "Show/Hide waveform." );
 } else if ( sender == menuFileNew ) {
-    text = _( "Create new project." );
+    text = gettext( "Create new project." );
 } else if ( sender == menuFileOpen ) {
-    text = _( "Open Cadencii project." );
+    text = gettext( "Open Cadencii project." );
 } else if ( sender == menuFileSave ) {
-    text = _( "Save current project." );
+    text = gettext( "Save current project." );
 } else if ( sender == menuFileSaveNamed ) {
-    text = _( "Save current project with new name." );
+    text = gettext( "Save current project with new name." );
 } else if ( sender == menuFileOpenVsq ) {
-    text = _( "Open VSQ / VOCALOID MIDI and create new project." );
+    text = gettext( "Open VSQ / VOCALOID MIDI and create new project." );
 } else if ( sender == menuFileOpenUst ) {
-    text = _( "Open UTAU project and create new project." );
+    text = gettext( "Open UTAU project and create new project." );
 } else if ( sender == menuFileImport ) {
-    text = _( "Import." );
+    text = gettext( "Import." );
 } else if ( sender == menuFileImportMidi ) {
-    text = _( "Import Standard MIDI." );
+    text = gettext( "Import Standard MIDI." );
 } else if ( sender == menuFileImportUst ) {
-    text = _( "Import UTAU project" );
+    text = gettext( "Import UTAU project" );
 } else if ( sender == menuFileImportVsq ) {
-    text = _( "Import VSQ / VOCALOID MIDI." );
+    text = gettext( "Import VSQ / VOCALOID MIDI." );
 } else if ( sender == menuFileExport ) {
-    text = _( "Export." );
+    text = gettext( "Export." );
 } else if ( sender == menuFileExportParaWave ) {
-    text = _( "Export all tracks to serial numbered WAVEs" );
+    text = gettext( "Export all tracks to serial numbered WAVEs" );
 } else if ( sender == menuFileExportWave ) {
-    text = _( "Export to WAVE file." );
+    text = gettext( "Export to WAVE file." );
 } else if ( sender == menuFileExportMusicXml ) {
-    text = _( "Export current track as Music XML" );
+    text = gettext( "Export current track as Music XML" );
 } else if ( sender == menuFileExportMidi ) {
-    text = _( "Export to Standard MIDI." );
+    text = gettext( "Export to Standard MIDI." );
 } else if ( sender == menuFileExportUst ) {
-    text = _( "Export current track as UTAU project file" );
+    text = gettext( "Export current track as UTAU project file" );
 } else if ( sender == menuFileExportVsq ) {
-    text = _( "Export to VSQ" );
+    text = gettext( "Export to VSQ" );
 } else if ( sender == menuFileExportVxt ) {
-    text = _( "Export current track as Meta-text for vConnect" );
+    text = gettext( "Export current track as Meta-text for vConnect" );
 } else if ( sender == menuFileRecent ) {
-    text = _( "Recent projects." );
+    text = gettext( "Recent projects." );
 } else if ( sender == menuFileQuit ) {
-    text = _( "Close this window." );
+    text = gettext( "Close this window." );
 } else if ( sender == menuJobConnect ) {
-    text = _( "Lengthen note end to neighboring note." );
+    text = gettext( "Lengthen note end to neighboring note." );
 } else if ( sender == menuJobLyric ) {
-    text = _( "Import lyric." );
+    text = gettext( "Import lyric." );
 } else if ( sender == menuJobNormalize ) {
-    text = _( "Correct overlapped item." );
+    text = gettext( "Correct overlapped item." );
 } else if ( sender == menuJobInsertBar ) {
-    text = _( "Insert bar." );
+    text = gettext( "Insert bar." );
 } else if ( sender == menuJobDeleteBar ) {
-    text = _( "Delete bar." );
+    text = gettext( "Delete bar." );
 } else if ( sender == menuJobRandomize ) {
-    text = _( "Randomize items." );
+    text = gettext( "Randomize items." );
 } else if ( sender == menuLyricExpressionProperty ) {
-    text = _( "Edit portamento/accent/decay of selected item" );
+    text = gettext( "Edit portamento/accent/decay of selected item" );
 } else if ( sender == menuLyricVibratoProperty ) {
-    text = _( "Edit vibrato length and type of selected item" );
+    text = gettext( "Edit vibrato length and type of selected item" );
 } else if ( sender == menuLyricPhonemeTransformation ) {
-    text = _( "Translate all phrase into phonetic symbol" );
+    text = gettext( "Translate all phrase into phonetic symbol" );
 } else if ( sender == menuLyricDictionary ){
-    text = _( "Open configuration dialog for phonetic symnol dictionaries" );
+    text = gettext( "Open configuration dialog for phonetic symnol dictionaries" );
 } else if ( sender == menuLyricCopyVibratoToPreset ) {
-    text = _( "Copy vibrato config of selected item into vibrato preset" );
+    text = gettext( "Copy vibrato config of selected item into vibrato preset" );
 } else if ( sender == menuScriptUpdate ){
-    text = _( "Read and compile all scripts and update the list of them" );
+    text = gettext( "Read and compile all scripts and update the list of them" );
 } else if ( sender == menuSettingPreference ){
-    text = _( "Open configuration dialog for editor configs" );
+    text = gettext( "Open configuration dialog for editor configs" );
 } else if ( sender == menuSettingPositionQuantize ) {
-    text = _( "Change quantize resolution" );
+    text = gettext( "Change quantize resolution" );
 } else if ( sender == menuSettingGameControler ){
-    text = _( "Connect/Remove/Configure game controler" );
+    text = gettext( "Connect/Remove/Configure game controler" );
 } else if ( sender == menuSettingPaletteTool ) {
-    text = _( "Configuration of palette tool" );
+    text = gettext( "Configuration of palette tool" );
 } else if ( sender == menuSettingShortcut ) {
-    text = _( "Open configuration dialog for shortcut key" );
+    text = gettext( "Open configuration dialog for shortcut key" );
 } else if ( sender == menuSettingVibratoPreset ) {
-    text = _( "Open configuration dialog for vibrato preset" );
+    text = gettext( "Open configuration dialog for vibrato preset" );
 } else if ( sender == menuSettingDefaultSingerStyle ) {
-    text = _( "Edit default singer style" );
+    text = gettext( "Edit default singer style" );
 } else if ( sender == menuSettingSequence ) {
-    text = _( "Configuration of this sequence." );
+    text = gettext( "Configuration of this sequence." );
 } else if ( sender == menuTrackAdd ) {
-    text = _( "Add new track." );
+    text = gettext( "Add new track." );
 } else if ( sender == menuTrackBgm ) {
-    text = _( "Add/Remove/Edit background music" );
+    text = gettext( "Add/Remove/Edit background music" );
 } else if ( sender == menuTrackOn ) {
-    text = _( "Enable current track." );
+    text = gettext( "Enable current track." );
 } else if ( sender == menuTrackCopy ) {
-    text = _( "Copy current track." );
+    text = gettext( "Copy current track." );
 } else if ( sender == menuTrackChangeName ) {
-    text = _( "Change track name." );
+    text = gettext( "Change track name." );
 } else if ( sender == menuTrackDelete ) {
-    text = _( "Delete current track." );
+    text = gettext( "Delete current track." );
 } else if ( sender == menuTrackRenderCurrent ) {
-    text = _( "Render current track." );
+    text = gettext( "Render current track." );
 } else if ( sender == menuTrackRenderAll ) {
-    text = _( "Render all tracks." );
+    text = gettext( "Render all tracks." );
 } else if ( sender == menuTrackOverlay ) {
-    text = _( "Show background items." );
+    text = gettext( "Show background items." );
 } else if ( sender == menuTrackRenderer ) {
-    text = _( "Select voice synthesis engine." );
+    text = gettext( "Select voice synthesis engine." );
 } else if ( sender == menuTrackRendererAquesTone ) {
-    text = _( "AquesTone" );
+    text = gettext( "AquesTone" );
 } else if ( sender == menuTrackRendererUtau ) {
-    text = _( "UTAU" );
+    text = gettext( "UTAU" );
 } else if ( sender == menuTrackRendererVCNT ) {
-    text = _( "vConnect-STAND" );
+    text = gettext( "vConnect-STAND" );
 } else if ( sender == menuTrackRendererVOCALOID1 ) {
-    text = _( "VOCALOID1" );
+    text = gettext( "VOCALOID1" );
 } else if ( sender == menuTrackRendererVOCALOID2 ) {
-    text = _( "VOCALOID2" );
+    text = gettext( "VOCALOID2" );
 } else if ( sender == menuFileRecentClear ) {
-    text = _( "Clear menu items" );
+    text = gettext( "Clear menu items" );
 } else {
     notfound = true;
 }
@@ -14007,7 +14007,7 @@ BgmMenuItem menu = (BgmMenuItem)sender;
 int index = menu.getBgmIndex();
 InputBox ib = null;
 try {
-    ib = new InputBox( _( "Input Offset Seconds" ) );
+    ib = new InputBox( gettext( "Input Offset Seconds" ) );
     ib.setLocation( getFormPreferedLocation( ib ) );
     ib.setResult( AppManager.getBgm( index ).readOffsetSeconds + "" );
     BDialogResult dr = AppManager.showModalDialog( ib, this );
@@ -14029,7 +14029,7 @@ try {
     try {
         draft = str.tof( ib.getResult() );
         item.readOffsetSeconds = draft;
-        menu.setToolTipText( draft + " " + _( "seconds" ) );
+        menu.setToolTipText( draft + " " + gettext( "seconds" ) );
     } catch ( Exception ex3 ) {
         Logger.write( FormMain.class + ".handleBgmOffsetSeconds_Click; ex=" + ex3 + "\n" );
     }
@@ -14095,8 +14095,8 @@ for ( int i = 0; i < count; i++ ) {
 }
 if ( found ) {
     AppManager.showMessageBox(
-        PortUtil.formatMessage( _( "file '{0}' instanceof already registered as BGM." ), file ),
-        _( "Error" ),
+        PortUtil.formatMessage( gettext( "file '{0}' instanceof already registered as BGM." ), file ),
+        gettext( "Error" ),
         org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION,
         org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
     return;
@@ -14116,7 +14116,7 @@ if ( !(sender instanceof BgmMenuItem) ) {
 BgmMenuItem parent = (BgmMenuItem)sender;
 int index = parent.getBgmIndex();
 BgmFile bgm = AppManager.getBgm( index );
-if ( AppManager.showMessageBox( PortUtil.formatMessage( _( "remove '{0}'?" ), bgm.file ),
+if ( AppManager.showMessageBox( PortUtil.formatMessage( gettext( "remove '{0}'?" ), bgm.file ),
                       "Cadencii",
                       org.kbinani.windows.forms.Utility.MSGBOX_YES_NO_OPTION,
                       org.kbinani.windows.forms.Utility.MSGBOX_QUESTION_MESSAGE ) != BDialogResult.YES ) {
@@ -14225,7 +14225,7 @@ if ( code == 0x80 ) {
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static String _( String id )
+        public static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

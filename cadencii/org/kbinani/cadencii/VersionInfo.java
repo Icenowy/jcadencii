@@ -94,8 +94,8 @@ m_show_twitter_id = value;
 
         public void applyLanguage()
         {
-String about = PortUtil.formatMessage( _( "About {0}" ), m_app_name );
-String credit = _( "Credit" );
+String about = PortUtil.formatMessage( gettext( "About {0}" ), m_app_name );
+String credit = gettext( "Credit" );
 Dimension size1 = Util.measureString( about, btnFlip.getFont() );
 Dimension size2 = Util.measureString( credit, btnFlip.getFont() );
 m_button_width_about = Math.max( 75, (int)(size1.width * 1.3) );
@@ -108,7 +108,7 @@ if ( m_credit_mode ) {
 setTitle( about );
         }
 
-        public static String _( String s )
+        public static String gettext( String s )
         {
 return Messaging.getMessage( s );
         }
@@ -239,7 +239,7 @@ close();
 m_credit_mode = !m_credit_mode;
 if ( m_credit_mode ) {
     try {
-        btnFlip.setText( PortUtil.formatMessage( _( "About {0}" ), m_app_name ) );
+        btnFlip.setText( PortUtil.formatMessage( gettext( "About {0}" ), m_app_name ) );
     } catch ( Exception ex ) {
         btnFlip.setText( "About " + m_app_name );
     }
@@ -253,7 +253,7 @@ if ( m_credit_mode ) {
     timer.start();
 } else {
     timer.stop();
-    btnFlip.setText( _( "Credit" ) );
+    btnFlip.setText( gettext( "Credit" ) );
     pictVstLogo.setVisible( true );
     lblVstLogo.setVisible( true );
     chkTwitterID.setVisible( false );

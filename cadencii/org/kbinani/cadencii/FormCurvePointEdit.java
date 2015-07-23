@@ -60,14 +60,14 @@ btnRedo.setEnabled( AppManager.editHistory.hasRedoHistory() );
 
         public void applyLanguage()
         {
-setTitle( _( "Edit Value" ) );
-lblDataPointClock.setText( _( "Clock" ) );
-lblDataPointValue.setText( _( "Value" ) );
-btnApply.setText( _( "Apply" ) );
-btnExit.setText( _( "Exit" ) );
+setTitle( gettext( "Edit Value" ) );
+lblDataPointClock.setText( gettext( "Clock" ) );
+lblDataPointValue.setText( gettext( "Value" ) );
+btnApply.setText( gettext( "Apply" ) );
+btnExit.setText( gettext( "Exit" ) );
         }
 
-        private String _( String id )
+        private String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

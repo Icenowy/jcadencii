@@ -121,17 +121,17 @@ return textResamplerPath.getText();
         {
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }
 
         private void applyLanguage()
         {
-setTitle( _( "Unknown singers and resamplers" ) );
-labelMessage.setText( _( "These singers and resamplers are not registered to Cadencii.\nCheck the box if you want to register them." ) );
-checkSingerImport.setText( _( "Import singer" ) );
-checkResamplerImport.setText( _( "Import resampler" ) );
+setTitle( gettext( "Unknown singers and resamplers" ) );
+labelMessage.setText( gettext( "These singers and resamplers are not registered to Cadencii.\nCheck the box if you want to register them." ) );
+checkSingerImport.setText( gettext( "Import singer" ) );
+checkResamplerImport.setText( gettext( "Import resampler" ) );
         }
 
 

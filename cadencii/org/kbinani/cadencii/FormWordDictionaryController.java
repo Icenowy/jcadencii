@@ -147,12 +147,12 @@ public class FormWordDictionaryController extends ControllerBase implements Form
 
     public void applyLanguage()
     {
-        ui.setTitle( _( "User Dictionary Configuration" ) );
-        ui.labelAvailableDictionariesSetText( _( "Available Dictionaries" ) );
-        ui.buttonOkSetText( _( "OK" ) );
-        ui.buttonCancelSetText( _( "Cancel" ) );
-        ui.buttonUpSetText( _( "Up" ) );
-        ui.buttonDownSetText( _( "Down" ) );
+        ui.setTitle( gettext( "User Dictionary Configuration" ) );
+        ui.labelAvailableDictionariesSetText( gettext( "Available Dictionaries" ) );
+        ui.buttonOkSetText( gettext( "OK" ) );
+        ui.buttonCancelSetText( gettext( "Cancel" ) );
+        ui.buttonUpSetText( gettext( "Up" ) );
+        ui.buttonDownSetText( gettext( "Down" ) );
     }
 
     public Vector<ValuePair<String, Boolean>> getResult()
@@ -172,7 +172,7 @@ public class FormWordDictionaryController extends ControllerBase implements Form
 
 
 
-    private static String _( String id )
+    private static String gettext( String id )
     {
         return Messaging.getMessage( id );
     }

@@ -64,7 +64,7 @@ try {
 }
 
 mMainForm = main_form;
-list.setColumnHeaders( new String[] { _( "Command" ), _( "Shortcut Key" ) } );
+list.setColumnHeaders( new String[] { gettext( "Command" ), gettext( "Shortcut Key" ) } );
 list.setColumnWidth( 0, mColumnWidthCommand );
 list.setColumnWidth( 1, mColumnWidthShortcutKey );
 
@@ -112,40 +112,40 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-setTitle( _( "Shortcut Config" ) );
+setTitle( gettext( "Shortcut Config" ) );
 
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
-btnRevert.setText( _( "Revert" ) );
-btnLoadDefault.setText( _( "Load Default" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
+btnRevert.setText( gettext( "Revert" ) );
+btnLoadDefault.setText( gettext( "Load Default" ) );
 
-list.setColumnHeaders( new String[] { _( "Command" ), _( "Shortcut Key" ) } );
+list.setColumnHeaders( new String[] { gettext( "Command" ), gettext( "Shortcut Key" ) } );
 
-labelCategory.setText( _( "Category" ) );
+labelCategory.setText( gettext( "Category" ) );
 int selected = comboCategory.getSelectedIndex();
 comboCategory.removeAllItems();
 for ( String category : mCategories ) {
     String c = category;
     if ( str.compare( category, "menuFile" ) ) {
-        c = _( "File" );
+        c = gettext( "File" );
     } else if ( str.compare( category, "menuEdit" ) ) {
-        c = _( "Edit" );
+        c = gettext( "Edit" );
     } else if ( str.compare( category, "menuVisual" ) ) {
-        c = _( "Visual" );
+        c = gettext( "Visual" );
     } else if ( str.compare( category, "menuJob" ) ) {
-        c = _( "Job" );
+        c = gettext( "Job" );
     } else if ( str.compare( category, "menuLyric" ) ) {
-        c = _( "Lyric" );
+        c = gettext( "Lyric" );
     } else if ( str.compare( category, "menuTrack" ) ) {
-        c = _( "Track" );
+        c = gettext( "Track" );
     } else if ( str.compare( category, "menuScript" ) ) {
-        c = _( "Script" );
+        c = gettext( "Script" );
     } else if ( str.compare( category, "menuSetting" ) ){
-        c = _( "Setting" );
+        c = gettext( "Setting" );
     } else if ( str.compare( category, "menuHelp" ) ) {
-        c = _( "Help" );
+        c = gettext( "Help" );
     } else {
-        c = _( "Other" );
+        c = gettext( "Other" );
     }
     comboCategory.addItem( c );
 }
@@ -154,10 +154,10 @@ if ( comboCategory.getItemCount() <= selected ) {
 }
 comboCategory.setSelectedIndex( selected );
 
-labelCommand.setText( _( "Command" ) );
-labelEdit.setText( _( "Edit" ) );
-labelEditKey.setText( _( "Key:" ) );
-labelEditModifier.setText( _( "Modifier:" ) );
+labelCommand.setText( gettext( "Command" ) );
+labelEdit.setText( gettext( "Edit" ) );
+labelEditKey.setText( gettext( "Key:" ) );
+labelEditModifier.setText( gettext( "Modifier:" ) );
         }
 
         public TreeMap<String, ValuePair<String, BKeys[]>> getResult()
@@ -167,7 +167,7 @@ copyDict( mDict, ret );
 return ret;
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

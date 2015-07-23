@@ -176,23 +176,23 @@ return ret;
 
         public void applyLanguage()
         {
-mUi.setTitle( _( "Beat Change" ) );
-mUi.setTextPositionGroup( _( "Position" ) );
-mUi.setTextBeatGroup( _( "Beat" ) );
-mUi.setTextOkButton( _( "OK" ) );
-mUi.setTextCancelButton( _( "Cancel" ) );
-mUi.setTextStartLabel( _( "From" ) );
+mUi.setTitle( gettext( "Beat Change" ) );
+mUi.setTextPositionGroup( gettext( "Position" ) );
+mUi.setTextBeatGroup( gettext( "Beat" ) );
+mUi.setTextOkButton( gettext( "OK" ) );
+mUi.setTextCancelButton( gettext( "Cancel" ) );
+mUi.setTextStartLabel( gettext( "From" ) );
 //lblStart.setMnemonic( KeyEvent.VK_F, numStart );
-mUi.setTextEndCheckbox( _( "To" ) );
+mUi.setTextEndCheckbox( gettext( "To" ) );
 //chkEnd.setDisplayedMnemonicIndex( 0 );
-mUi.setTextBar1Label( _( "Measure" ) );
-mUi.setTextBar2Label( _( "Measure" ) );
+mUi.setTextBar1Label( gettext( "Measure" ) );
+mUi.setTextBar2Label( gettext( "Measure" ) );
         }
 
 
 
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

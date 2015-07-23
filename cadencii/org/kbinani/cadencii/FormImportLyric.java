@@ -50,9 +50,9 @@ super.setVisible( value );
 
         public void applyLanguage()
         {
-setTitle( _( "Import lyrics" ) );
-btnCancel.setText( _( "Cancel" ) );
-btnOK.setText( _( "OK" ) );
+setTitle( gettext( "Import lyrics" ) );
+btnCancel.setText( gettext( "Cancel" ) );
+btnOK.setText( gettext( "OK" ) );
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ for ( int j = 0; j < spl.length; j++ ) {
 return ret.toArray( new String[] { } );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

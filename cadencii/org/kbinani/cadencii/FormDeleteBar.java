@@ -44,11 +44,11 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-setTitle( _( "Delete Bars" ) );
-lblStart.setText( _( "Start" ) );
-lblEnd.setText( _( "End" ) );
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
+setTitle( gettext( "Delete Bars" ) );
+lblStart.setText( gettext( "Start" ) );
+lblEnd.setText( gettext( "End" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
         }
 
         public int getStart()
@@ -71,7 +71,7 @@ return (int)numEnd.getFloatValue();
 numEnd.setFloatValue( value );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

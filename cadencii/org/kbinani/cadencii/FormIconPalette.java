@@ -119,7 +119,7 @@ mPreviousAlwaysOnTop = value;
 
         public void applyLanguage()
         {
-setTitle( _( "Icon Palette" ) );
+setTitle( gettext( "Icon Palette" ) );
         }
 
         public void applyShortcut( KeyStroke shortcut )
@@ -127,7 +127,7 @@ setTitle( _( "Icon Palette" ) );
 menuWindowHide.setAccelerator( shortcut );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

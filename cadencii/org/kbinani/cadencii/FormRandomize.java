@@ -179,7 +179,7 @@ numEndBeat.setMinimum( endBeatMin );
 lockRequired = false;
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }
@@ -302,25 +302,25 @@ return draft;
 
         public void applyLanguage()
         {
-lblStart.setText( _( "Start" ) );
-lblStartBar.setText( _( "bar" ) );
-lblStartBeat.setText( _( "beat" ) );
-lblEnd.setText( _( "End" ) );
-lblEndBar.setText( _( "bar" ) );
-lblEndBeat.setText( _( "beat" ) );
+lblStart.setText( gettext( "Start" ) );
+lblStartBar.setText( gettext( "bar" ) );
+lblStartBeat.setText( gettext( "beat" ) );
+lblEnd.setText( gettext( "End" ) );
+lblEndBar.setText( gettext( "bar" ) );
+lblEndBeat.setText( gettext( "beat" ) );
 
-chkShift.setText( _( "Note Shift" ) );
-lblShiftValue.setText( _( "Value" ) );
+chkShift.setText( gettext( "Note Shift" ) );
+lblShiftValue.setText( gettext( "Value" ) );
 
-chkPit.setText( _( "Pitch Fluctuation" ) );
-lblResolution.setText( _( "Resolution" ) );
-lblPitPattern.setText( _( "Pattern" ) );
-lblPitValue.setText( _( "Value" ) );
+chkPit.setText( gettext( "Pitch Fluctuation" ) );
+lblResolution.setText( gettext( "Resolution" ) );
+lblPitPattern.setText( gettext( "Pattern" ) );
+lblPitValue.setText( gettext( "Value" ) );
 
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
 
-setTitle( _( "Randomize" ) );
+setTitle( gettext( "Randomize" ) );
         }
 
 

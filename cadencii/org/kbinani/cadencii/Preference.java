@@ -768,19 +768,19 @@ chkScrollHorizontal.setSelected( value );
 
         public void applyLanguage()
         {
-setTitle( _( "Preference" ) );
-btnCancel.setText( _( "Cancel" ) );
-btnOK.setText( _( "OK" ) );
+setTitle( gettext( "Preference" ) );
+btnCancel.setText( gettext( "Cancel" ) );
+btnOK.setText( gettext( "OK" ) );
 openUtauCore.clearChoosableFileFilter();
 try {
-    openUtauCore.addFileFilter( _( "Executable(*.exe)|*.exe" ) );
-    openUtauCore.addFileFilter( _( "All Files(*.*)|*.*" ) );
+    openUtauCore.addFileFilter( gettext( "Executable(*.exe)|*.exe" ) );
+    openUtauCore.addFileFilter( gettext( "All Files(*.*)|*.*" ) );
 } catch ( Exception ex ) {
     openUtauCore.addFileFilter( "Executable(*.exe)|*.exe" );
     openUtauCore.addFileFilter( "All Files(*.*)|*.*" );
 }
 
-folderBrowserSingers.setDialogTitle( _( "Select Singer Directory" ) );
+folderBrowserSingers.setDialogTitle( gettext( "Select Singer Directory" ) );
 
 int count = tabPane.getTabCount();
 for( int i = 0; i < count; i++ ){
@@ -790,107 +790,107 @@ for( int i = 0; i < count; i++ ){
     }
     BPanel p = (BPanel)c;
     if( p == tabSequence ){
-        tabPane.setTitleAt( i, _( "Sequence" ) );
+        tabPane.setTitleAt( i, gettext( "Sequence" ) );
     }else if( p == tabAnother ){
-        tabPane.setTitleAt( i, _( "Other" ) );
+        tabPane.setTitleAt( i, gettext( "Other" ) );
     }else if( p == tabAppearance ){
-        tabPane.setTitleAt( i, _( "Appearance" ) );
+        tabPane.setTitleAt( i, gettext( "Appearance" ) );
     }else if( p == tabOperation ){
-        tabPane.setTitleAt( i, _( "Operation" ) );
+        tabPane.setTitleAt( i, gettext( "Operation" ) );
     }else if( p == tabPlatform ){
-        tabPane.setTitleAt( i, _( "Platform" ) );
+        tabPane.setTitleAt( i, gettext( "Platform" ) );
     }else if( p == tabUtausingers ){
-        tabPane.setTitleAt( i, _( "UTAU Singers" ) );
+        tabPane.setTitleAt( i, gettext( "UTAU Singers" ) );
     }else if( p == tabFile ){
-        tabPane.setTitleAt( i, _( "File" ) );
+        tabPane.setTitleAt( i, gettext( "File" ) );
     }else if( p == tabSingingSynth ){
-        tabPane.setTitleAt( i, _( "Synthesizer" ) );
+        tabPane.setTitleAt( i, gettext( "Synthesizer" ) );
     }
 }
 
-lblResolution.setText( _( "Resolution(VSTi)" ) );
-lblResolControlCurve.setText( _( "Control Curve" ) );
+lblResolution.setText( gettext( "Resolution(VSTi)" ) );
+lblResolControlCurve.setText( gettext( "Control Curve" ) );
 lblResolControlCurve.setMnemonic( KeyEvent.VK_C, comboResolControlCurve );
 
-chkEnableAutoVibrato.setText( _( "Enable Automatic Vibrato" ) );
+chkEnableAutoVibrato.setText( gettext( "Enable Automatic Vibrato" ) );
 chkEnableAutoVibrato.setMnemonic( KeyEvent.VK_E );
-lblVibratoLength.setText( _( "Default Vibrato Length" ) );
+lblVibratoLength.setText( gettext( "Default Vibrato Length" ) );
 lblVibratoLength.setMnemonic( KeyEvent.VK_L, comboVibratoLength );
-lblAutoVibratoThresholdLength.setText( _( "Minimum note length for Automatic Vibrato" ) );
+lblAutoVibratoThresholdLength.setText( gettext( "Minimum note length for Automatic Vibrato" ) );
 lblAutoVibratoThresholdLength.setMnemonic( KeyEvent.VK_M, txtAutoVibratoThresholdLength );
 
-lblAutoVibratoType.setText( _( "Auto Vibrato Type" ) );
-groupVocaloidEditorCompatible.setTitle( _( "VOCALOID Editor Compatible" ) );
-groupUserDefined.setTitle( _( "User Defined" ) );
-radioVocaloidEditorCompatible.setText( _( "VOCALOID Editor Compatible" ) );
-radioUserDefined.setText( _( "User Defined" ) );
-chkEnableAutoVibrato.setText( _( "Enable Automatic Vibrato" ) );
+lblAutoVibratoType.setText( gettext( "Auto Vibrato Type" ) );
+groupVocaloidEditorCompatible.setTitle( gettext( "VOCALOID Editor Compatible" ) );
+groupUserDefined.setTitle( gettext( "User Defined" ) );
+radioVocaloidEditorCompatible.setText( gettext( "VOCALOID Editor Compatible" ) );
+radioUserDefined.setText( gettext( "User Defined" ) );
+chkEnableAutoVibrato.setText( gettext( "Enable Automatic Vibrato" ) );
 chkEnableAutoVibrato.setMnemonic( KeyEvent.VK_E );
-lblAutoVibratoType1.setText( _( "Vibrato Type" ) + ": VOCALOID1" );
+lblAutoVibratoType1.setText( gettext( "Vibrato Type" ) + ": VOCALOID1" );
 lblAutoVibratoType1.setMnemonic( KeyEvent.VK_T, comboAutoVibratoType1 );
-lblAutoVibratoType2.setText( _( "Vibrato Type" ) + ": VOCALOID2" );
+lblAutoVibratoType2.setText( gettext( "Vibrato Type" ) + ": VOCALOID2" );
 lblAutoVibratoType2.setMnemonic( KeyEvent.VK_T, comboAutoVibratoType2 );
 
-lblDefaultSinger.setText( _( "Default Singer" ) );
+lblDefaultSinger.setText( gettext( "Default Singer" ) );
 lblDefaultSinger.setMnemonic( KeyEvent.VK_S, comboDefualtSinger );
-lblPreSendTime.setText( _( "Pre-Send time" ) );
+lblPreSendTime.setText( gettext( "Pre-Send time" ) );
 lblPreSendTime.setMnemonic( KeyEvent.VK_P, numPreSendTime );
-lblWait.setText( _( "Waiting Time" ) );
+lblWait.setText( gettext( "Waiting Time" ) );
 lblWait.setMnemonic( KeyEvent.VK_W, numWait );
-chkChasePastEvent.setText( _( "Chase Event" ) );
+chkChasePastEvent.setText( gettext( "Chase Event" ) );
 chkChasePastEvent.setMnemonic( KeyEvent.VK_C );
-lblBuffer.setText( _( "Buffer Size" ) );
+lblBuffer.setText( gettext( "Buffer Size" ) );
 lblBuffer.setMnemonic( KeyEvent.VK_B, numBuffer );
 lblBufferSize.setText( "msec(" + EditorConfig.MIN_BUFFER_MILLIXEC + "-" + EditorConfig.MAX_BUFFER_MILLISEC + ")" );
 
-groupFont.setTitle( _( "Font" ) );
-labelMenu.setText( _( "Menu / Lyrics" ) );
-labelScreen.setText( _( "Screen" ) );
-lblLanguage.setText( _( "UI Language" ) );
-btnChangeMenuFont.setText( _( "Change" ) );
-btnChangeScreenFont.setText( _( "Change" ) );
-lblTrackHeight.setText( _( "Track Height (pixel)" ) );
-groupVisibleCurve.setTitle( _( "Visible Control Curve" ) );
+groupFont.setTitle( gettext( "Font" ) );
+labelMenu.setText( gettext( "Menu / Lyrics" ) );
+labelScreen.setText( gettext( "Screen" ) );
+lblLanguage.setText( gettext( "UI Language" ) );
+btnChangeMenuFont.setText( gettext( "Change" ) );
+btnChangeScreenFont.setText( gettext( "Change" ) );
+lblTrackHeight.setText( gettext( "Track Height (pixel)" ) );
+groupVisibleCurve.setTitle( gettext( "Visible Control Curve" ) );
 
-groupPianoroll.setTitle( _( "Piano Roll" ) );
-labelWheelOrder.setText( _( "Mouse wheel Rate" ) );
+groupPianoroll.setTitle( gettext( "Piano Roll" ) );
+labelWheelOrder.setText( gettext( "Mouse wheel Rate" ) );
 
-chkCursorFix.setText( _( "Fix Song position to Center" ) );
-chkScrollHorizontal.setText( _( "Horizontal Scroll when Mouse wheel" ) );
-chkKeepLyricInputMode.setText( _( "Keep Lyric Input Mode" ) );
-chkPlayPreviewWhenRightClick.setText( _( "Play Preview On Right Click" ) );
-chkCurveSelectingQuantized.setText( _( "Enable Quantize for Curve Selecting" ) );
-chkUseSpaceKeyAsMiddleButtonModifier.setText( _( "Use space key as Middle button modifier" ) );
+chkCursorFix.setText( gettext( "Fix Song position to Center" ) );
+chkScrollHorizontal.setText( gettext( "Horizontal Scroll when Mouse wheel" ) );
+chkKeepLyricInputMode.setText( gettext( "Keep Lyric Input Mode" ) );
+chkPlayPreviewWhenRightClick.setText( gettext( "Play Preview On Right Click" ) );
+chkCurveSelectingQuantized.setText( gettext( "Enable Quantize for Curve Selecting" ) );
+chkUseSpaceKeyAsMiddleButtonModifier.setText( gettext( "Use space key as Middle button modifier" ) );
 
-groupMisc.setTitle( _( "Misc" ) );
-lblMaximumFrameRate.setText( _( "Maximum Frame Rate" ) );
-lblMilliSecond.setText( _( "frame per second" ) );
-lblMouseHoverTime.setText( _( "Waiting Time for Preview" ) );
-lblMidiInPort.setText( _( "MIDI In Port Number" ) );
-labelMtcMidiInPort.setText( _( "MTC MIDI In Port Number" ) );
-chkTranslateRoman.setText( _( "Translate Roman letters into Kana" ) );
+groupMisc.setTitle( gettext( "Misc" ) );
+lblMaximumFrameRate.setText( gettext( "Maximum Frame Rate" ) );
+lblMilliSecond.setText( gettext( "frame per second" ) );
+lblMouseHoverTime.setText( gettext( "Waiting Time for Preview" ) );
+lblMidiInPort.setText( gettext( "MIDI In Port Number" ) );
+labelMtcMidiInPort.setText( gettext( "MTC MIDI In Port Number" ) );
+chkTranslateRoman.setText( gettext( "Translate Roman letters into Kana" ) );
 
-groupUtauCores.setTitle( _( "UTAU Cores" ) );
-labelWavtoolPath.setText( _( "Path:" ) );
-chkWavtoolWithWine.setText( _( "Invoke wavtool with Wine" ) );
-listResampler.setColumnHeaders( new String[] { _( "path" ) } );
-labelResamplerWithWine.setText( _( "Check the box to use Wine" ) );
-checkEnableWideCharacterWorkaround.setText( _( "Enable Workaround for Wide-Character Path" ) );
+groupUtauCores.setTitle( gettext( "UTAU Cores" ) );
+labelWavtoolPath.setText( gettext( "Path:" ) );
+chkWavtoolWithWine.setText( gettext( "Invoke wavtool with Wine" ) );
+listResampler.setColumnHeaders( new String[] { gettext( "path" ) } );
+labelResamplerWithWine.setText( gettext( "Check the box to use Wine" ) );
+checkEnableWideCharacterWorkaround.setText( gettext( "Enable Workaround for Wide-Character Path" ) );
 
-listSingers.setColumnHeaders( new String[] { _( "Program Change" ), _( "Name" ), _( "Path" ) } );
-btnAdd.setText( _( "Add" ) );
-btnRemove.setText( _( "Remove" ) );
-btnUp.setText( _( "Up" ) );
-btnDown.setText( _( "Down" ) );
+listSingers.setColumnHeaders( new String[] { gettext( "Program Change" ), gettext( "Name" ), gettext( "Path" ) } );
+btnAdd.setText( gettext( "Add" ) );
+btnRemove.setText( gettext( "Remove" ) );
+btnUp.setText( gettext( "Up" ) );
+btnDown.setText( gettext( "Down" ) );
 
-chkAutoBackup.setText( _( "Automatical Backup" ) );
-lblAutoBackupInterval.setText( _( "interval" ) );
-lblAutoBackupMinutes.setText( _( "minute(s)" ) );
-chkKeepProjectCache.setText( _( "Keep Project Cache" ) );
+chkAutoBackup.setText( gettext( "Automatical Backup" ) );
+lblAutoBackupInterval.setText( gettext( "interval" ) );
+lblAutoBackupMinutes.setText( gettext( "minute(s)" ) );
+chkKeepProjectCache.setText( gettext( "Keep Project Cache" ) );
 
-groupSynthesizerDll.setTitle( _( "Synthesizer DLL Usage" ) );
+groupSynthesizerDll.setTitle( gettext( "Synthesizer DLL Usage" ) );
 
-groupDefaultSynthesizer.setTitle( _( "Default Synthesizer" ) );
+groupDefaultSynthesizer.setTitle( gettext( "Default Synthesizer" ) );
         }
 
         public String getLanguage()
@@ -1244,7 +1244,7 @@ if ( fontDialog.getDialogResult() == BDialogResult.OK ) {
         {
 boolean was_modified = false;
 if ( was_modified ) {
-    AppManager.showMessageBox( _( "Restart Cadencii to complete your changes\n(restart will NOT be automatically done)" ),
+    AppManager.showMessageBox( gettext( "Restart Cadencii to complete your changes\n(restart will NOT be automatically done)" ),
                                "Cadencii",
                                org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION,
                                org.kbinani.windows.forms.Utility.MSGBOX_INFORMATION_MESSAGE );
@@ -1622,7 +1622,7 @@ if ( sel_mtc >= 0 ) {
 }
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

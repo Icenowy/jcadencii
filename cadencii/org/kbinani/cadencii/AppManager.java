@@ -727,8 +727,8 @@ Vector<PatchWorkQueue> queue = patchWorkCreateQueue( tracks );
 
 FormWorker fw = new FormWorker();
 fw.setupUi( new FormWorkerUi( fw ) );
-fw.getUi().setTitle( _( "Synthesize" ) );
-fw.getUi().setText( _( "now synthesizing..." ) );
+fw.getUi().setTitle( gettext( "Synthesize" ) );
+fw.getUi().setText( gettext( "now synthesizing..." ) );
 
 double total = 0;
 SynthesizeWorker worker = new SynthesizeWorker( main_window );
@@ -740,7 +740,7 @@ for( PatchWorkQueue q : queue ){
 }
 
 // パッチワークをするジョブを追加
-fw.addJob( worker, "patchWork", _( "patchwork" ), total, new Object[] { queue, tracks } );
+fw.addJob( worker, "patchWork", gettext( "patchwork" ), total, new Object[] { queue, tracks } );
 
 // ジョブを開始
 fw.startJob();
@@ -1774,7 +1774,7 @@ return mID;
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static String _( String id )
+        public static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }
@@ -2131,8 +2131,8 @@ if ( mVsq != null ) {
                 PortUtil.createDirectory( cacheDir );
             } catch ( Exception ex ) {
                 serr.println( "AppManager#saveTo; ex=" + ex );
-                showMessageBox( PortUtil.formatMessage( _( "failed creating cache directory, '{0}'." ), cacheDir ),
-                                _( "Info." ),
+                showMessageBox( PortUtil.formatMessage( gettext( "failed creating cache directory, '{0}'." ), cacheDir ),
+                                gettext( "Info." ),
                                 PortUtil.OK_OPTION,
                                 org.kbinani.windows.forms.Utility.MSGBOX_INFORMATION_MESSAGE );
                 Logger.write( AppManager.class + ".saveTo; ex=" + ex + "\n" );
@@ -2158,8 +2158,8 @@ if ( mVsq != null ) {
                         PortUtil.moveFile( wavFrom, wavTo );
                     } catch ( Exception ex ) {
                         serr.println( "AppManager#saveTo; ex=" + ex );
-                        showMessageBox( PortUtil.formatMessage( _( "failed copying WAVE cache file, '{0}'." ), wavFrom ),
-                                        _( "Error" ),
+                        showMessageBox( PortUtil.formatMessage( gettext( "failed copying WAVE cache file, '{0}'." ), wavFrom ),
+                                        gettext( "Error" ),
                                         PortUtil.OK_OPTION,
                                         org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
                         Logger.write( AppManager.class + ".saveTo; ex=" + ex + "\n" );
@@ -2182,8 +2182,8 @@ if ( mVsq != null ) {
                         PortUtil.moveFile( xmlFrom, xmlTo );
                     } catch ( Exception ex ) {
                         serr.println( "AppManager#saveTo; ex=" + ex );
-                        showMessageBox( PortUtil.formatMessage( _( "failed copying XML cache file, '{0}'." ), xmlFrom ),
-                                        _( "Error" ),
+                        showMessageBox( PortUtil.formatMessage( gettext( "failed copying XML cache file, '{0}'." ), xmlFrom ),
+                                        gettext( "Error" ),
                                         PortUtil.OK_OPTION,
                                         org.kbinani.windows.forms.Utility.MSGBOX_WARNING_MESSAGE );
                         Logger.write( AppManager.class + ".saveTo; ex=" + ex + "\n" );

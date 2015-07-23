@@ -73,15 +73,15 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
         {
 int num_dev = 0;
 if ( num_dev > 0 ) {
-    lblMessage.setText( _( "Push buttons in turn as shown below" ) );
+    lblMessage.setText( gettext( "Push buttons in turn as shown below" ) );
 } else {
-    lblMessage.setText( _( "Game controler instanceof not available" ) );
+    lblMessage.setText( gettext( "Game controler instanceof not available" ) );
 }
-setTitle( _( "Game Controler Configuration" ) );
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
-btnReset.setText( _( "Reset And Exit" ) );
-btnSkip.setText( _( "Skip" ) );
+setTitle( gettext( "Game Controler Configuration" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
+btnReset.setText( gettext( "Reset And Exit" ) );
+btnSkip.setText( gettext( "Skip" ) );
         }
 
         public int getRectangle()
@@ -154,7 +154,7 @@ return m_povs.get( 2 );
 return m_povs.get( 3 );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

@@ -24,54 +24,54 @@ import org.kbinani.componentmodel.*;
         public String getDisplayName( String name )
         {
 if ( name.equals( "Clock" ) ) {
-    return _( "Clock" );
+    return gettext( "Clock" );
 } else if ( name.equals( "Length" ) ) {
-    return _( "Length" );
+    return gettext( "Length" );
 } else if ( name.equals( "Note" ) ) {
-    return _( "Note#" );
+    return gettext( "Note#" );
 } else if ( name.equals( "Velocity" ) ) {
-    return _( "Velocity" );
+    return gettext( "Velocity" );
 } else if ( name.equals( "BendDepth" ) ) {
-    return _( "Bend Depth" );
+    return gettext( "Bend Depth" );
 } else if ( name.equals( "BendLength" ) ) {
-    return _( "Bend Length" );
+    return gettext( "Bend Length" );
 } else if ( name.equals( "Decay" ) ) {
-    return _( "Decay" );
+    return gettext( "Decay" );
 } else if ( name.equals( "Accent" ) ) {
-    return _( "Accent" );
+    return gettext( "Accent" );
 } else if ( name.equals( "UpPortamento" ) ) {
-    return _( "Up-Portamento" );
+    return gettext( "Up-Portamento" );
 } else if ( name.equals( "DownPortamento" ) ) {
-    return _( "Down-Portamento" );
+    return gettext( "Down-Portamento" );
 } else if ( name.equals( "VibratoLength" ) ) {
-    return _( "Vibrato Length" );
+    return gettext( "Vibrato Length" );
 } else if ( name.equals( "PhoneticSymbol" ) ) {
-    return _( "Phonetic Symbol" );
+    return gettext( "Phonetic Symbol" );
 } else if ( name.equals( "Phrase" ) ) {
-    return _( "Phrase" );
+    return gettext( "Phrase" );
 } else if ( name.equals( "PreUtterance" ) ) {
-    return _( "Pre Utterance" );
+    return gettext( "Pre Utterance" );
 } else if ( name.equals( "Overlap" ) ) {
-    return _( "Overlap" );
+    return gettext( "Overlap" );
 } else if ( name.equals( "Moduration" ) ) {
-    return _( "Moduration" );
+    return gettext( "Moduration" );
 } else if ( name.equals( "Vibrato" ) ) {
-    return _( "Vibrato" );
+    return gettext( "Vibrato" );
 } else if ( name.equals( "Attack" ) ) {
-    return _( "Attack" );
+    return gettext( "Attack" );
 } else if ( name.equals( "AttackDuration" ) ) {
-    return _( "Attack Duration" );
+    return gettext( "Attack Duration" );
 } else if ( name.equals( "AttackDepth" ) ) {
-    return _( "Attack Depth" );
+    return gettext( "Attack Depth" );
 } else if ( str.compare( name, "StartPoint" ) ) {
-    return _( "StartPoint" );
+    return gettext( "StartPoint" );
 } else if ( str.compare( name, "Intensity" ) ) {
-    return _( "Intensity" );
+    return gettext( "Intensity" );
 }
-return _( name );
+return gettext( name );
         }
 
-        private static String _( String id ) {
+        private static String gettext( String id ) {
 return Messaging.getMessage( id );
         }
     }

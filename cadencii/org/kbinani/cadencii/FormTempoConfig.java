@@ -55,17 +55,17 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-setTitle( _( "Global Tempo" ) );
-groupPosition.setTitle( _( "Position" ) );
-lblBar.setText( _( "Measure" ) );
+setTitle( gettext( "Global Tempo" ) );
+groupPosition.setTitle( gettext( "Position" ) );
+lblBar.setText( gettext( "Measure" ) );
 lblBar.setMnemonic( KeyEvent.VK_M, numBar );
-lblBeat.setText( _( "Beat" ) );
+lblBeat.setText( gettext( "Beat" ) );
 lblBeat.setMnemonic( KeyEvent.VK_B, numBeat );
-lblClock.setText( _( "Clock" ) );
+lblClock.setText( gettext( "Clock" ) );
 lblClock.setMnemonic( KeyEvent.VK_L, numClock );
-groupTempo.setTitle( _( "Tempo" ) );
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
+groupTempo.setTitle( gettext( "Tempo" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
         }
 
         public int getBeatCount()
@@ -93,7 +93,7 @@ setDialogResult( BDialogResult.OK );
 setDialogResult( BDialogResult.CANCEL );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

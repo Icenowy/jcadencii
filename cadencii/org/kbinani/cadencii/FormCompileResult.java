@@ -43,10 +43,10 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-textBox1.setText( _( "Script Compilation Result" ) );
+textBox1.setText( gettext( "Script Compilation Result" ) );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

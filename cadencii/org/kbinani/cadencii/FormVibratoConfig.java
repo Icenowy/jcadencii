@@ -116,14 +116,14 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-setTitle( _( "Vibrato property" ) );
-lblVibratoLength.setText( _( "Vibrato length" ) );
+setTitle( gettext( "Vibrato property" ) );
+lblVibratoLength.setText( gettext( "Vibrato length" ) );
 lblVibratoLength.setMnemonic( KeyEvent.VK_L, txtVibratoLength );
-lblVibratoType.setText( _( "Vibrato Type" ) );
+lblVibratoType.setText( gettext( "Vibrato Type" ) );
 lblVibratoType.setMnemonic( KeyEvent.VK_T, comboVibratoType );
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
-groupSelect.setTitle( _( "Select from" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
+groupSelect.setTitle( gettext( "Select from" ) );
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ groupSelect.setTitle( _( "Select from" ) );
 return m_vibrato;
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

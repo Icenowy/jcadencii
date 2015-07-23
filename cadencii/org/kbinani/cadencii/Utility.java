@@ -1390,7 +1390,7 @@ for ( String file : files ) {
         /// <param name="file">スクリプトを発動するのに使用するコンテナを返します．</param>
         /// <returns></returns>
 
-        private static String _( String id ) {
+        private static String gettext( String id ) {
 return Messaging.getMessage( id );
         }
 

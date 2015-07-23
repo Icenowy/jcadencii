@@ -54,7 +54,7 @@ import org.kbinani.apputil.*;
         /// <returns></returns>
         public String getMessage()
         {
-String message = _( "track" ) + "#" + this.track + " ";
+String message = gettext( "track" ) + "#" + this.track + " ";
 double start = this.vsq.getSecFromClock( this.clockStart );
 double cend = this.clockEnd;
 if ( this.clockEnd == Integer.MAX_VALUE ) {
@@ -63,9 +63,9 @@ if ( this.clockEnd == Integer.MAX_VALUE ) {
 double end = this.vsq.getSecFromClock( cend );
 int istart = (int)Math.floor( start );
 int iend = (int)Math.floor( end );
-message += istart + "." + str.format( (int)((start - istart) * 100), 2 ) + " " + _( "sec" );
+message += istart + "." + str.format( (int)((start - istart) * 100), 2 ) + " " + gettext( "sec" );
 message += " - ";
-message += iend + "." + str.format( (int)((end - iend) * 100), 2 ) + " " + _( "sec" );
+message += iend + "." + str.format( (int)((end - iend) * 100), 2 ) + " " + gettext( "sec" );
 
 return message;
         }
@@ -81,7 +81,7 @@ double end = this.vsq.getSecFromClock( cend );
 return (end - start) * vsq.config.SamplingRate;
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

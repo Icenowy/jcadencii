@@ -43,19 +43,19 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-setTitle( _( "Insert Bars" ) );
-String th_prefix = _( "_PREFIX_TH_" );
+setTitle( gettext( "Insert Bars" ) );
+String th_prefix = gettext( "_PREFIX_TH_" );
 if ( th_prefix.equals( "_PREFIX_TH_" ) ) {
     lblPositionPrefix.setText( "" );
 } else {
     lblPositionPrefix.setText( th_prefix );
 }
-lblPosition.setText( _( "Position" ) );
-lblLength.setText( _( "Length" ) );
-lblThBar.setText( _( "th bar" ) );
-lblBar.setText( _( "bar" ) );
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
+lblPosition.setText( gettext( "Position" ) );
+lblLength.setText( gettext( "Length" ) );
+lblThBar.setText( gettext( "th bar" ) );
+lblBar.setText( gettext( "bar" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
         }
 
         public int getLength()
@@ -78,7 +78,7 @@ return (int)numPosition.getFloatValue();
 numPosition.setFloatValue( value );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

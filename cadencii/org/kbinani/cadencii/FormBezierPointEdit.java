@@ -99,21 +99,21 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-setTitle( _( "Edit Bezier Data Point" ) );
+setTitle( gettext( "Edit Bezier Data Point" ) );
 
-groupDataPoint.setTitle( _( "Data Poin" ) );
-lblDataPointClock.setText( _( "Clock" ) );
-lblDataPointValue.setText( _( "Value" ) );
+groupDataPoint.setTitle( gettext( "Data Poin" ) );
+lblDataPointClock.setText( gettext( "Clock" ) );
+lblDataPointValue.setText( gettext( "Value" ) );
 
-groupLeft.setTitle( _( "Left Control Point" ) );
-lblLeftClock.setText( _( "Clock" ) );
-lblLeftValue.setText( _( "Value" ) );
+groupLeft.setTitle( gettext( "Left Control Point" ) );
+lblLeftClock.setText( gettext( "Clock" ) );
+lblLeftValue.setText( gettext( "Value" ) );
 
-groupRight.setTitle( _( "Right Control Point" ) );
-lblRightClock.setText( _( "Clock" ) );
-lblRightValue.setText( _( "Value" ) );
+groupRight.setTitle( gettext( "Right Control Point" ) );
+lblRightClock.setText( gettext( "Clock" ) );
+lblRightValue.setText( gettext( "Value" ) );
 
-chkEnableSmooth.setText( _( "Smooth" ) );
+chkEnableSmooth.setText( gettext( "Smooth" ) );
         }
 
         private void updateStatus()
@@ -134,7 +134,7 @@ m_min = m_curve_type.getMinimum();
 m_max = m_curve_type.getMaximum();
         }
 
-        private static String _( String message )
+        private static String gettext( String message )
         {
 return Messaging.getMessage( message );
         }
@@ -172,8 +172,8 @@ try {
     y = str.toi( txtDataPointValue.getText() );
     if ( y < m_min || m_max < y ) {
         AppManager.showMessageBox( 
-            _( "Invalid value" ), 
-            _( "Error" ), 
+            gettext( "Invalid value" ), 
+            gettext( "Error" ), 
             org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION, 
             org.kbinani.windows.forms.Utility.MSGBOX_ERROR_MESSAGE );
         return;
@@ -186,7 +186,7 @@ try {
     }
     setDialogResult( BDialogResult.OK );
 } catch ( Exception ex ) {
-    AppManager.showMessageBox( _( "Integer format error" ), _( "Error" ), org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION, org.kbinani.windows.forms.Utility.MSGBOX_ERROR_MESSAGE );
+    AppManager.showMessageBox( gettext( "Integer format error" ), gettext( "Error" ), org.kbinani.windows.forms.Utility.MSGBOX_DEFAULT_OPTION, org.kbinani.windows.forms.Utility.MSGBOX_ERROR_MESSAGE );
     setDialogResult( BDialogResult.CANCEL );
     Logger.write( FormBezierPointEdit.class + ".btnOK_Click; ex=" + ex + "\n" );
 }

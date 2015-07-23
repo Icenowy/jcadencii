@@ -37,10 +37,10 @@ return mUi;
 
         public void applyLanguage()
         {
-mUi.setMessageLabelText( _( "It seems some key-board sounds are missing. Do you want to re-generate them now?" ) );
-mUi.setAlwaysPerformThisCheckCheckboxText( _( "Always perform this check when starting Cadencii." ) );
-mUi.setYesButtonText( _( "Yes" ) );
-mUi.setNoButtonText( _( "No" ) );
+mUi.setMessageLabelText( gettext( "It seems some key-board sounds are missing. Do you want to re-generate them now?" ) );
+mUi.setAlwaysPerformThisCheckCheckboxText( gettext( "Always perform this check when starting Cadencii." ) );
+mUi.setYesButtonText( gettext( "Yes" ) );
+mUi.setNoButtonText( gettext( "No" ) );
         }
 
         public void buttonCancelClickedSlot()
@@ -53,7 +53,7 @@ mUi.close( true );
 mUi.close( false );
         }
 
-        private static String _( String message )
+        private static String gettext( String message )
         {
 return Messaging.getMessage( message );
         }

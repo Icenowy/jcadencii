@@ -48,8 +48,8 @@ applyLanguage();
 
 // wave channel
 comboChannel.removeAllItems();
-comboChannel.addItem( _( "Monoral" ) );
-comboChannel.addItem( _( "Stereo" ) );
+comboChannel.addItem( gettext( "Monoral" ) );
+comboChannel.addItem( gettext( "Stereo" ) );
 
 // sample rate
 comboSampleRate.removeAllItems();
@@ -71,27 +71,27 @@ Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
 
         public void applyLanguage()
         {
-setTitle( _( "Sequence config" ) );
-btnCancel.setText( _( "Cancel" ) );
-btnOK.setText( _( "OK" ) );
+setTitle( gettext( "Sequence config" ) );
+btnCancel.setText( gettext( "Cancel" ) );
+btnOK.setText( gettext( "OK" ) );
 
-groupWaveFileOutput.setTitle( _( "Wave File Output" ) );
-lblChannel.setText( _( "Channel" ) );
+groupWaveFileOutput.setTitle( gettext( "Wave File Output" ) );
+lblChannel.setText( gettext( "Channel" ) );
 lblChannel.setMnemonic( KeyEvent.VK_C, comboChannel );
-labelSampleRate.setText( _( "Sample rate" ) );
+labelSampleRate.setText( gettext( "Sample rate" ) );
 labelSampleRate.setMnemonic( KeyEvent.VK_S, comboSampleRate );
-radioMasterTrack.setText( _( "Master Track" ) );
-radioCurrentTrack.setText( _( "Current Track" ) );
-labelSampleRate.setText( _( "Sample rate" ) );
+radioMasterTrack.setText( gettext( "Master Track" ) );
+radioCurrentTrack.setText( gettext( "Current Track" ) );
+labelSampleRate.setText( gettext( "Sample rate" ) );
 
 int current_index = comboChannel.getSelectedIndex();
 comboChannel.removeAllItems();
-comboChannel.addItem( _( "Monoral" ) );
-comboChannel.addItem( _( "Stereo" ) );
+comboChannel.addItem( gettext( "Monoral" ) );
+comboChannel.addItem( gettext( "Stereo" ) );
 comboChannel.setSelectedIndex( current_index );
 
-groupSequence.setTitle( _( "Sequence" ) );
-labelPreMeasure.setText( _( "Pre-measure" ) );
+groupSequence.setTitle( gettext( "Sequence" ) );
+labelPreMeasure.setText( gettext( "Pre-measure" ) );
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ setDialogResult( BDialogResult.OK );
 setDialogResult( BDialogResult.CANCEL );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

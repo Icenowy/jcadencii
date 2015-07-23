@@ -65,7 +65,7 @@ mPreviousAlwaysOnTop = value;
 
         public void applyLanguage()
         {
-setTitle( _( "Note Property" ) );
+setTitle( gettext( "Note Property" ) );
         }
 
         public void applyShortcut( KeyStroke value )
@@ -73,7 +73,7 @@ setTitle( _( "Note Property" ) );
 menuClose.setAccelerator( value );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

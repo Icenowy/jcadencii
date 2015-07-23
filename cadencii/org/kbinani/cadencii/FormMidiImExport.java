@@ -61,7 +61,7 @@ initialize();
 applyLanguage();
 setMode( FormMidiMode.EXPORT );
 Util.applyFontRecurse( this, AppManager.editorConfig.getBaseFont() );
-listTrack.setColumnHeaders( new String[] { _( "Track" ), _( "Name" ), _( "Notes" ) } );
+listTrack.setColumnHeaders( new String[] { gettext( "Track" ), gettext( "Name" ), gettext( "Notes" ) } );
 listTrack.setColumnWidth( 0, columnWidthTrack );
 listTrack.setColumnWidth( 1, columnWidthName );
 listTrack.setColumnWidth( 2, columnWidthNotes );
@@ -76,31 +76,31 @@ setResources();
         public void applyLanguage()
         {
 if ( m_mode == FormMidiMode.EXPORT ) {
-    setTitle( _( "Midi Export" ) );
+    setTitle( gettext( "Midi Export" ) );
 } else if ( m_mode == FormMidiMode.IMPORT ) {
-    setTitle( _( "Midi Import" ) );
+    setTitle( gettext( "Midi Import" ) );
 } else {
-    setTitle( _( "VSQ/Vocaloid Midi Import" ) );
+    setTitle( gettext( "VSQ/Vocaloid Midi Import" ) );
 }
-groupMode.setTitle( _( "Import Basis" ) );
-radioGateTime.setText( _( "gate-time" ) );
-radioPlayTime.setText( _( "play-time" ) );
-listTrack.setColumnHeaders( new String[] { _( "Track" ), _( "Name" ), _( "Notes" ) } );
-btnCheckAll.setText( _( "Check All" ) );
-btnUncheckAll.setText( _( "Uncheck All" ) );
-groupCommonOption.setTitle( _( "Option" ) );
-btnOK.setText( _( "OK" ) );
-btnCancel.setText( _( "Cancel" ) );
-chkTempo.setText( _( "Tempo" ) );
-chkBeat.setText( _( "Beat" ) );
-chkNote.setText( _( "Note" ) );
-chkLyric.setText( _( "Lyrics" ) );
-chkExportVocaloidNrpn.setText( _( "vocaloid NRPN" ) );
-lblOffset.setText( _( "offset" ) );
+groupMode.setTitle( gettext( "Import Basis" ) );
+radioGateTime.setText( gettext( "gate-time" ) );
+radioPlayTime.setText( gettext( "play-time" ) );
+listTrack.setColumnHeaders( new String[] { gettext( "Track" ), gettext( "Name" ), gettext( "Notes" ) } );
+btnCheckAll.setText( gettext( "Check All" ) );
+btnUncheckAll.setText( gettext( "Uncheck All" ) );
+groupCommonOption.setTitle( gettext( "Option" ) );
+btnOK.setText( gettext( "OK" ) );
+btnCancel.setText( gettext( "Cancel" ) );
+chkTempo.setText( gettext( "Tempo" ) );
+chkBeat.setText( gettext( "Beat" ) );
+chkNote.setText( gettext( "Note" ) );
+chkLyric.setText( gettext( "Lyrics" ) );
+chkExportVocaloidNrpn.setText( gettext( "vocaloid NRPN" ) );
+lblOffset.setText( gettext( "offset" ) );
 if ( radioGateTime.isSelected() ) {
-    lblOffsetUnit.setText( _( "clocks" ) );
+    lblOffsetUnit.setText( gettext( "clocks" ) );
 } else {
-    lblOffsetUnit.setText( _( "seconds" ) );
+    lblOffsetUnit.setText( gettext( "seconds" ) );
 }
         }
 
@@ -146,8 +146,8 @@ chkLyric.setEnabled( (m_mode != FormMidiMode.IMPORT_VSQ) );
 chkNote.setEnabled( (m_mode != FormMidiMode.IMPORT_VSQ) );
 chkPreMeasure.setEnabled( (m_mode != FormMidiMode.IMPORT_VSQ) );
 if ( m_mode == FormMidiMode.EXPORT ) {
-    setTitle( _( "Midi Export" ) );
-    chkPreMeasure.setText( _( "Export pre-measure part" ) );
+    setTitle( gettext( "Midi Export" ) );
+    chkPreMeasure.setText( gettext( "Export pre-measure part" ) );
     if ( chkExportVocaloidNrpn.isSelected() ) {
         chkPreMeasure.setEnabled( false );
         AppManager.editorConfig.MidiImExportConfigExport.LastPremeasureCheckStatus = chkPreMeasure.isSelected();
@@ -164,15 +164,15 @@ if ( m_mode == FormMidiMode.EXPORT ) {
     }
     groupMode.setEnabled( false );
 } else if ( m_mode == FormMidiMode.IMPORT ) {
-    setTitle( _( "Midi Import" ) );
-    chkPreMeasure.setText( _( "Inserting start at pre-measure" ) );
+    setTitle( gettext( "Midi Import" ) );
+    chkPreMeasure.setText( gettext( "Inserting start at pre-measure" ) );
     chkMetaText.setEnabled( false );
     AppManager.editorConfig.MidiImExportConfigImport.LastMetatextCheckStatus = chkMetaText.isSelected();
     chkMetaText.setSelected( false );
     groupMode.setEnabled( true );
 } else {
-    setTitle( _( "VSQ/Vocaloid Midi Import" ) );
-    chkPreMeasure.setText( _( "Inserting start at pre-measure" ) );
+    setTitle( gettext( "VSQ/Vocaloid Midi Import" ) );
+    chkPreMeasure.setText( gettext( "Inserting start at pre-measure" ) );
     chkPreMeasure.setSelected( false );
     AppManager.editorConfig.MidiImExportConfigImportVsq.LastMetatextCheckStatus = chkMetaText.isSelected();
     chkMetaText.setSelected( true );
@@ -229,7 +229,7 @@ return chkLyric.isSelected();
 return chkPreMeasure.isSelected();
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }
@@ -322,7 +322,7 @@ setDialogResult( BDialogResult.OK );
         public void radioGateTime_CheckedChanged( Object sender, BEventArgs e )
         {
 if ( radioGateTime.isSelected() ) {
-    lblOffsetUnit.setText( _( "clocks" ) );
+    lblOffsetUnit.setText( gettext( "clocks" ) );
     txtOffset.setType( NumberTextBox.ValueType.Integer );
 }
         }
@@ -330,7 +330,7 @@ if ( radioGateTime.isSelected() ) {
         public void radioPlayTime_CheckedChanged( Object sender, BEventArgs e )
         {
 if ( radioPlayTime.isSelected() ) {
-    lblOffsetUnit.setText( _( "seconds" ) );
+    lblOffsetUnit.setText( gettext( "seconds" ) );
     txtOffset.setType( NumberTextBox.ValueType.Double );
 }
         }

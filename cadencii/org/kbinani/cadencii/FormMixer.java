@@ -179,7 +179,7 @@ menuVisualReturn.setAccelerator( shortcut );
 
         public void applyLanguage()
         {
-setTitle( _( "Mixer" ) );
+setTitle( gettext( "Mixer" ) );
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ gbc.fill = GridBagConstraints.VERTICAL;
 panelSlaves.add( item, gbc );
         }
 
-        private static String _( String id )
+        private static String gettext( String id )
         {
 return Messaging.getMessage( id );
         }

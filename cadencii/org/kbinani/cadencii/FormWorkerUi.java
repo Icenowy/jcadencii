@@ -80,11 +80,11 @@ public class FormWorkerUi extends BDialog
 
     public void applyLanguage()
     {
-        buttonCancel.setText( _( "Cancel" ) );
-        buttonDetail.setText( _( "detail" ) );
+        buttonCancel.setText( gettext( "Cancel" ) );
+        buttonDetail.setText( gettext( "detail" ) );
     }
     
-    private static String _( String id )
+    private static String gettext( String id )
     {
         return Messaging.getMessage( id );
     }
