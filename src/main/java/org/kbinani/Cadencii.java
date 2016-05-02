@@ -11,7 +11,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-import org.kbinani.*;
+package org.kbinani;
 
 import org.kbinani.apputil.*;
 
@@ -23,11 +23,11 @@ public class Cadencii implements Thread.UncaughtExceptionHandler {
     private static String mPathResource = "";
     private static boolean mPrintVersion = false;
 
-    /// <summary>
-    /// 起動時に渡されたコマンドライン引数を評価します。
-    /// 戻り値は、コマンドライン引数のうちVSQ,またはXVSQファイルとして指定された引数、または空文字です。
-    /// </summary>
-    /// <param name="arg"></param>
+    /**
+     * 起動時に渡されたコマンドライン引数を評価します。
+     * 戻り値は、コマンドライン引数のうちVSQ,またはXVSQファイルとして指定された引数、または空文字です。
+     * @param arg
+     */
     private static void parseArguments(String[] arg) {
         String currentparse = "";
 
