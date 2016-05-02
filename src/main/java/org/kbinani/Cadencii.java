@@ -12,10 +12,13 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 package org.kbinani;
-
-import org.kbinani.apputil.*;
-
-import org.kbinani.cadencii.*;
+import org.kbinani.apputil.Messaging;
+import org.kbinani.cadencii.AppManager;
+import org.kbinani.cadencii.BAssemblyInfo;
+import org.kbinani.cadencii.ExceptionNotifyFormController;
+import org.kbinani.cadencii.FormMain;
+import org.kbinani.cadencii.FormMainController;
+import org.kbinani.cadencii.Resources;
 
 
 public class Cadencii implements Thread.UncaughtExceptionHandler {

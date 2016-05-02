@@ -77,24 +77,26 @@ public class Resources {
     private static Image s_minus8x8 = null;
 
     public static void setBasePath(String value) {
-        superPath = value;
+       superPath = value;
     }
 
     private static String getBasePath() {
         if (superPath == null) {
-            superPath = fsys.combine(PortUtil.getApplicationStartupPath(),
-                    "resources");
+            superPath = Resources.class.getResource("/assets/").toString();
         }
-
-        return superPath;
+        return null;
     }
 
+    private static InputStream getAsset(String relPath) {
+        InputStream inputStream = Resources.class.getResourceAsStream("/assets" + relPath);
+        return inputStream;
+    }
+    
     public static Image get_alarm_clock() {
         if (s_alarm_clock == null) {
             String res_path = fsys.combine(getBasePath(), "alarm-clock.png");
-
             try {
-                s_alarm_clock = ImageIO.read(new File(res_path));
+                s_alarm_clock = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_alarm_clock; ex=" + ex +
                     "; res_path=" + res_path);
@@ -109,7 +111,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "arrow-090.png");
 
             try {
-                s_arrow_090 = ImageIO.read(new File(res_path));
+                s_arrow_090 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_090; ex=" + ex +
                     "; res_path=" + res_path);
@@ -124,7 +126,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "arrow-180.png");
 
             try {
-                s_arrow_180 = ImageIO.read(new File(res_path));
+                s_arrow_180 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_180; ex=" + ex +
                     "; res_path=" + res_path);
@@ -139,7 +141,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "arrow-270.png");
 
             try {
-                s_arrow_270 = ImageIO.read(new File(res_path));
+                s_arrow_270 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_270; ex=" + ex +
                     "; res_path=" + res_path);
@@ -154,7 +156,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "arrow-skip-090.png");
 
             try {
-                s_arrow_skip_090 = ImageIO.read(new File(res_path));
+                s_arrow_skip_090 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_skip_090; ex=" + ex +
                     "; res_path=" + res_path);
@@ -169,7 +171,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "arrow_135.png");
 
             try {
-                s_arrow_135 = ImageIO.read(new File(res_path));
+                s_arrow_135 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_135; ex=" + ex +
                     "; res_path=" + res_path);
@@ -185,7 +187,7 @@ public class Resources {
                     "arrow_circle_double.png");
 
             try {
-                s_arrow_circle_double = ImageIO.read(new File(res_path));
+                s_arrow_circle_double = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_circle_double; ex=" + ex +
                     "; res_path=" + res_path);
@@ -200,7 +202,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "arrow_return.png");
 
             try {
-                s_arrow_return = ImageIO.read(new File(res_path));
+                s_arrow_return = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_return; ex=" + ex +
                     "; res_path=" + res_path);
@@ -215,7 +217,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "arrow_skip.png");
 
             try {
-                s_arrow_skip = ImageIO.read(new File(res_path));
+                s_arrow_skip = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_skip; ex=" + ex +
                     "; res_path=" + res_path);
@@ -230,7 +232,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "arrow_skip_180.png");
 
             try {
-                s_arrow_skip_180 = ImageIO.read(new File(res_path));
+                s_arrow_skip_180 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_arrow_skip_180; ex=" + ex +
                     "; res_path=" + res_path);
@@ -245,7 +247,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "btn1.png");
 
             try {
-                s_btn1 = ImageIO.read(new File(res_path));
+                s_btn1 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_btn1; ex=" + ex + "; res_path=" +
                     res_path);
@@ -260,7 +262,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "btn2.png");
 
             try {
-                s_btn2 = ImageIO.read(new File(res_path));
+                s_btn2 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_btn2; ex=" + ex + "; res_path=" +
                     res_path);
@@ -275,7 +277,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "btn3.png");
 
             try {
-                s_btn3 = ImageIO.read(new File(res_path));
+                s_btn3 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_btn3; ex=" + ex + "; res_path=" +
                     res_path);
@@ -291,7 +293,7 @@ public class Resources {
                     "chevron-small-collapse.png");
 
             try {
-                s_chevron_small_collapse = ImageIO.read(new File(res_path));
+                s_chevron_small_collapse = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_chevron_small_collapse; ex=" + ex +
                     "; res_path=" + res_path);
@@ -306,7 +308,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "clipboard_paste.png");
 
             try {
-                s_clipboard_paste = ImageIO.read(new File(res_path));
+                s_clipboard_paste = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_clipboard_paste; ex=" + ex +
                     "; res_path=" + res_path);
@@ -321,7 +323,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "control.png");
 
             try {
-                s_control = ImageIO.read(new File(res_path));
+                s_control = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_control; ex=" + ex + "; res_path=" +
                     res_path);
@@ -336,7 +338,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "control_double.png");
 
             try {
-                s_control_double = ImageIO.read(new File(res_path));
+                s_control_double = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_control_double; ex=" + ex +
                     "; res_path=" + res_path);
@@ -352,7 +354,7 @@ public class Resources {
                     "control_double_180.png");
 
             try {
-                s_control_double_180 = ImageIO.read(new File(res_path));
+                s_control_double_180 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_control_double_180; ex=" + ex +
                     "; res_path=" + res_path);
@@ -367,7 +369,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "control_pause.png");
 
             try {
-                s_control_pause = ImageIO.read(new File(res_path));
+                s_control_pause = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_control_pause; ex=" + ex +
                     "; res_path=" + res_path);
@@ -382,7 +384,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "control_skip.png");
 
             try {
-                s_control_skip = ImageIO.read(new File(res_path));
+                s_control_skip = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_control_skip; ex=" + ex +
                     "; res_path=" + res_path);
@@ -397,7 +399,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "control_stop.png");
 
             try {
-                s_control_stop = ImageIO.read(new File(res_path));
+                s_control_stop = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_control_stop; ex=" + ex +
                     "; res_path=" + res_path);
@@ -412,7 +414,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "control_stop_180.png");
 
             try {
-                s_control_stop_180 = ImageIO.read(new File(res_path));
+                s_control_stop_180 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_control_stop_180; ex=" + ex +
                     "; res_path=" + res_path);
@@ -427,7 +429,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "cross-small.png");
 
             try {
-                s_cross_small = ImageIO.read(new File(res_path));
+                s_cross_small = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_cross_small; ex=" + ex +
                     "; res_path=" + res_path);
@@ -442,7 +444,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "disk.png");
 
             try {
-                s_disk = ImageIO.read(new File(res_path));
+                s_disk = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_disk; ex=" + ex + "; res_path=" +
                     res_path);
@@ -457,7 +459,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "disk__plus.png");
 
             try {
-                s_disk__plus = ImageIO.read(new File(res_path));
+                s_disk__plus = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_disk__plus; ex=" + ex +
                     "; res_path=" + res_path);
@@ -472,7 +474,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "documents.png");
 
             try {
-                s_documents = ImageIO.read(new File(res_path));
+                s_documents = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_documents; ex=" + ex +
                     "; res_path=" + res_path);
@@ -487,7 +489,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "drive.png");
 
             try {
-                s_drive = ImageIO.read(new File(res_path));
+                s_drive = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_drive; ex=" + ex + "; res_path=" +
                     res_path);
@@ -502,7 +504,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "edit-list-order.png");
 
             try {
-                s_edit_list_order = ImageIO.read(new File(res_path));
+                s_edit_list_order = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_edit_list_order; ex=" + ex +
                     "; res_path=" + res_path);
@@ -517,7 +519,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "end_marker.png");
 
             try {
-                s_end_marker = ImageIO.read(new File(res_path));
+                s_end_marker = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_end_marker; ex=" + ex +
                     "; res_path=" + res_path);
@@ -532,7 +534,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "eraser.png");
 
             try {
-                s_eraser = ImageIO.read(new File(res_path));
+                s_eraser = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_eraser; ex=" + ex + "; res_path=" +
                     res_path);
@@ -547,7 +549,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "folder--plus.png");
 
             try {
-                s_folder__plus = ImageIO.read(new File(res_path));
+                s_folder__plus = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_folder__plus; ex=" + ex +
                     "; res_path=" + res_path);
@@ -562,7 +564,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "folder.png");
 
             try {
-                s_folder = ImageIO.read(new File(res_path));
+                s_folder = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_folder; ex=" + ex + "; res_path=" +
                     res_path);
@@ -578,7 +580,7 @@ public class Resources {
                     "folder_horizontal_open.png");
 
             try {
-                s_folder_horizontal_open = ImageIO.read(new File(res_path));
+                s_folder_horizontal_open = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_folder_horizontal_open; ex=" + ex +
                     "; res_path=" + res_path);
@@ -594,7 +596,7 @@ public class Resources {
                     "layer_shape_curve.png");
 
             try {
-                s_layer_shape_curve = ImageIO.read(new File(res_path));
+                s_layer_shape_curve = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_layer_shape_curve; ex=" + ex +
                     "; res_path=" + res_path);
@@ -609,7 +611,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "layer_shape_line.png");
 
             try {
-                s_layer_shape_line = ImageIO.read(new File(res_path));
+                s_layer_shape_line = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_layer_shape_line; ex=" + ex +
                     "; res_path=" + res_path);
@@ -624,7 +626,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "pencil.png");
 
             try {
-                s_pencil = ImageIO.read(new File(res_path));
+                s_pencil = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_pencil; ex=" + ex + "; res_path=" +
                     res_path);
@@ -639,7 +641,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "piano.png");
 
             try {
-                s_piano = ImageIO.read(new File(res_path));
+                s_piano = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_piano; ex=" + ex + "; res_path=" +
                     res_path);
@@ -654,7 +656,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "pin__arrow.png");
 
             try {
-                s_pin__arrow = ImageIO.read(new File(res_path));
+                s_pin__arrow = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_pin__arrow; ex=" + ex +
                     "; res_path=" + res_path);
@@ -669,7 +671,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "pin__arrow_inv.png");
 
             try {
-                s_pin__arrow_inv = ImageIO.read(new File(res_path));
+                s_pin__arrow_inv = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_pin__arrow_inv; ex=" + ex +
                     "; res_path=" + res_path);
@@ -684,7 +686,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "ruler_crop.png");
 
             try {
-                s_ruler_crop = ImageIO.read(new File(res_path));
+                s_ruler_crop = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_ruler_crop; ex=" + ex +
                     "; res_path=" + res_path);
@@ -699,7 +701,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "scissors.png");
 
             try {
-                s_scissors = ImageIO.read(new File(res_path));
+                s_scissors = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_scissors; ex=" + ex +
                     "; res_path=" + res_path);
@@ -714,7 +716,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "slash.png");
 
             try {
-                s_slash = ImageIO.read(new File(res_path));
+                s_slash = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_slash; ex=" + ex + "; res_path=" +
                     res_path);
@@ -729,7 +731,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "start_marker.png");
 
             try {
-                s_start_marker = ImageIO.read(new File(res_path));
+                s_start_marker = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_start_marker; ex=" + ex +
                     "; res_path=" + res_path);
@@ -744,7 +746,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "target--pencil.png");
 
             try {
-                s_target__pencil = ImageIO.read(new File(res_path));
+                s_target__pencil = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_target__pencil; ex=" + ex +
                     "; res_path=" + res_path);
@@ -759,7 +761,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "VSTonWht.png");
 
             try {
-                s_VSTonWht = ImageIO.read(new File(res_path));
+                s_VSTonWht = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_VSTonWht; ex=" + ex +
                     "; res_path=" + res_path);
@@ -774,7 +776,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "icon.ico");
 
             try {
-                s_icon = ImageIO.read(new File(res_path));
+                s_icon = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_icon; ex=" + ex + "; res_path=" +
                     res_path);
@@ -789,7 +791,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "switch.ico");
 
             try {
-                s_switch = ImageIO.read(new File(res_path));
+                s_switch = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_switch; ex=" + ex + "; res_path=" +
                     res_path);
@@ -804,7 +806,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "cresc1.png");
 
             try {
-                s_cresc1 = ImageIO.read(new File(res_path));
+                s_cresc1 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_cresc1; ex=" + ex + "; res_path=" +
                     res_path);
@@ -819,7 +821,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "cresc2.png");
 
             try {
-                s_cresc2 = ImageIO.read(new File(res_path));
+                s_cresc2 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_cresc2; ex=" + ex + "; res_path=" +
                     res_path);
@@ -834,7 +836,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "cresc3.png");
 
             try {
-                s_cresc3 = ImageIO.read(new File(res_path));
+                s_cresc3 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_cresc3; ex=" + ex + "; res_path=" +
                     res_path);
@@ -849,7 +851,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "cresc4.png");
 
             try {
-                s_cresc4 = ImageIO.read(new File(res_path));
+                s_cresc4 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_cresc4; ex=" + ex + "; res_path=" +
                     res_path);
@@ -864,7 +866,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "cresc5.png");
 
             try {
-                s_cresc5 = ImageIO.read(new File(res_path));
+                s_cresc5 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_cresc5; ex=" + ex + "; res_path=" +
                     res_path);
@@ -879,7 +881,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "dim1.png");
 
             try {
-                s_dim1 = ImageIO.read(new File(res_path));
+                s_dim1 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_dim1; ex=" + ex + "; res_path=" +
                     res_path);
@@ -894,7 +896,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "dim2.png");
 
             try {
-                s_dim2 = ImageIO.read(new File(res_path));
+                s_dim2 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_dim2; ex=" + ex + "; res_path=" +
                     res_path);
@@ -909,7 +911,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "dim3.png");
 
             try {
-                s_dim3 = ImageIO.read(new File(res_path));
+                s_dim3 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_dim3; ex=" + ex + "; res_path=" +
                     res_path);
@@ -924,7 +926,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "dim4.png");
 
             try {
-                s_dim4 = ImageIO.read(new File(res_path));
+                s_dim4 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_dim4; ex=" + ex + "; res_path=" +
                     res_path);
@@ -939,7 +941,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "dim5.png");
 
             try {
-                s_dim5 = ImageIO.read(new File(res_path));
+                s_dim5 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_dim5; ex=" + ex + "; res_path=" +
                     res_path);
@@ -954,7 +956,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "splash.png");
 
             try {
-                s_splash = ImageIO.read(new File(res_path));
+                s_splash = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_splash; ex=" + ex + "; res_path=" +
                     res_path);
@@ -969,7 +971,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "plus8x8.png");
 
             try {
-                s_plus8x8 = ImageIO.read(new File(res_path));
+                s_plus8x8 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_plus8x8; ex=" + ex + "; res_path=" +
                     res_path);
@@ -984,7 +986,7 @@ public class Resources {
             String res_path = fsys.combine(getBasePath(), "minus8x8.png");
 
             try {
-                s_minus8x8 = ImageIO.read(new File(res_path));
+                s_minus8x8 = ImageIO.read(getAsset(res_path));
             } catch (Exception ex) {
                 serr.println("Resources#get_minus8x8; ex=" + ex +
                     "; res_path=" + res_path);
