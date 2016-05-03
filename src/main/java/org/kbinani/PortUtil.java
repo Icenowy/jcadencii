@@ -13,21 +13,7 @@
  */
 package org.kbinani;
 
-import java.awt.AWTEvent;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.MouseInfo;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.Toolkit;
-import java.awt.Window;
+import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
@@ -45,6 +31,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import java.net.URI;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
@@ -684,6 +671,12 @@ public class PortUtil implements AWTEventListener {
         return f.getName();
     }
 
+    public static String getFileName(URI path) {
+        File f = new File(path);
+
+        return f.getName();
+    }
+
     public static String getDirectoryName(String path) {
         File f = new File(path);
 
@@ -1033,7 +1026,16 @@ public class PortUtil implements AWTEventListener {
     }
 
     public static void setMousePosition(Point p) {
-        // TODO: PortUtil#setMousePosition
+        Robot r = null;
+        try {
+            r = new Robot();
+        } catch (AWTException e) {
+            System.err.println("Error when creating MouseMove event!");
+            e.printStackTrace();
+        }
+        if (r != null) {
+            r.mouseMove(p.x,p.y);
+        }
     }
 
     public static Point getMousePosition() {

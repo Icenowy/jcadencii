@@ -14,10 +14,10 @@
 package org.kbinani.cadencii;
 
 
-/// <summary>
-/// プラットフォームを表す列挙型．
-/// （互換性のため，Javaの命名規則に基づくリファクタリングは未実施．）
-/// </summary>
+/**
+ * プラットフォームを表す列挙型．
+ * （互換性のため，Javaの命名規則に基づくリファクタリングは未実施．）
+ */
 public enum PlatformEnum {Windows,
     Macintosh,
     Linux;
