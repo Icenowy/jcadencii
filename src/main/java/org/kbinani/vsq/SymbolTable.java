@@ -17,7 +17,11 @@ import org.kbinani.*;
 
 import java.io.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.*;
+
+import static org.kbinani.windows.forms.BKeys.T;
 
 
 /// <summary>
@@ -54,35 +58,49 @@ public class SymbolTable implements Cloneable {
     /// </summary>
     private int mMaxDivisions = 1;
 
-    /// <summary>
-    /// 使ってはいけないコンストラクタ
-    /// </summary>
+    /**
+     * 使ってはいけないコンストラクタ
+     */
     private SymbolTable() {
+        //---Empty ?
     }
 
-    /// <summary>
-    /// コンストラクタ
-    /// </summary>
-    /// <param name="path">読み込む辞書ファイルのパス</param>
-    /// <param name="is_udc_mode">VOCALOID2仕様の辞書ファイルかどうか</param>
-    /// <param name="enabled">辞書ファイルを有効とするかどうか</param>
-    /// <param name="encoding">辞書ファイルのテキストエンコーディング</param>
     public SymbolTable(String path, boolean is_udc_mode, boolean enabled,
-        String encoding) {
-        mDict = new TreeMap<String, SymbolTableEntry>();
-        mEnabled = enabled;
-
+                       String encoding) {
         if (!fsys.isFileExists(path)) {
+            System.out.println("File Not Exists: " + path);
             return;
         }
-
         mName = PortUtil.getFileName(path);
+
+        try {
+            new SymbolTable(new FileInputStream(path), is_udc_mode, enabled, encoding);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * コンストラクタ
+     *
+     * @param stream      読み込む辞書ファイルのパス
+     * @param is_udc_mode VOCALOID2仕様の辞書ファイルかどうか
+     * @param enabled     辞書ファイルを有効とするかどうか
+     * @param encoding    辞書ファイルのテキストエンコーディング
+     */
+    public SymbolTable(InputStream stream, boolean is_udc_mode, boolean enabled,
+                       String encoding) {
+        mDict = new TreeMap<>();
+        mEnabled = enabled;
+
+        // System.out.println("Path: " + path + "-- " + "File name: " + mName);
 
         BufferedReader sr = null;
 
         try {
             sr = new BufferedReader(new InputStreamReader(
-                        new FileInputStream(path), encoding));
+                    stream, encoding));
+            //new FileInputStream(String.valueOf(path)), encoding));
 
             if (sr == null) {
                 return;
@@ -183,6 +201,12 @@ public class SymbolTable implements Cloneable {
     public static void loadDictionary(String dictionary_file, String name) {
         SymbolTable table = new SymbolTable(dictionary_file, false, true,
                 "UTF-8");
+        table.mName = name;
+        mTable.add(table);
+    }
+
+    public static void loadDictionary(InputStream inputStream, String name) {
+        SymbolTable table = new SymbolTable(inputStream, false, true, "UTF-8");
         table.mName = name;
         mTable.add(table);
     }

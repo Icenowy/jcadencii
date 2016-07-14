@@ -14,6 +14,7 @@
 package org.kbinani;
 
 import java.io.*;
+import java.net.URI;
 
 
 public class fsys {
@@ -67,6 +68,12 @@ public class fsys {
     }
 
     public static boolean isFileExists(String path) {
+        File f = new File(path);
+
+        return (f.isFile());
+    }
+
+    public static boolean isFileExists(URI path) {
         File f = new File(path);
 
         return f.isFile();

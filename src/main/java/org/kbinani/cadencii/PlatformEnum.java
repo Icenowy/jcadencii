@@ -1,6 +1,6 @@
 /*
- * FormPluginUi.cs
- * Copyright © 2009-2011 kbinani
+ * Platform.cs
+ * Copyright © 2008-2011 kbinani
  *
  * This file is part of org.kbinani.cadencii.
  *
@@ -11,3 +11,14 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+package org.kbinani.cadencii;
+
+
+/**
+ * プラットフォームを表す列挙型．
+ * （互換性のため，Javaの命名規則に基づくリファクタリングは未実施．）
+ */
+public enum PlatformEnum {Windows,
+    Macintosh,
+    Linux;
+}
